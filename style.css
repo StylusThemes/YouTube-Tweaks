@@ -1,0 +1,50 @@
+@-moz-document domain("youtube.com") {
+  /* ++----------------------------------------------------------------------------------++ */
+  /* ||                                                                                  || */
+  /* ||* Name        : YouTube_                                                          || */
+  /* ||                                                                                  || */
+  /* ||* Author      : JourneyOver                                                       || */
+  /* ||                                                                                  || */
+  /* ||* Created     : 09 / 11 / 2017                                                    || */
+  /* ||                                                                                  || */
+  /* ||* Updated     : xx / xx / xxxx                                                    || */
+  /* ||                                                                                  || */
+  /* ||* Version     : 0.0.1                                                             || */
+  /* ||                                                                                  || */
+  /* ||* Copyright   : 2017-2018                                                         || */
+  /* ||                                                                                  || */
+  /* ++----------------------------------------------------------------------------------++ */
+}
+
+@-moz-document domain("youtube.com") {
+
+/*:: Thinner/Darker Scroll bar ::*/
+::-webkit-scrollbar-corner {
+  background-color: #333 !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+
+  background-color: #333 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+
+  background: #555 !important;
+}
+
+}
+
+@-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
+
+/*::: STRETCH VIDEO TO FILL PLAYER :::*/
+/*[[SVTFP]]*/
+
+/*::: Max Video Player Width 122032 :::*/
+/*[[VMaxWidth]]*/
+
+}
