@@ -1,5 +1,7 @@
 # YouTube_
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c49c66965dc74808a8bfacf1111daf17)](https://www.codacy.com/app/StylusThemes/YouTube_?utm_source=github.com&utm_medium=referral&utm_content=StylusThemes/YouTube_&utm_campaign=badger)
+
 ## Description
 
 Just some small things I decided to add/mess around with on youtube
