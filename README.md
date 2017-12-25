@@ -1,6 +1,7 @@
 # YouTube_
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c49c66965dc74808a8bfacf1111daf17)](https://www.codacy.com/app/StylusThemes/YouTube_?utm_source=github.com&utm_medium=referral&utm_content=StylusThemes/YouTube_&utm_campaign=badger)
+[![Dependencies Badge](https://img.shields.io/david/dev/StylusThemes/YouTube_.svg?label=%20devDependencies%20)](https://david-dm.org/StylusThemes/YouTube_?type=dev)
 
 ## Description
 

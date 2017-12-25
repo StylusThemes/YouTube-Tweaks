@@ -2,8 +2,29 @@
   "name": "youtube_",
   "version": "0.0.1",
   "description": "Small YouTube Additions",
-  "license": "CC-BY-SA-4.0",
+  "devDependencies": {
+    "css": "^2.2.1",
+    "perfectionist": "^2.4.0",
+    "postcss": "^6.0.14",
+    "semver": "^5.4.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "updates": "2.0.3"
+  },
   "scripts": {
-    "build": "node build/build.js"
-  }
+    "build": "node build/build.js",
+    "stylelint": "stylelint style.css --fix",
+    "perfectionist": "perfectionist",
+    "update": "updates -cu && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StylusThemes/YouTube_.git"
+  },
+  "author": "StylusThemes",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/StylusThemes/YouTube_/issues"
+  },
+  "homepage": "https://github.com/StylusThemes/YouTube_"
 }

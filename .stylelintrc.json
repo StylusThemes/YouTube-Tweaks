@@ -1,0 +1,46 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": [ "*.user.css", "*/*.user.css" ],
+  "rules": {
+    "at-rule-empty-line-before": null,
+    "block-no-empty": null,
+    "block-opening-brace-space-before": "always",
+    "color-hex-case": null,
+    "color-named": "never",
+    "color-no-invalid-hex": true,
+    "comment-empty-line-before": null,
+    "comment-no-empty": null,
+    "comment-whitespace-inside": null,
+    "declaration-bang-space-before": "always",
+    "declaration-block-no-duplicate-properties": null,
+    "declaration-block-single-line-max-declarations": null,
+    "declaration-colon-newline-after": null,
+    "declaration-empty-line-before": null,
+    "declaration-no-important": null,
+    "font-family-name-quotes": "always-where-recommended",
+    "font-family-no-duplicate-names": true,
+    "function-url-quotes": "always",
+    "indentation": null,
+    "max-empty-lines": 1,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": true,
+    "number-leading-zero": "never",
+    "number-max-precision": 3,
+    "number-no-trailing-zeros": true,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": [ "after-single-line-comment", "first-nested" ],
+        "ignore": [ "after-comment", "inside-block" ],
+        "severity": "warning"
+      }
+    ],
+    "selector-combinator-space-after": "always",
+    "selector-combinator-space-before": "always",
+    "selector-list-comma-newline-after": null,
+    "selector-pseudo-element-colon-notation": "double",
+    "selector-type-no-unknown": null,
+    "string-quotes": "double",
+    "value-list-comma-newline-after": null
+  }
+}

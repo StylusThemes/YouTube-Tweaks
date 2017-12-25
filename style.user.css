@@ -62,7 +62,6 @@ SVTFPN "No" <<<EOT
 
   background: #555 !important;
 }
-
 }
 
 @-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
@@ -72,5 +71,4 @@ SVTFPN "No" <<<EOT
 
 /*::: Max Video Player Width 122032 :::*/
 /*[[VMaxWidth]]*/
-
 }

@@ -36,7 +36,6 @@
 
   background: #555 !important;
 }
-
 }
 
 @-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
@@ -46,5 +45,4 @@
 
 /*::: Max Video Player Width 122032 :::*/
 /*[[VMaxWidth]]*/
-
 }
