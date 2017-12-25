@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "node build/build.js",
-    "stylelint": "stylelint style.css --fix",
+    "stylelint": "stylelint style.css --fix && stylelint optionals.css --fix",
     "perfectionist": "perfectionist",
     "update": "updates -cu && npm install"
   },

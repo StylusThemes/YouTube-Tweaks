@@ -1,10 +1,10 @@
 /*::: Max Video Player Width 122032 :::*/
 [is-watch-page] ytd-page-manager {
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
 
 [is-watch-page] ytd-masthead {
-  background: transparent!important;
+  background: transparent !important;
 }
 
 [is-watch-page] ytd-masthead::before {
@@ -29,7 +29,7 @@
 
 [is-watch-page] #masthead-container:hover ytd-masthead,
 [is-watch-page] #masthead-container:hover.ytd-app::after {
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
 [is-watch-page] [theater] #player.ytd-watch {
@@ -38,11 +38,11 @@
 }
 
 [is-watch-page] [theater] #player video {
-  left: 0!important;
+  left: 0 !important;
 
-  width: 100%!important;
+  width: 100% !important;
   max-width: 100%;
-  height: auto!important;
+  height: auto !important;
   max-height: 100vh;
 }
 
