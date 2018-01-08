@@ -1,49 +1,36 @@
-/*::: Max Video Player Width 122032 :::*/
-[is-watch-page] ytd-page-manager {
+/*::: Max Video Player Width 138006 :::*/
+
+/* Full height player */
+ytd-app[is-watch-page] ytd-watch[theater] #player {
+  min-height: 100vh !important;
+  max-height: 100vh !important;
+}
+
+/* Hide top bar */
+ytd-app[is-watch-page] #masthead-container {
+  opacity: 0 !important;
+
+  transition: opacity .2s ease-in-out;
+}
+
+/* Show on hover */
+ytd-app[is-watch-page] #masthead-container:hover {
+  opacity: 1 !important;
+}
+
+/* Remove top margin */
+ytd-app[is-watch-page] #page-manager {
   margin-top: 0 !important;
 }
 
-[is-watch-page] ytd-masthead {
-  background: transparent !important;
+/* Hide feedback and restore classic buttons */
+ytd-app[is-watch-page] #extra-buttons {
+  display: none !important;
 }
 
-[is-watch-page] ytd-masthead::before {
-  position: absolute;
-  z-index: -1;
-
-  width: 100%;
-  height: 100%;
-
-  background: var(--yt-swatch-primary);
-
-  opacity: .65;
-
-  content: "";
-}
-
-[is-watch-page] ytd-masthead,
-[is-watch-page] #masthead-container.ytd-app::after {
-  transition: transform .1s .5s ease-out;
-  transform: translateY(-56px);
-}
-
-[is-watch-page] #masthead-container:hover ytd-masthead,
-[is-watch-page] #masthead-container:hover.ytd-app::after {
-  transform: translateY(0);
-}
-
-[is-watch-page] [theater] #player.ytd-watch {
-  height: 100vh;
-  max-height: 100vh;
-}
-
-[is-watch-page] [theater] #player video {
-  left: 0 !important;
-
-  width: 100% !important;
-  max-width: 100%;
-  height: auto !important;
-  max-height: 100vh;
+/* Fix toast interfering with controls */
+ytd-app[is-watch-page] #toast:not(.paper-toast-open) {
+  pointer-events: none;
 }
 
 /*::: STRETCH VIDEO TO FILL PLAYER :::*/

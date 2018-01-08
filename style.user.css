@@ -11,7 +11,7 @@
 
 @advanced dropdown VMaxWidth "Real Theater Mode?" {
 VMaxWidthY "Yes" <<<EOT
-[is-watch-page] ytd-page-manager{margin-top:0!important}[is-watch-page] ytd-masthead{background:transparent!important}[is-watch-page] ytd-masthead::before{position:absolute;z-index:-1;width:100%;height:100%;background:var(--yt-swatch-primary);opacity:0.65;content:""}[is-watch-page] #masthead-container.ytd-app::after,[is-watch-page] ytd-masthead{transition:transform 0.1s 0.5s ease-out;transform:translateY(-56px)}[is-watch-page] #masthead-container:hover ytd-masthead,[is-watch-page] #masthead-container:hover.ytd-app::after{transform:translateY(0px)}[is-watch-page] [theater] #player.ytd-watch{height:100vh;max-height:100vh}[is-watch-page] [theater] #player video{left:0!important;width:100%!important;max-width:100%;height:auto!important;max-height:100vh} EOT;
+ytd-app[is-watch-page] ytd-watch[theater] #player{min-height:100vh !important;max-height:100vh !important}ytd-app[is-watch-page] #masthead-container{opacity:0 !important;transition:opacity 0.2s ease-in-out}ytd-app[is-watch-page] #masthead-container:hover{opacity:1 !important}ytd-app[is-watch-page] #page-manager{margin-top:0 !important}ytd-app[is-watch-page] #extra-buttons{display:none !important}ytd-app[is-watch-page] #toast:not(.paper-toast-open){pointer-events:none} EOT;
 VMaxWidthN "No" <<<EOT
  EOT;
 }
@@ -69,6 +69,6 @@ SVTFPN "No" <<<EOT
 /*::: STRETCH VIDEO TO FILL PLAYER :::*/
 /*[[SVTFP]]*/
 
-/*::: Max Video Player Width 122032 :::*/
+/*::: Max Video Player Width 138006 :::*/
 /*[[VMaxWidth]]*/
 }
