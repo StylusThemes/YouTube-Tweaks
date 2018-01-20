@@ -1,5 +1,5 @@
 # YouTube_ Changelog
 
-## v0.0.1 ... (UNRELEASED)
+## v1.0.0 ... (UNRELEASED)
 
 ### Initial Release
