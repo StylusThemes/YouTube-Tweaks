@@ -1,6 +1,6 @@
 {
   "name": "youtube_",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Small YouTube Additions",
   "devDependencies": {
     "css": "^2.2.1",

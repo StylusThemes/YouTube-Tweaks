@@ -1,6 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": [ "*.user.css", "*/*.user.css" ],
+  "ignoreFiles": [ "*.user.css", "*/*.user.css", "*.min.css" ],
   "rules": {
     "at-rule-empty-line-before": null,
     "block-no-empty": null,

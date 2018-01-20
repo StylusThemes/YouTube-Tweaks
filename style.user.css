@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name        YouTube_
-@version     0.0.1
+@version     1.0.0
 @description Small YouTube Additions
 @namespace   github.com/StylusThemes
 @author      StylusThemes <https://github.com/StylusThemes>
@@ -25,25 +25,24 @@ SVTFPN "No" <<<EOT
 ==/UserStyle== */
 /* DO NOT EDIT THIS USERCSS - IT IS GENERATED AUTOMATICALLY */
 @-moz-document domain("youtube.com") {
-  /* ++----------------------------------------------------------------------------------++ */
-  /* ||                                                                                  || */
-  /* ||* Name        : YouTube_                                                          || */
-  /* ||                                                                                  || */
-  /* ||* Author      : JourneyOver                                                       || */
-  /* ||                                                                                  || */
-  /* ||* Created     : 09 / 11 / 2017                                                    || */
-  /* ||                                                                                  || */
-  /* ||* Updated     : xx / xx / xxxx                                                    || */
-  /* ||                                                                                  || */
-  /* ||* Version     : 0.0.1                                                             || */
-  /* ||                                                                                  || */
-  /* ||* Copyright   : 2017-2018                                                         || */
-  /* ||                                                                                  || */
-  /* ++----------------------------------------------------------------------------------++ */
+/* ++----------------------------------------------------------------------------------++ */
+/* ||                                                                                  || */
+/* ||* Name        : YouTube_                                                          || */
+/* ||                                                                                  || */
+/* ||* Author      : JourneyOver                                                       || */
+/* ||                                                                                  || */
+/* ||* Created     : 09 / 11 / 2017                                                    || */
+/* ||                                                                                  || */
+/* ||* Updated     : xx / xx / xxxx                                                    || */
+/* ||                                                                                  || */
+/* ||* Version     : 1.0.0                                                             || */
+/* ||                                                                                  || */
+/* ||* Copyright   : 2017-2018                                                         || */
+/* ||                                                                                  || */
+/* ++----------------------------------------------------------------------------------++ */
 }
 
 @-moz-document domain("youtube.com") {
-
 /*:: Thinner/Darker Scroll bar ::*/
 ::-webkit-scrollbar-corner {
   background-color: #333 !important;
@@ -65,7 +64,6 @@ SVTFPN "No" <<<EOT
 }
 
 @-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
-
 /*::: STRETCH VIDEO TO FILL PLAYER :::*/
 /*[[SVTFP]]*/
 
