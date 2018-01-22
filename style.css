@@ -17,7 +17,9 @@
 }
 
 @-moz-document domain("youtube.com") {
-/*:: Thinner/Darker Scroll bar ::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Globals :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+/*::: Thinner/Darker Scroll bar :::*/
 ::-webkit-scrollbar-corner {
   background-color: #333 !important;
 }
@@ -38,9 +40,9 @@
 }
 
 @-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
-/*::: STRETCH VIDEO TO FILL PLAYER :::*/
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Video Page :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
 /*[[SVTFP]]*/
 
-/*::: Max Video Player Width 138006 :::*/
 /*[[VMaxWidth]]*/
 }
