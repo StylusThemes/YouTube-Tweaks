@@ -37,6 +37,8 @@
 
   background: #555 !important;
 }
+
+/*[[WatchedBadge]]*/
 }
 
 @-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
