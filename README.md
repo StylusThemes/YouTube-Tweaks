@@ -23,7 +23,7 @@
 - If you're using a browser extension:
   - Stylus - get the addon for [Firefox][1], [Chrome][2] and [Opera][3].
   - Stylish - get the addon for [Firefox][4], [Chrome][5], [Opera][6], [Safari][7] and [Firefox Mobile][4].
-  - FreeStyler is available for [Firefox][8], [Chrome][9], [Opera][10], [Safari][11].
+  - FreeStyler is available for [Firefox][8], [Chrome][9], [Opera][10] and [Safari][11].
   - xStyle is available for [Firefox][12] and [Chrome][13].
   - Then install this style using:
     - [userstyles.org][14] (with customization options)
@@ -52,7 +52,7 @@ If you would like to contribute to this repository, please...
 [8]: https://addons.mozilla.org/en-US/firefox/addon/freestyler/
 [9]: https://chrome.google.com/webstore/detail/freestyler/hihigldmabkodfpehkgdemjklmaebmca
 [10]: https://addons.opera.com/extensions/download/freestyler/
-[11]: http://freestyler.ws/download.php?browser=safari
+[11]: https://safari-extensions.apple.com/details/?id=ws.freestyler.freestyler-SRV36C8E2C
 [12]: https://addons.mozilla.org/en-us/firefox/addon/xstyle
 [13]: https://chrome.google.com/webstore/detail/xstyle/hncgkmhphmncjohllpoleelnibpmccpj
 [14]: https://userstyles.org/styles/160362/youtube-theater
