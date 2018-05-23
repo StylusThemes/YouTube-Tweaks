@@ -1,13 +1,13 @@
 @-moz-document domain("youtube.com") {
 /* ++----------------------------------------------------------------------------------++ */
 /* ||                                                                                  || */
-/* ||* Name        : YouTube_                                                          || */
+/* ||* Name        : YouTube Theater                                                   || */
 /* ||                                                                                  || */
 /* ||* Author      : JourneyOver                                                       || */
 /* ||                                                                                  || */
 /* ||* Created     : 09 / 11 / 2017                                                    || */
 /* ||                                                                                  || */
-/* ||* Updated     : xx / xx / xxxx                                                    || */
+/* ||* Updated     : 05 / 22 / 2018                                                    || */
 /* ||                                                                                  || */
 /* ||* Version     : 1.0.0                                                             || */
 /* ||                                                                                  || */
@@ -41,7 +41,7 @@
 /*[[WatchedBadge]]*/
 }
 
-@-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
+@-moz-document regexp("https?://www.youtube.com/watch.*") {
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Video Page :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 /*[[SVTFP]]*/

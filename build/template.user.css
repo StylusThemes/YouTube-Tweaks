@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name        YouTube_
+@name        YouTube Theater
 @version     [[VERSION]]
-@description Small YouTube Additions
+@description Expands videos to fill all free space inside browser window.
 @namespace   github.com/StylusThemes
 @author      StylusThemes <https://github.com/StylusThemes>
-@homepageURL https://github.com/StylusThemes/YouTube_
-@supportURL  https://github.com/StylusThemes/YouTube_/issues
-@updateURL   https://raw.githubusercontent.com/StylusThemes/YouTube_/master/style.user.css
+@homepageURL https://github.com/StylusThemes/YouTube-Theater
+@supportURL  https://github.com/StylusThemes/YouTube-Theater/issues
+@updateURL   https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
 @license     CC-BY-SA-4.0
 
 @advanced dropdown VMaxWidth "Real Theater Mode?" {

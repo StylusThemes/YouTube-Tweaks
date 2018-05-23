@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name        YouTube_
+@name        YouTube Theater
 @version     1.0.0
-@description Small YouTube Additions
+@description Expands videos to fill all free space inside browser window.
 @namespace   github.com/StylusThemes
 @author      StylusThemes <https://github.com/StylusThemes>
-@homepageURL https://github.com/StylusThemes/YouTube_
-@supportURL  https://github.com/StylusThemes/YouTube_/issues
-@updateURL   https://raw.githubusercontent.com/StylusThemes/YouTube_/master/style.user.css
+@homepageURL https://github.com/StylusThemes/YouTube-Theater
+@supportURL  https://github.com/StylusThemes/YouTube-Theater/issues
+@updateURL   https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
 @license     CC-BY-SA-4.0
 
 @advanced dropdown VMaxWidth "Real Theater Mode?" {
@@ -34,13 +34,13 @@ WatchedBadgeN "No" <<<EOT
 @-moz-document domain("youtube.com") {
 /* ++----------------------------------------------------------------------------------++ */
 /* ||                                                                                  || */
-/* ||* Name        : YouTube_                                                          || */
+/* ||* Name        : YouTube Theater                                                   || */
 /* ||                                                                                  || */
 /* ||* Author      : JourneyOver                                                       || */
 /* ||                                                                                  || */
 /* ||* Created     : 09 / 11 / 2017                                                    || */
 /* ||                                                                                  || */
-/* ||* Updated     : xx / xx / xxxx                                                    || */
+/* ||* Updated     : 05 / 22 / 2018                                                    || */
 /* ||                                                                                  || */
 /* ||* Version     : 1.0.0                                                             || */
 /* ||                                                                                  || */
@@ -74,7 +74,7 @@ WatchedBadgeN "No" <<<EOT
 /*[[WatchedBadge]]*/
 }
 
-@-moz-document regexp("https:\/\/www.youtube.com\/watch.*") {
+@-moz-document regexp("https?://www.youtube.com/watch.*") {
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Video Page :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 /*[[SVTFP]]*/
