@@ -1,61 +1,55 @@
-# YouTube Theater
+# YouTube Theater [![Version][version]][1] [![Install directly with Stylus][stylus]][2] [![userstyles.org installations][userstyles]][3] [![GitHub stars][stars]][4] [![GitHub issues][issues]][5] [![GitHub license][license]][6] [![Dependencies][dependencies]][7]
 
-<p align="center">
-  <a href="https://www.codacy.com/app/StylusThemes/YouTube-Theater?utm_source=github.com&utm_medium=referral&utm_content=StylusThemes/YouTube-Theater&utm_campaign=badger">
-    <img src="https://api.codacy.com/project/badge/Grade/c49c66965dc74808a8bfacf1111daf17" alt="Codacy Badge">
-  </a>
-  <a href="https://github.com/StylusThemes/YouTube-Theater/tags">
-    <img src="https://img.shields.io/github/tag/StylusThemes/YouTube-Theater.svg?label=tag" alt="Tag">
-  </a>
-  <a href="https://github.com/StylusThemes/YouTube-Theater/stargazers">
-    <img src="http://github-svg-buttons.herokuapp.com/star.svg?user=StylusThemes&repo=YouTube-Theater&style=flat&background=007ec6" alt="Star">
-  </a>
-  <a href="http://github.com/StylusThemes/YouTube-Theater/fork">
-    <img src="http://github-svg-buttons.herokuapp.com/fork.svg?user=StylusThemes&repo=YouTube-Theater&style=flat&background=007ec6" alt="Fork">
-  </a>
-  <a href="https://david-dm.org/StylusThemes/YouTube-Theater?type=dev">
-    <img src="https://img.shields.io/david/dev/StylusThemes/YouTube-Theater.svg?label=%20devDependencies%20" alt="devDependencies">
-  </a>
-</p>
+**_Expands videos to fill all free space inside browser window_**
 
-## Installing
+# Installation
 
-- If you're using a browser extension:
-  - Stylus - get the addon for [Firefox][1], [Chrome][2] and [Opera][3].
-  - Stylish - get the addon for [Firefox][4], [Chrome][5], [Opera][6], [Safari][7] and [Firefox Mobile][4].
-  - FreeStyler is available for [Firefox][8], [Chrome][9], [Opera][10] and [Safari][11].
-  - xStyle is available for [Firefox][12] and [Chrome][13].
-  - Then install this style using:
-    - [userstyles.org][14] (with customization options)
-    - or, add it [manually][15] into the editor.
-- Or, **[install directly][16]** from this repository by opening the user.css file; only available using Stylus, FreeStyler or xStyle (see the [documentation][17]). :tada:
+- Download one of these add-ons for your browser
+  - Stylus (recommended): [Firefox][8], [Chrome][9], or [Opera][10].
+  - Stylish: [Firefox][11], [Chrome][12], [Opera][13], or [Safari][14].
+  - FreeStyler: [Firefox][15], [Chrome][16], [Opera][17], or [Safari][18].
+  - xStyle: [Firefox][19] and [Chrome][20].
+- Click [here][2] to install directly with Stylus, or go to [userstyles.org][3] and click on "Install Style" button to install with Stylish.
+- Done! From now on it will automatically update.
 
 ## Updating
 
-If a recent change by Youtube broke the style, chances are that I already fixed it. Make sure to reinstall from [userstyles.org][14], [GitHub][15] or [GitHub UserCSS][16] before opening an issue.
+If a recent change by Youtube broke the style, chances are that I already fixed it. Make sure to reinstall from [userstyles.org][3], [GitHub][21] or [GitHub UserCSS][2] before opening an issue.
 
 ## Contributions
 
 If you would like to contribute to this repository, please...
 
 1. Fork
-2. Make changes (please read the [contribution guidelines](./.github/CONTRIBUTING.md) and abide by them)
+2. Make changes (please read the [Contribution Guidelines][22] and abide by them)
 3. Create a pull request!
 
-[1]: https://addons.mozilla.org/en-US/firefox/addon/styl-us/
-[2]: https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
-[3]: https://addons.opera.com/en-gb/extensions/details/stylus/
-[4]: https://addons.mozilla.org/en-US/firefox/addon/stylish/
-[5]: https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe
-[6]: https://addons.opera.com/en/extensions/details/stylish/
-[7]: http://sobolev.us/stylish/
-[8]: https://addons.mozilla.org/en-US/firefox/addon/freestyler/
-[9]: https://chrome.google.com/webstore/detail/freestyler/hihigldmabkodfpehkgdemjklmaebmca
-[10]: https://addons.opera.com/extensions/download/freestyler/
-[11]: https://safari-extensions.apple.com/details/?id=ws.freestyler.freestyler-SRV36C8E2C
-[12]: https://addons.mozilla.org/en-us/firefox/addon/xstyle
-[13]: https://chrome.google.com/webstore/detail/xstyle/hncgkmhphmncjohllpoleelnibpmccpj
-[14]: https://userstyles.org/styles/160362/youtube-theater
-[15]: https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.css
-[16]: https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
-[17]: https://github.com/openstyles/stylus/wiki/Usercss
+[version]: https://img.shields.io/github/tag/StylusThemes/YouTube-Theater.svg?longCache=true&style=flat-square
+[1]: #
+[stylus]: https://img.shields.io/badge/install%20directly%20with-Stylus-00adad.svg?longCache=true&style=flat-square "Click here!"
+[2]: https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
+[userstyles]: https://img.shields.io/badge/dynamic/json.svg?label=userstyles.org%20installations&url=https%3A%2F%2Fwidget.userstyles.org%2Fstyles%2F160362%2Fyoutube-theater.json&query=total_installs&colorB=e51ced&longCache=true&style=flat-square
+[3]: https://userstyles.org/styles/160362/youtube-theater
+[stars]: https://img.shields.io/github/stars/StylusThemes/YouTube-Theater.svg?longCache=true&style=flat-square
+[4]: https://github.com/StylusThemes/YouTube-Theater/stargazers
+[issues]: https://img.shields.io/github/issues/StylusThemes/YouTube-Theater.svg?longCache=true&style=flat-square
+[5]: https://github.com/StylusThemes/YouTube-Theater/issues
+[license]: https://img.shields.io/github/license/StylusThemes/YouTube-Theater.svg?longCache=true&style=flat-square
+[6]: https://creativecommons.org/licenses/by-sa/4.0/
+[dependencies]: https://img.shields.io/david/dev/StylusThemes/YouTube-Theater.svg?longCache=true&style=flat-square
+[7]: https://david-dm.org/StylusThemes/YouTube-Theater?type=dev
+[8]: https://addons.mozilla.org/en-US/firefox/addon/styl-us/
+[9]: https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
+[10]: https://addons.opera.com/en-gb/extensions/details/stylus/
+[11]: https://addons.mozilla.org/en-US/firefox/addon/stylish/
+[12]: https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe
+[13]: https://addons.opera.com/en/extensions/details/stylish/
+[14]: http://sobolev.us/stylish/
+[15]: https://addons.mozilla.org/en-US/firefox/addon/freestyler/
+[16]: https://chrome.google.com/webstore/detail/freestyler/hihigldmabkodfpehkgdemjklmaebmca
+[17]: https://addons.opera.com/extensions/download/freestyler/
+[18]: https://safari-extensions.apple.com/details/?id=ws.freestyler.freestyler-SRV36C8E2C
+[19]: https://addons.mozilla.org/en-us/firefox/addon/xstyle
+[20]: https://chrome.google.com/webstore/detail/xstyle/hncgkmhphmncjohllpoleelnibpmccpj
+[21]: https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.css
+[22]: ./.github/CONTRIBUTING.md

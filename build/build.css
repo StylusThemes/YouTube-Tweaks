@@ -1,20 +1,3 @@
-/* ==UserStyle==
-@name           YouTube Theater
-@version        1.0.1
-@namespace      https://github.com/StylusThemes
-@description    Expands videos to fill all free space inside browser window.
-@author         StylusThemes <https://github.com/StylusThemes>
-@homepageURL    https://github.com/StylusThemes/YouTube-Theater
-@supportURL     https://github.com/StylusThemes/YouTube-Theater/issues
-@updateURL      https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
-@license        CC-BY-SA-4.0
-@preprocessor   stylus
-
-@var checkbox   WatchedBadge 'Re-Add Youtube Watched Badge' 1
-@var checkbox   SVTFP 'Stretch Video To Fill Player' 1
-@var checkbox   VMaxWidth 'Real Theater Mode' 1
-==/UserStyle== */
-/* DO NOT EDIT THIS USERCSS - IT IS GENERATED AUTOMATICALLY */
 @-moz-document domain("youtube.com") {
 /* ++----------------------------------------------------------------------------------++ */
 /* ||* Created     : 09 / 11 / 2017                                                    || */

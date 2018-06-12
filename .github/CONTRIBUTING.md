@@ -1,4 +1,4 @@
-# Contributing to YouTube_
+# Contributing to Youtube Theater
 
 1. [Getting Involved](#getting-involved)
 2. [How To Report style issues](#how-to-report-style-issues)
@@ -68,7 +68,7 @@ If you don't know CSS very well and have found a missing style, please include a
 
 * Try to wrap lines at around 80 characters.
 * Try to limit the style size:
-  * Don't add any image URI's to the css; instead add the image into the `/images` directory; then point to using the following url: `https://raw.githubusercontent.com/StylusThemes/Youtube_/master/images/`{my-image.png}.
+  * Don't add any image URI's to the css; instead add the image into the `/images` directory; then point to using the following url: `https://raw.githubusercontent.com/StylusThemes/Youtube-Theater/master/images/`{my-image.png}.
   * If possible, reduce any added selectors. Remember that Stylus requires an `!important` flag to override default styling, so a selector starting from the body isn't always necessary.
   * Don't add any inline comments. If you want to make a comment, add it as a note in the commit.
   * If your css definition already exists within the style, do not add it again! Add your selector to the existing definition.

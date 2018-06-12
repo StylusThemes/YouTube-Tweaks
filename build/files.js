@@ -5,7 +5,7 @@ const fs = require( "fs" );
 
 function createUserCss( version ) {
   return Promise.all(
-      [ "./build/template.user.css", "./style.css" ].map( name => readFile( name ) )
+      [ "./build/template.user.css", "./build/build.css" ].map( name => readFile( name ) )
     )
     .then( files => writeFile(
       "style.user.css", processTemplate( files, version ) ) );

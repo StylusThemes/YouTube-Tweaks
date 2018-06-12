@@ -1,15 +1,16 @@
 {
   "name": "youtube-theater",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Expands videos to fill all free space inside browser window.",
   "devDependencies": {
     "css": "^2.2.3",
     "perfectionist": "^2.4.0",
     "postcss": "^6.0.22",
+    "postcss-syntax": "^0.28.0",
     "semver": "^5.5.0",
     "stylelint": "^9.2.1",
     "stylelint-config-standard": "^18.2.0",
-    "updates": "2.7.3"
+    "updates": "3.0.1"
   },
   "scripts": {
     "build": "node build/build.js",
