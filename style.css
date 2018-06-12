@@ -7,9 +7,9 @@
 /* ||                                                                                  || */
 /* ||* Created     : 09 / 11 / 2017                                                    || */
 /* ||                                                                                  || */
-/* ||* Updated     : 05 / 22 / 2018                                                    || */
+/* ||* Updated     : 06 / 11 / 2018                                                    || */
 /* ||                                                                                  || */
-/* ||* Version     : 1.0.0                                                             || */
+/* ||* Version     : 1.0.2                                                             || */
 /* ||                                                                                  || */
 /* ||* Copyright   : 2017-2018                                                         || */
 /* ||                                                                                  || */
@@ -27,14 +27,12 @@
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-
   background-color: #333 !important;
 }
 
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 2px;
   border-radius: 2px;
-
   background: #555 !important;
 }
 

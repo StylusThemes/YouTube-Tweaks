@@ -1,6 +1,6 @@
 {
   "name": "youtube-theater",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Expands videos to fill all free space inside browser window.",
   "devDependencies": {
     "css": "^2.2.3",
