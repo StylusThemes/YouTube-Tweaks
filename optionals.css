@@ -9,18 +9,19 @@ ytd-app[is-watch-page] ytd-watch[theater] #player {
 
 /*::: Hide top bar :::*/
 ytd-app[is-watch-page] #masthead-container {
-  opacity: 0 !important;
+  opacity: 0;
   transition: opacity .2s ease-in-out;
 }
 
 /*::: Show top bar on hover :::*/
 ytd-app[is-watch-page] #masthead-container:hover {
-  opacity: 1 !important;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 /*::: Remove top margin :::*/
 ytd-app[is-watch-page] #page-manager {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 /*::: Hide feedback and restore classic buttons :::*/
@@ -99,4 +100,96 @@ html[dark=true] .ytd-browse div#progress:after {
 
 .ytd-browse ytd-thumbnail-overlay-resume-playback-renderer:hover {
   opacity: 0 !important;
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::: Move "Next-Bar" To The Right-Side Of Player 147411  ::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+/*::: Move "Next-Bar" To The Right-Side Of Player :::*/
+ytd-watch[theater] .ytd-watch #player-container.ytd-watch {
+  position: relative !important;
+  margin: 0 !important;
+  width: calc(100% - 185px) !important;
+  height: 100% !important;
+}
+
+ytd-watch[theater] .ytd-watch #related {
+  overflow: auto;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 185px !important;
+  height: 100vh !important;
+}
+
+#related-skeleton {
+  display: none;
+}
+
+ytd-watch[theater] .ytd-watch #related::-webkit-scrollbar {
+  width: 0;
+}
+
+ytd-watch[theater] .ytd-watch ytd-thumbnail.ytd-compact-video-renderer {
+  margin-right: 0;
+  margin-bottom: 95px;
+}
+
+ytd-watch[theater] .ytd-watch #autoplay.ytd-compact-autoplay-renderer {
+  display: none;
+}
+
+ytd-watch[theater] .ytd-watch a.yt-simple-endpoint.style-scope.ytd-compact-video-renderer {
+  position: absolute;
+  margin-top: 100px;
+  padding-right: 6px;
+  width: -webkit-fill-available;
+}
+
+ytd-watch[theater] .ytd-watch #related.ytd-watch {
+  padding-top: 10px;
+  padding-left: 9px;
+}
+
+ytd-watch[theater] .ytd-watch paper-button.style-scope.yt-next-continuation {
+  margin-right: 0 !important;
+  width: calc(100% - 7px);
+}
+
+ytd-compact-video-renderer,
+ytd-compact-playlist-renderer,
+.ytd-watch-next-secondary-results-renderer {
+  display: block !important;
+}
+
+#masthead-container.ytd-app {
+  width: calc(100% - 185px);
+}
+
+ytd-watch[theater] .ytd-watch paper-button.style-scope.yt-next-continuation {
+  margin-right: 9px;
+}
+
+ytd-watch[theater] .ytd-watch .badge.badge-style-type-simple.style-scope.ytd-badge-supported-renderer {
+  margin-top: 2px;
+  font-size: 9px;
+  color: #fff;
+  background-color: #e62117;
+}
+
+ytd-watch:not([theater]) #top.ytd-watch {
+  margin-top: 56px;
+}
+
+ytd-playlist-thumbnail.ytd-compact-playlist-renderer {
+  margin-bottom: 5px;
+}
+
+ytd-menu-renderer.style-scope.ytd-compact-video-renderer {
+  top: inherit;
+  right: inherit;
+  left: -4px;
+}
+
+video {
+  height: 100% !important;
 }

@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           YouTube Theater
-@version        1.0.2
+@version        1.0.3
 @namespace      https://github.com/StylusThemes
 @description    Expands videos to fill all free space inside browser window.
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -11,7 +11,7 @@
 
 @advanced dropdown VMaxWidth "Real Theater Mode?" {
 VMaxWidthY "Yes" <<<EOT
-ytd-app[is-watch-page] ytd-watch[theater] #player{min-height:100vh !important;max-height:100vh !important}ytd-app[is-watch-page] #masthead-container{opacity:0 !important;transition:opacity 0.2s ease-in-out}ytd-app[is-watch-page] #masthead-container:hover{opacity:1 !important}ytd-app[is-watch-page] #page-manager{margin-top:0 !important}ytd-app[is-watch-page] #extra-buttons{display:none !important}ytd-app[is-watch-page] #toast:not(.paper-toast-open){pointer-events:none} EOT;
+ytd-app[is-watch-page] ytd-watch[theater] #player{min-height:100vh !important;max-height:100vh !important}ytd-app[is-watch-page] #masthead-container{opacity:0;transition:opacity 0.2s ease-in-out}ytd-app[is-watch-page] #masthead-container:hover{opacity:1;transition-delay:0s}ytd-app[is-watch-page] #page-manager{margin-top:0}ytd-app[is-watch-page] #extra-buttons{display:none !important}ytd-app[is-watch-page] #toast:not(.paper-toast-open){pointer-events:none} EOT;
 VMaxWidthN "No" <<<EOT
  EOT;
 }
@@ -29,6 +29,13 @@ WatchedBadgeY "Yes" <<<EOT
 WatchedBadgeN "No" <<<EOT
  EOT;
 }
+
+@advanced dropdown RSNB "Move "Next-Bar" To The Right-Side Of Player?" {
+RSNBY "Yes" <<<EOT
+ytd-watch[theater] .ytd-watch #player-container.ytd-watch{position:relative !important;margin:0 !important;width:calc(100% - 185px) !important;height:100% !important}ytd-watch[theater] .ytd-watch #related{overflow:auto;position:absolute !important;top:0 !important;right:0 !important;width:185px !important;height:100vh !important}#related-skeleton{display:none}ytd-watch[theater] .ytd-watch #related::-webkit-scrollbar{width:0}ytd-watch[theater] .ytd-watch ytd-thumbnail.ytd-compact-video-renderer{margin-right:0;margin-bottom:95px}ytd-watch[theater] .ytd-watch #autoplay.ytd-compact-autoplay-renderer{display:none}ytd-watch[theater] .ytd-watch a.yt-simple-endpoint.style-scope.ytd-compact-video-renderer{position:absolute;margin-top:100px;padding-right:6px;width:-webkit-fill-available}ytd-watch[theater] .ytd-watch #related.ytd-watch{padding-top:10px;padding-left:9px}ytd-watch[theater] .ytd-watch paper-button.style-scope.yt-next-continuation{margin-right:0 !important;width:calc(100% - 7px)}.ytd-watch-next-secondary-results-renderer,ytd-compact-playlist-renderer,ytd-compact-video-renderer{display:block !important}#masthead-container.ytd-app{width:calc(100% - 185px)}ytd-watch[theater] .ytd-watch paper-button.style-scope.yt-next-continuation{margin-right:9px}ytd-watch[theater] .ytd-watch .badge.badge-style-type-simple.style-scope.ytd-badge-supported-renderer{margin-top:2px;font-size:9px;color:#fff;background-color:#e62117}ytd-watch:not([theater]) #top.ytd-watch{margin-top:56px}ytd-playlist-thumbnail.ytd-compact-playlist-renderer{margin-bottom:5px}ytd-menu-renderer.style-scope.ytd-compact-video-renderer{top:inherit;right:inherit;left:-4px}video{height:100% !important} EOT;
+RSNBN "No" <<<EOT
+ EOT;
+}
 ==/UserStyle== */
 /* DO NOT EDIT THIS USERCSS - IT IS GENERATED AUTOMATICALLY */
 @-moz-document domain("youtube.com") {
@@ -40,9 +47,9 @@ WatchedBadgeN "No" <<<EOT
 /* ||                                                                                  || */
 /* ||* Created     : 09 / 11 / 2017                                                    || */
 /* ||                                                                                  || */
-/* ||* Updated     : 06 / 11 / 2018                                                    || */
+/* ||* Updated     : 07 / 23 / 2018                                                    || */
 /* ||                                                                                  || */
-/* ||* Version     : 1.0.2                                                             || */
+/* ||* Version     : 1.0.3                                                             || */
 /* ||                                                                                  || */
 /* ||* Copyright   : 2017-2018                                                         || */
 /* ||                                                                                  || */
@@ -53,14 +60,19 @@ WatchedBadgeN "No" <<<EOT
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Globals :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 /*::: Thinner/Darker Scroll bar :::*/
-::-webkit-scrollbar-corner {
-  background-color: #333 !important;
+::-webkit-scrollbar {
+  width: 4px;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  background-color: #333 !important;
+::-webkit-scrollbar-button {
+  display: none;
+  border-radius: 0;
+  height: 13px;
+  background-color: #333;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -69,6 +81,9 @@ WatchedBadgeN "No" <<<EOT
   background: #555 !important;
 }
 
+::-webkit-scrollbar-corner {
+  background-color: #333 !important;
+}
 /*[[WatchedBadge]]*/
 }
 
@@ -78,4 +93,6 @@ WatchedBadgeN "No" <<<EOT
 /*[[SVTFP]]*/
 
 /*[[VMaxWidth]]*/
+
+/*[[RSNB]]*/
 }
