@@ -3,10 +3,13 @@
 ## v1.0.3 ... (23 JULY 18)
 
 ### Additions:
-`+`Added an option to move the `Next-Bar` to the right side of the video player
+`+`Added an option to move the `Next-Bar` to the right side of the video player.
 
 ### Changes:
 `+` Made scrollbar thinner so video player has a bit more space to take up.
+
+### Notes:
+`*` `Next-Bar` to the right side of the video player option will kinda fuck with video right side controls if enabled or disabled while on video page.
 
 ## v1.0.2 ... (11 JUNE 18)
 

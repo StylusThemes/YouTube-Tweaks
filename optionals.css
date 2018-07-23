@@ -189,7 +189,3 @@ ytd-menu-renderer.style-scope.ytd-compact-video-renderer {
   right: inherit;
   left: -4px;
 }
-
-video {
-  height: 100% !important;
-}
