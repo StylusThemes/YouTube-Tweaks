@@ -1,15 +1,16 @@
-/*:::::::::::::::::::::::::::::::::::::::::::::::: Max Video Player Width 138006 ::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::: Real Theater Mode 138006 ::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 /*::: Max Video Player Width :::*/
 /*::: Full height player :::*/
-ytd-app[is-watch-page] ytd-watch[theater] #player {
+ytd-app[is-watch-page] ytd-watch[theater] #player,
+ytd-app[is-watch-page] ytd-watch-flexy[theater] #player-theater-container {
   min-height: 100vh !important;
   max-height: 100vh !important;
 }
 
 /*::: Hide top bar :::*/
 ytd-app[is-watch-page] #masthead-container {
-  opacity: 0;
+  opacity: 0 !important;
   transition: opacity .2s ease-in-out;
 }
 

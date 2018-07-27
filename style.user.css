@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           YouTube Theater
-@version        1.0.3
+@version        1.0.4
 @namespace      https://github.com/StylusThemes
 @description    Expands videos to fill all free space inside browser window.
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -11,7 +11,7 @@
 
 @advanced dropdown VMaxWidth "Real Theater Mode?" {
 VMaxWidthY "Yes" <<<EOT
-ytd-app[is-watch-page] ytd-watch[theater] #player{min-height:100vh !important;max-height:100vh !important}ytd-app[is-watch-page] #masthead-container{opacity:0;transition:opacity 0.2s ease-in-out}ytd-app[is-watch-page] #masthead-container:hover{opacity:1;transition-delay:0s}ytd-app[is-watch-page] #page-manager{margin-top:0}ytd-app[is-watch-page] #extra-buttons{display:none !important}ytd-app[is-watch-page] #toast:not(.paper-toast-open){pointer-events:none} EOT;
+ytd-app[is-watch-page] ytd-watch-flexy[theater] #player-theater-container,ytd-app[is-watch-page] ytd-watch[theater] #player{min-height:100vh !important;max-height:100vh !important}ytd-app[is-watch-page] #masthead-container{opacity:0 !important;transition:opacity 0.2s ease-in-out}ytd-app[is-watch-page] #masthead-container:hover{opacity:1;transition-delay:0s}ytd-app[is-watch-page] #page-manager{margin-top:0}ytd-app[is-watch-page] #extra-buttons{display:none !important}ytd-app[is-watch-page] #toast:not(.paper-toast-open){pointer-events:none} EOT;
 VMaxWidthN "No" <<<EOT
  EOT;
 }
@@ -47,9 +47,9 @@ ytd-watch[theater] .ytd-watch #player-container.ytd-watch{position:relative !imp
 /* ||                                                                                  || */
 /* ||* Created     : 09 / 11 / 2017                                                    || */
 /* ||                                                                                  || */
-/* ||* Updated     : 07 / 23 / 2018                                                    || */
+/* ||* Updated     : 07 / 26 / 2018                                                    || */
 /* ||                                                                                  || */
-/* ||* Version     : 1.0.3                                                             || */
+/* ||* Version     : 1.0.4                                                             || */
 /* ||                                                                                  || */
 /* ||* Copyright   : 2017-2018                                                         || */
 /* ||                                                                                  || */

@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.0.4 ... (26 JULY 18)
+
+### Fixes:
+`+` Fixed Real Theater Mode broken by youtube update
+
 ## v1.0.3 ... (23 JULY 18)
 
 ### Additions:
