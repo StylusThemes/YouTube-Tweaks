@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.0.5 ... (29 JULY 18)
+
+### Fixes:
+`+` Fixed top-bar when hovering while on video page
+
 ## v1.0.4 ... (26 JULY 18)
 
 ### Fixes:

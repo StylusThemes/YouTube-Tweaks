@@ -16,13 +16,12 @@ ytd-app[is-watch-page] #masthead-container {
 
 /*::: Show top bar on hover :::*/
 ytd-app[is-watch-page] #masthead-container:hover {
-  opacity: 1;
-  transition-delay: 0s;
+  opacity: 1 !important;
 }
 
 /*::: Remove top margin :::*/
 ytd-app[is-watch-page] #page-manager {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 /*::: Hide feedback and restore classic buttons :::*/
