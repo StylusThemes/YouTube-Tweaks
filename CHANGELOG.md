@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.1.0 ... (30 DECEMBER 18)
+
+### Changes:
+`+`Rewrote theme into LESS style.
+
 ## v1.0.5 ... (29 JULY 18)
 
 ### Fixes:
