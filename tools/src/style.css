@@ -1,0 +1,36 @@
+@-moz-document domain("youtube.com") {
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Globals :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+/*::: Thinner/Darker Scroll bar :::*/
+::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  border-radius: 0 !important;
+  height: 13px !important;
+  background-color: #333 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px !important;
+  border-radius: 2px !important;
+  background: #555 !important;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: #333 !important;
+}
+
+/*[[WatchedBadge]]*/
+}
+
+@-moz-document regexp("https?://www.youtube.com/watch.*") {
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Video Page :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+/*[[SVTFP]]*/
+
+/*[[VMaxWidth]]*/
+}

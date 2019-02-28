@@ -1,31 +1,38 @@
 {
   "name": "youtube-theater",
-  "version": "1.1.0",
+  "title": "Youtube Theater",
+  "version": "1.2.0",
   "description": "Expands videos to fill all free space inside browser window.",
+  "license": "CC-BY-SA-4.0",
+  "repository": "StylusThemes/YouTube-Theater",
+  "homepage": "https://github.com/StylusThemes/YouTube-Theater",
+  "main": "style.user.css",
+  "engines": {
+    "node": ">=10"
+  },
   "devDependencies": {
-    "css": "^2.2.4",
+    "minify": "^4.1.1",
+    "eslint": "^5.14.1",
+    "eslint-config-silverwind": "^2.1.0",
+    "fs-extra": "^7.0.1",
     "perfectionist": "^2.4.0",
-    "postcss": "^7.0.7",
-    "postcss-syntax": "^0.34.0",
     "semver": "^5.6.0",
-    "stylelint": "^9.9.0",
+    "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
-    "updates": "6.0.3"
+    "updates": "^7.2.0"
   },
   "scripts": {
-    "build": "node build/build.js",
-    "stylelint": "stylelint style.css --fix && stylelint optionals.css --fix",
-    "perfectionist": "perfectionist",
-    "update": "updates -cu && npm install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/StylusThemes/YouTube-Theater.git"
-  },
-  "author": "StylusThemes",
-  "license": "CC-BY-SA-4.0",
-  "bugs": {
-    "url": "https://github.com/StylusThemes/YouTube-Theater/issues"
-  },
-  "homepage": "https://github.com/StylusThemes/YouTube-Theater"
+    "authors": "bash tools/authors",
+    "clean": "npm run perfectionist && node tools/fix-perfectionist.js",
+    "eslint": "eslint --quiet --color tools/*.js",
+    "lint": "npm run eslint && npm run stylelint",
+    "major": "node tools/bump-version.js major && git add . && npm version -f major",
+    "minor": "node tools/bump-version.js minor && git add . && npm version -f minor",
+    "patch": "node tools/bump-version.js patch && git add . && npm version -f patch",
+    "perfectionist": "perfectionist style.user.css style.user.css --indentSize 2 --maxAtRuleLength 250",
+    "stylelint": "stylelint --silent --color -- style.user.css",
+    "test": "npm run eslint && npm run stylelint",
+    "update": "updates -cu && npm install",
+    "usercss": "node tools/update-usercss.js"
+  }
 }

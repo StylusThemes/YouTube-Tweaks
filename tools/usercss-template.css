@@ -1,0 +1,32 @@
+/* ==UserStyle==
+@name         {{title}}
+@version      {{version}}
+@description  {{description}}
+@namespace    https://github.com/StylusThemes
+@author       StylusThemes <https://github.com/StylusThemes>
+@homepageURL  https://github.com/StylusThemes/YouTube-Theater
+@supportURL   https://github.com/StylusThemes/YouTube-Theater/issues
+@updateURL    https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/{{main}}
+@license      {{license}}
+
+@advanced dropdown VMaxWidth "Real Theater Mode?" {
+VMaxWidthY "Yes" <<<EOT
+{{max-width}} EOT;
+VMaxWidthN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown SVTFP "Stretch Video To Fill Player?" {
+SVTFPY "Yes" <<<EOT
+{{stretch-video}} EOT;
+SVTFPN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown WatchedBadge "Re-Add Youtube Watched Badge?" {
+WatchedBadgeY "Yes" <<<EOT
+{{fade-watched}} EOT;
+WatchedBadgeN "No" <<<EOT
+ EOT;
+}
+==/UserStyle== */

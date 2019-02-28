@@ -1,9 +1,12 @@
 <!--
 Thank you for reporting an issue. Please make sure that your style is up to
 date and you checked the recent commits that your issue wasn't recently
-addressed.
+addressed. To update:
 
-If the issue persists, please help me identifying the cause by providing these
+Make sure to first update DIRECTLY from our repository, then force refresh
+the web page (Windows: Ctrl+F5; Mac/Apple: Apple+R or Command+R; Linux: F5).
+
+If the issue persists, please help us identifying the cause by providing these
 details:
 -->
 
