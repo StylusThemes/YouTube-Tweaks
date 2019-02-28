@@ -1,5 +1,12 @@
 # YouTube Theater Changelog
 
+## v1.2.0 ... (28 FEBRUARY 19)
+
+### Changes:
+`+` Reverted `Rewrote theme into LESS style.`
+
+`+` Changed how I build the style.
+
 ## v1.1.0 ... (30 DECEMBER 18)
 
 ### Changes:

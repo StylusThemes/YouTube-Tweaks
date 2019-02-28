@@ -1,179 +1,68 @@
 /* ==UserStyle==
-@name           YouTube Theater
-@version        1.1.0
-@namespace      https://github.com/StylusThemes
-@description    Expands videos to fill all free space inside browser window.
-@author         StylusThemes <https://github.com/StylusThemes>
-@homepageURL    https://github.com/StylusThemes/YouTube-Theater
-@supportURL     https://github.com/StylusThemes/YouTube-Theater/issues
-@updateURL      https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
-@preprocessor   stylus
-@license        CC-BY-SA-4.0
+@name         Youtube Theater
+@version      1.2.0
+@description  Expands videos to fill all free space inside browser window.
+@namespace    https://github.com/StylusThemes
+@author       StylusThemes <https://github.com/StylusThemes>
+@homepageURL  https://github.com/StylusThemes/YouTube-Theater
+@supportURL   https://github.com/StylusThemes/YouTube-Theater/issues
+@updateURL    https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
+@license      CC-BY-SA-4.0
 
-@var select VMaxWidth "Real Theater Mode?" ["VMaxWidthY:Yes", "VMaxWidthN:No"]
-@var select SVTFP "Stretch Video To Fill Player?" ["SVTFPY:Yes", "SVTFPN:No"]
-@var select WatchedBadge "Re-Add Youtube Watched Badge?" ["WatchedBadgeY:Yes", "WatchedBadgeN:No"]
+@advanced dropdown VMaxWidth "Real Theater Mode?" {
+VMaxWidthY "Yes" <<<EOT
+ytd-app[is-watch-page] ytd-watch-flexy[theater] #player-theater-container,ytd-app[is-watch-page] ytd-watch[theater] #player{min-height:100vh!important;max-height:100vh!important}ytd-app[is-watch-page] #masthead-container{opacity:0!important;transition:opacity .2s ease-in-out}ytd-app[is-watch-page] #masthead-container:hover{opacity:1!important}ytd-app[is-watch-page] #page-manager{margin-top:0!important}ytd-app[is-watch-page] #extra-buttons{display:none!important}ytd-app[is-watch-page] #toast:not(.paper-toast-open){pointer-events:none} EOT;
+VMaxWidthN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown SVTFP "Stretch Video To Fill Player?" {
+SVTFPY "Yes" <<<EOT
+video{position:static!important;width:100%!important;object-fit:fill!important} EOT;
+SVTFPN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown WatchedBadge "Re-Add Youtube Watched Badge?" {
+WatchedBadgeY "Yes" <<<EOT
+@font-face{font-family:FontAwesome;font-weight:400;font-style:normal;src:url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0);src:url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0) format("woff2"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0) format("woff"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0) format("truetype"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg")}.ytd-browse yt-formatted-string.ytd-thumbnail-overlay-playback-status-renderer{display:none}.ytd-browse ytd-thumbnail-overlay-resume-playback-renderer{width:100%;height:100%;background-color:#f0f0f0;opacity:.85;transition:opacity .2s ease-out}.ytd-browse ytd-thumbnail-overlay-resume-playback-renderer div#progress:after{visibility:visible;position:absolute;top:15%;left:10%;margin-top:-14px;margin-left:-14px;font-family:FontAwesome;font-size:32px;color:#999;opacity:.7;content:url(https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/images/watched.png)}.ytd-browse ytd-thumbnail-overlay-resume-playback-renderer:hover{opacity:0!important}.ytd-browse #progress.ytd-thumbnail-overlay-resume-playback-renderer{height:100%;background-color:#fff}html[dark=true] .ytd-browse ytd-thumbnail-overlay-resume-playback-renderer{background-color:#030303;opacity:.95}html[dark=true] .ytd-browse #progress.ytd-thumbnail-overlay-resume-playback-renderer{background-color:#111}html[dark=true] .ytd-browse div#progress:after{color:#fff} EOT;
+WatchedBadgeN "No" <<<EOT
+ EOT;
+}
 ==/UserStyle== */
-
 @-moz-document domain("youtube.com") {
-/* ++----------------------------------------------------------------------------------++ */
-/* ||                                                                                  || */
-/* ||* Name        : YouTube Theater                                                   || */
-/* ||                                                                                  || */
-/* ||* Author      : JourneyOver                                                       || */
-/* ||                                                                                  || */
-/* ||* Created     : 09 / 11 / 2017                                                    || */
-/* ||                                                                                  || */
-/* ||* Updated     : 12 / 30 / 2018                                                    || */
-/* ||                                                                                  || */
-/* ||* Version     : 1.1.0                                                             || */
-/* ||                                                                                  || */
-/* ||* Copyright   : 2017-2019                                                         || */
-/* ||                                                                                  || */
-/* ++----------------------------------------------------------------------------------++ */
-
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Globals :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 /*::: Thinner/Darker Scroll bar :::*/
-: {
-  &:-webkit-scrollbar {
-    width: 4px !important;
-  }
-  &:-webkit-scrollbar-button {
-    display: none !important;
-    border-radius: 0 !important;
-    height: 13px !important;
-    background-color: #333 !important;
-  }
-  &:-webkit-scrollbar-track {
-    background-color: #333 !important;
-  }
-  &:-webkit-scrollbar-thumb {
-    -webkit-border-radius: 2px !important;
-    border-radius: 2px !important;
-    background: #555 !important;
-  }
-  &:-webkit-scrollbar-corner {
-    background-color: #333 !important;
-  }
+::-webkit-scrollbar {
+  width: 4px !important;
 }
 
-if WatchedBadge == 'WatchedBadgeY' {
-/*::: FADE WATCHED VIDEOS 144084 :::*/
-@font-face {
-  font-family: "FontAwesome";
-  font-weight: normal;
-  font-style: normal;
-  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+::-webkit-scrollbar-button {
+  display: none !important;
+  border-radius: 0 !important;
+  height: 13px !important;
+  background-color: #333 !important;
 }
 
-.ytd-browse {
-  yt-formatted-string.ytd-thumbnail-overlay-playback-status-renderer {
-    display: none;
-  }
-  ytd-thumbnail-overlay-resume-playback-renderer {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(240, 240, 240);
-    opacity: .85;
-    transition: opacity 200ms ease-out;
-    div#progress {
-      &:after {
-        visibility: visible;
-        position: absolute;
-        top: 15%;
-        left: 10%;
-        margin-top: -14px;
-        margin-left: -14px;
-        font-family: "FontAwesome";
-        font-size: 32px;
-        color: #999;
-        opacity: .7;
-        content: url("https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/images/watched.png");
-      }
-    }
-    &:hover {
-      opacity: 0 !important;
-    }
-  }
-  #progress.ytd-thumbnail-overlay-resume-playback-renderer {
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-  }
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px !important;
+  border-radius: 2px !important;
+  background: #555 !important;
 }
 
-html[dark=true] {
-  .ytd-browse {
-    ytd-thumbnail-overlay-resume-playback-renderer {
-      background-color: rgb(3, 3, 3);
-      opacity: .95;
-    }
-    #progress.ytd-thumbnail-overlay-resume-playback-renderer {
-      background-color: rgb(17, 17, 17);
-    }
-    div#progress {
-      &:after {
-        color: #fff;
-      }
-    }
-  }
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: #333 !important;
 }
-}
+
+/*[[WatchedBadge]]*/
 }
 
 @-moz-document regexp("https?://www.youtube.com/watch.*") {
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Video Page :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-if SVTFP == 'SVTFPY' {
-/*::: STRETCH VIDEO TO FILL PLAYER :::*/
-video {
-  position: static !important;
-  width: 100% !important;
+/*[[SVTFP]]*/
 
-  object-fit: fill !important;
-}
-}
-
-if VMaxWidth == 'VMaxWidthY' {
-/*::: Max Video Player Width 138006 :::*/
-/*::: Full height player :::*/
-ytd-app[is-watch-page] {
-  ytd-watch[theater] {
-    #player {
-      min-height: 100vh !important;
-      max-height: 100vh !important;
-    }
-  }
-  ytd-watch-flexy[theater] {
-    #player-theater-container {
-      min-height: 100vh !important;
-      max-height: 100vh !important;
-    }
-  }
-  /*::: Hide top bar :::*/
-  #masthead-container {
-    opacity: 0 !important;
-    transition: opacity .2s ease-in-out;
-    /*::: Show top bar on hover :::*/
-    &:hover {
-      opacity: 1 !important;
-    }
-  }
-  /*::: Remove top margin :::*/
-  #page-manager {
-    margin-top: 0 !important;
-  }
-  /*::: Hide feedback and restore classic buttons :::*/
-  #extra-buttons {
-    display: none !important;
-  }
-  /*::: Fix toast interfering with controls :::*/
-  #toast {
-    &:not(.paper-toast-open) {
-      pointer-events: none;
-    }
-  }
-}
-}
+/*[[VMaxWidth]]*/
 }

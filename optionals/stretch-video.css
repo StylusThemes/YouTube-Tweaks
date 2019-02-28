@@ -1,0 +1,8 @@
+/* stretch-video */
+/*::: STRETCH VIDEO TO FILL PLAYER :::*/
+video {
+  position: static !important;
+  width: 100% !important;
+
+  object-fit: fill !important;
+}

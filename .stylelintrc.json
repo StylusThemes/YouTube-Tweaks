@@ -1,6 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": [ "*.user.css", "*/*.user.css", "*.min.css" ],
+  "ignoreFiles": ["*.user.css", "*/*.user.css", "*.min.css"],
   "rules": {
     "at-rule-empty-line-before": null,
     "block-no-empty": null,
@@ -30,8 +30,8 @@
     "rule-empty-line-before": [
       "always-multi-line",
       {
-        "except": [ "after-single-line-comment", "first-nested" ],
-        "ignore": [ "after-comment", "inside-block" ],
+        "except": ["after-single-line-comment", "first-nested"],
+        "ignore": ["after-comment", "inside-block"],
         "severity": "warning"
       }
     ],
