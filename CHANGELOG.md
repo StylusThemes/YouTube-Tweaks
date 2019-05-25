@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.2.1 ... (25 MAY 19)
+
+### Fixes:
+`+` Fixed Watched badge so now it works on every page instead of just some.
+
 ## v1.2.0 ... (28 FEBRUARY 19)
 
 ### Changes:
