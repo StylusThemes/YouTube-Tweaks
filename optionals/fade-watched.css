@@ -67,7 +67,8 @@ html[dark=true] ytd-thumbnail-overlay-resume-playback-renderer {
 }
 
 html[dark=true] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
-  background-color: #111;
+  background-color: #3a0909;
+  opacity: 1;
 }
 
 html[dark=true] .ytd-browse div#progress:after {
