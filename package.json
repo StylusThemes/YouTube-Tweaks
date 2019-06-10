@@ -13,7 +13,7 @@
   "devDependencies": {
     "minify": "^4.1.1",
     "eslint": "^5.16.0",
-    "eslint-config-silverwind": "^3.0.2",
+    "eslint-config-silverwind": "^3.0.3",
     "fs-extra": "^8.0.1",
     "perfectionist": "^2.4.0",
     "semver": "^6.1.1",
