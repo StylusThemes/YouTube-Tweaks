@@ -1,13 +1,13 @@
 /* ==UserStyle==
-@name         {{title}}
-@version      {{version}}
-@description  {{description}}
+@name         Youtube Theater
+@version      1.2.1
+@description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
 @homepageURL  https://github.com/StylusThemes/YouTube-Theater
-@supportURL   https://github.com/StylusThemes/YouTube-Theater/issues
-@updateURL    https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/{{main}}
-@license      {{license}}
+@supportURL   https://github.com/StylusThemes/YouTube-Theater/issues/
+@updateURL    https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
+@license      CC-BY-SA-4.0
 
 @advanced dropdown VMaxWidth "Real Theater Mode?" {
 VMaxWidthY "Yes" <<<EOT
@@ -30,3 +30,12 @@ WatchedBadgeN "No" <<<EOT
  EOT;
 }
 ==/UserStyle== */
+@-moz-document domain("youtube.com") {
+{{theme}}
+/*[[WatchedBadge]]*/
+}
+
+@-moz-document regexp("https?://www.youtube.com/watch.*") {
+/*[[SVTFP]]*/
+/*[[VMaxWidth]]*/
+}

@@ -5,7 +5,7 @@
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
 @homepageURL  https://github.com/StylusThemes/YouTube-Theater
-@supportURL   https://github.com/StylusThemes/YouTube-Theater/issues
+@supportURL   https://github.com/StylusThemes/YouTube-Theater/issues/
 @updateURL    https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/style.user.css
 @license      CC-BY-SA-4.0
 
@@ -31,38 +31,31 @@ WatchedBadgeN "No" <<<EOT
 }
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Globals :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+  ::-webkit-scrollbar {
+    width: 4px !important;
+  }
 
-/*::: Thinner/Darker Scroll bar :::*/
-::-webkit-scrollbar {
-  width: 4px !important;
-}
+  ::-webkit-scrollbar-button {
+    display: none !important;
+    border-radius: 0 !important;
+    height: 13px !important;
+    background-color: #333 !important;
+  }
 
-::-webkit-scrollbar-button {
-  display: none !important;
-  border-radius: 0 !important;
-  height: 13px !important;
-  background-color: #333 !important;
-}
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px !important;
+    background: #555 !important;
+  }
 
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 2px !important;
-  border-radius: 2px !important;
-  background: #555 !important;
-}
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: #333 !important;
+  }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-  background-color: #333 !important;
-}
-
-/*[[WatchedBadge]]*/
+  /*[[WatchedBadge]]*/
 }
 
 @-moz-document regexp("https?://www.youtube.com/watch.*") {
-/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Video Page :::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
-/*[[SVTFP]]*/
-
-/*[[VMaxWidth]]*/
+  /*[[SVTFP]]*/
+  /*[[VMaxWidth]]*/
 }
