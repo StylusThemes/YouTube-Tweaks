@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Theater
-@version      1.2.1
+@version      1.2.2
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -29,8 +29,27 @@ WatchedBadgeY "Yes" <<<EOT
 WatchedBadgeN "No" <<<EOT
  EOT;
 }
+
+@advanced dropdown WVC "Make the main video container on youtube wider?" {
+WVCY "Yes" <<<EOT
+ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]) ytd-two-column-browse-results-renderer.ytd-browse{margin:10px!important;box-sizing:border-box!important;width:auto!important} EOT;
+WVCN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown FadePPComp "Fade++ Compatibility Mode? [mainly for Wide video container]" {
+FadePPCompN "No" <<<EOT
+ EOT;
+FadePPCompY "Yes" <<<EOT
+ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]){display:block}ytd-app[guide-persistent-and-visible] #page-manager>ytd-browse:not([page-subtype=playlist]) ytd-two-column-browse-results-renderer.ytd-browse{margin-left:250px!important} EOT;
+}
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
+  #copyright div::after {
+    white-space: pre;
+    content: "\A Youtube Theater - Version 1.2.2";
+  }
+
   ::-webkit-scrollbar {
     width: 4px !important;
   }
@@ -53,6 +72,8 @@ WatchedBadgeN "No" <<<EOT
   }
 
   /*[[WatchedBadge]]*/
+  /*[[WVC]]*/
+  /*[[FadePPComp]]*/
 }
 
 @-moz-document regexp("https?://www.youtube.com/watch.*") {

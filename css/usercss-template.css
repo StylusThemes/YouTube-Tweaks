@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Theater
-@version      1.2.1
+@version      1.2.2
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -29,10 +29,26 @@ WatchedBadgeY "Yes" <<<EOT
 WatchedBadgeN "No" <<<EOT
  EOT;
 }
+
+@advanced dropdown WVC "Make the main video container on youtube wider?" {
+WVCY "Yes" <<<EOT
+{{wide-video-container}} EOT;
+WVCN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown FadePPComp "Fade++ Compatibility Mode? [mainly for Wide video container]" {
+FadePPCompN "No" <<<EOT
+ EOT;
+FadePPCompY "Yes" <<<EOT
+{{fade++-compatibility}} EOT;
+}
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
 {{theme}}
 /*[[WatchedBadge]]*/
+/*[[WVC]]*/
+/*[[FadePPComp]]*/
 }
 
 @-moz-document regexp("https?://www.youtube.com/watch.*") {

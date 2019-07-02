@@ -1,0 +1,9 @@
+// Youtube Theater Version
+#copyright {
+  div {
+    &::after {
+      white-space: pre;
+      content: "\A Youtube Theater - Version 1.2.2";
+    }
+  }
+}

@@ -1,3 +1,8 @@
+#copyright div::after {
+  white-space: pre;
+  content: "\A Youtube Theater - Version 1.2.2";
+}
+
 ::-webkit-scrollbar {
   width: 4px !important;
 }

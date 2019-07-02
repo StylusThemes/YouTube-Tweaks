@@ -39,7 +39,9 @@ gulp.task( 'usercss', function () {
       '{{theme}}': './css/theme/theme.css',
       '{{max-width}}': './css/optionals/min/max-width.min.css',
       '{{stretch-video}}': './css/optionals/min/stretch-video.min.css',
-      '{{fade-watched}}': './css/optionals/min/fade-watched.min.css'
+      '{{fade-watched}}': './css/optionals/min/fade-watched.min.css',
+      '{{wide-video-container}}': './css/optionals/min/wide-video-container.min.css',
+      '{{fade++-compatibility}}': './css/optionals/min/fade++-compatibility.min.css'
     } ) )
     .pipe( rename( 'style.user.css' ) )
     .pipe( beautify.css( {
