@@ -1,0 +1,22 @@
+// Thinner/Darker Scroll bar
+::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  border-radius: 0 !important;
+  height: 13px !important;
+  background-color: $scrollbar !important;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px !important;
+  border-radius: 2px !important;
+  background: $scrollbart !important;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background-color: $scrollbar !important;
+}
