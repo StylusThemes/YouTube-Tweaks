@@ -1,9 +1,14 @@
 # YouTube Theater Changelog
 
+## v1.2.3 ... (01 AUGUST 19)
+
+### Fixes:
+`+` Fixed Stretch video to fill player, as some videos end up being stretched too far and cutting off a bit of the sides of the videos.
+
 ## v1.2.2 ... (02 JULY 19)
 
 ### Additions:
-`+`Added an option to stretch the main video container on youtube to be a bit wider. `Especially on a 2K monitor the default youtube container is ridiculously narrow, but even on 1080p using this means at least one more column of videos visible.`
+`+` Added an option to stretch the main video container on youtube to be a bit wider. `Especially on a 2K monitor the default youtube container is ridiculously narrow, but even on 1080p using this means at least one more column of videos visible.`
 
 ## v1.2.1 ... (25 MAY 19)
 
