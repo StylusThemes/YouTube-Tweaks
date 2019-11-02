@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.2.4 ... (02 NOVEMBER 19)
+
+### Fixes:
+`+` Fixed main video container as previous rules worked on the subscriptions page, but not on Home page. Now using different rules that seem to work for both.
+
 ## v1.2.3 ... (01 AUGUST 19)
 
 ### Fixes:

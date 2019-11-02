@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Theater
-@version      1.2.3
+@version      1.2.4
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -32,7 +32,7 @@ WatchedBadgeN "No" <<<EOT
 
 @advanced dropdown WVC "Make the main video container on youtube wider?" {
 WVCY "Yes" <<<EOT
-ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]) ytd-two-column-browse-results-renderer.ytd-browse{margin:10px!important;box-sizing:border-box!important;width:auto!important} EOT;
+ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]) ytd-two-column-browse-results-renderer.ytd-browse{margin:10px;box-sizing:border-box;width:calc(100% - 20px)!important} EOT;
 WVCN "No" <<<EOT
  EOT;
 }
@@ -47,7 +47,7 @@ ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]){display:block}ytd-
 @-moz-document domain("youtube.com") {
   #copyright div::after {
     white-space: pre;
-    content: "\A Youtube Theater - Version 1.2.3";
+    content: "\A Youtube Theater - Version 1.2.4";
   }
 
   ::-webkit-scrollbar {
