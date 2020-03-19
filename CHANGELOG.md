@@ -1,5 +1,13 @@
 # YouTube Theater Changelog
 
+## v1.2.5 ... (19 MARCH 20)
+
+### Fixes:
+`+` Fixed wide video container
+
+### Notes:
+`*` YT now uses a different system for displaying the videos on (only) the homepage. Due to how it works, manipulating it via CSS only is difficult. I have opted to just disable all extra CSS rules for the home page.
+
 ## v1.2.4 ... (02 NOVEMBER 19)
 
 ### Fixes:
