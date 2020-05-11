@@ -22,7 +22,7 @@
     "node-sass": "^4.14.1",
     "sass-lint": "^1.13.1",
     "standard": "^14.3.3",
-    "updates": "^10.2.10"
+    "updates": "^10.2.11"
   },
   "scripts": {
     "update": "updates -cu && npm install",
