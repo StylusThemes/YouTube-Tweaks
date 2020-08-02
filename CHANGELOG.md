@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.2.6 ... (02 AUGUST 20)
+
+### Fixes:
+`+` Fixed Fade Watched.
+
 ## v1.2.5 ... (19 MARCH 20)
 
 ### Fixes:

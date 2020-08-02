@@ -15,7 +15,7 @@
 ytd-thumbnail-overlay-resume-playback-renderer {
   width: 100%;
   height: 100%;
-  background-color: #f0f0f0;
+  background-color: #030303;
   opacity: .85;
   transition: opacity 200ms ease-out;
 }
@@ -50,26 +50,12 @@ ytd-thumbnail #overlays {
   transition: .2s ease;
 }
 
-ytd-thumbnail-overlay-resume-playback-renderer {
-  opacity: 1;
-}
-
 #progress.ytd-thumbnail-overlay-resume-playback-renderer {
   height: 100%;
-  background-color: #fff;
-  opacity: .5;
-}
-
-html[dark=true] ytd-thumbnail-overlay-resume-playback-renderer {
-  background-color: #030303;
-  opacity: .85;
-}
-
-html[dark=true] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
   background-color: #3a0909;
   opacity: 1;
 }
 
-html[dark=true] .ytd-browse div#progress:after {
+.ytd-browse div#progress:after {
   color: #fff;
 }
