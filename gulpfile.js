@@ -1,24 +1,18 @@
 'use strict'
 
-let autoprefixer = require( 'gulp-autoprefixer' )
-let beautify = require( 'gulp-beautify' )
-let cleanCSS = require( 'gulp-clean-css' );
-let gulp = require( 'gulp' )
-let insert = require( 'gulp-file-insert' )
-let rename = require( 'gulp-rename' )
-let sass = require( 'gulp-sass' )
+const autoprefixer = require( 'gulp-autoprefixer' )
+const beautify = require( 'gulp-beautify' )
+const cleanCSS = require( 'gulp-clean-css' );
+const gulp = require( 'gulp' )
+const insert = require( 'gulp-file-insert' )
+const rename = require( 'gulp-rename' )
+const sass = require( 'gulp-sass' )
 
 sass.compiler = require( 'node-sass' )
 
 gulp.task( 'autoprefix', function () {
   return gulp.src( './css/theme/*.css' )
     .pipe( autoprefixer( {
-      overrideBrowserslist: [
-        '> 0.2%',
-        'last 2 versions',
-        'maintained node versions',
-        'not dead'
-      ],
       cascade: false
     } ) )
     .pipe( gulp.dest( './css/theme' ) )
