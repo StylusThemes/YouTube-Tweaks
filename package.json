@@ -22,7 +22,7 @@
     "node-sass": "^4.14.1",
     "sass-lint": "^1.13.1",
     "standard": "^14.3.4",
-    "updates": "^10.3.4"
+    "updates": "^10.3.5"
   },
   "browserslist": [
     "> 0.2%",
