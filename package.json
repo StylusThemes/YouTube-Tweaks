@@ -8,7 +8,7 @@
   "homepage": "https://github.com/StylusThemes/YouTube-Theater",
   "main": "style.user.css",
   "dependencies": {
-    "yarn": "^1.22.4"
+    "yarn": "^1.22.5"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
