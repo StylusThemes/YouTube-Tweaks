@@ -1,0 +1,31 @@
+pull_request_rules:
+  - name: automatic merge when CI passes and 1 review
+    conditions:
+      - "#approved-reviews-by>=1"
+      - status-success=WIP
+      - base=master
+    actions:
+      merge:
+        strict: smart
+        method: squash
+  - name: automatic merge when CI passes and user is JourneyOver
+    conditions:
+      - author=JourneyOver
+      - status-success=WIP
+      - base=master
+    actions:
+      merge:
+        strict: smart
+        method: squash
+  - name: automatic merge when user is dependabot[bot]
+    conditions:
+      - author=dependabot[bot]
+      - base=dev
+    actions:
+      merge:
+        strict: smart
+        method: squash
+  - name: delete head branch after merge
+    conditions: []
+    actions:
+      delete_head_branch: {}
