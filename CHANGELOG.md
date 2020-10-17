@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.2.7 ... (16 OCTOBER 20)
+
+### Additions:
+`+` Add code to make search thumbnails a bit smaller.
+
 ## v1.2.6 ... (02 AUGUST 20)
 
 ### Fixes:

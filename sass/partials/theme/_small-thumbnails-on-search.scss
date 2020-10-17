@@ -1,0 +1,17 @@
+ytd-thumbnail[class="style-scope ytd-video-renderer"],
+ytd-playlist-thumbnail[class="style-scope ytd-playlist-renderer"] {
+  max-width: 225px !important;
+  max-height: 132px !important;
+}
+
+ytd-video-renderer[use-prominent-thumbs] {
+  #channel-info.ytd-video-renderer {
+    padding: 5px 0;
+  }
+}
+
+ytd-search[center-results] {
+  ytd-two-column-search-results-renderer.ytd-search {
+    padding-right: 150px;
+  }
+}

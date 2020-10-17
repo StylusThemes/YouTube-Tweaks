@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Theater
-@version      1.2.6
+@version      1.2.7
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -47,7 +47,7 @@ ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]){display:block}ytd-
 @-moz-document domain("youtube.com") {
   #copyright div::after {
     white-space: pre;
-    content: "\A Youtube Theater - Version 1.2.6";
+    content: "\A Youtube Theater - Version 1.2.7";
   }
 
   ::-webkit-scrollbar {
@@ -69,6 +69,20 @@ ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]){display:block}ytd-
   ::-webkit-scrollbar-track,
   ::-webkit-scrollbar-corner {
     background-color: #333 !important;
+  }
+
+  ytd-thumbnail[class="style-scope ytd-video-renderer"],
+  ytd-playlist-thumbnail[class="style-scope ytd-playlist-renderer"] {
+    max-width: 225px !important;
+    max-height: 132px !important;
+  }
+
+  ytd-video-renderer[use-prominent-thumbs] #channel-info.ytd-video-renderer {
+    padding: 5px 0;
+  }
+
+  ytd-search[center-results] ytd-two-column-search-results-renderer.ytd-search {
+    padding-right: 150px;
   }
 
   /*[[WatchedBadge]]*/
