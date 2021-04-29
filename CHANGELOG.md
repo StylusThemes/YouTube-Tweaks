@@ -1,5 +1,10 @@
 # YouTube Theater Changelog
 
+## v1.2.8 ... (29 APRIL 21)
+
+### Fixes:
+`+` Fix Theater mode options.
+
 ## v1.2.7 ... (16 OCTOBER 20)
 
 ### Additions:

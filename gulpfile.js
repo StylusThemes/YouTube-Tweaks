@@ -6,9 +6,7 @@ const cleanCSS = require( 'gulp-clean-css' );
 const gulp = require( 'gulp' )
 const insert = require( 'gulp-file-insert' )
 const rename = require( 'gulp-rename' )
-const sass = require( 'gulp-sass' )
-
-sass.compiler = require( 'node-sass' )
+const sass = require( 'gulp-dart-sass' )
 
 gulp.task( 'autoprefix', function () {
   return gulp.src( './css/theme/*.css' )
