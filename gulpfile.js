@@ -33,7 +33,8 @@ gulp.task( 'usercss', function () {
       '{{stretch-video}}': './css/optionals/min/stretch-video.min.css',
       '{{fade-watched}}': './css/optionals/min/fade-watched.min.css',
       '{{wide-video-container}}': './css/optionals/min/wide-video-container.min.css',
-      '{{fade++-compatibility}}': './css/optionals/min/fade++-compatibility.min.css'
+      '{{fade++-compatibility}}': './css/optionals/min/fade++-compatibility.min.css',
+      '{{netflix-subtitles}}': './css/optionals/min/netflix-subtitles.min.css'
     } ) )
     .pipe( rename( 'style.user.css' ) )
     .pipe( beautify.css( {

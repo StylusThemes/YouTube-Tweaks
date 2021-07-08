@@ -1,11 +1,11 @@
 {
-  "name": "youtube-theater",
-  "title": "Youtube Theater",
-  "version": "1.2.8",
-  "description": "Expands videos to fill all free space inside browser window.",
+  "name": "youtube-tweaks",
+  "title": "Youtube Tweaks",
+  "version": "1.2.9",
+  "description": "Tweaks for Youtube!",
   "license": "CC-BY-SA-4.0",
-  "repository": "StylusThemes/YouTube-Theater",
-  "homepage": "https://github.com/StylusThemes/YouTube-Theater",
+  "repository": "StylusThemes/YouTube-Tweaks",
+  "homepage": "https://github.com/StylusThemes/YouTube-Tweaks",
   "main": "style.user.css",
   "dependencies": {
     "yarn": "^1.22.10"

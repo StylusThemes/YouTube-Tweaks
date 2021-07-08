@@ -1,0 +1,10 @@
+/*::: Netflix subtitles with the drop shadow for the YouTube subtitles :::*/
+.ytp-caption-segment {
+  padding-bottom: 5 !important;
+  font-family: "Netflix Sans", sans-serif !important;
+  font-weight: 700 !important;
+
+/*font-size: 36px !important;*/
+  background: none !important;
+  text-shadow: rgba(0, 0, 0, 1) 0 0 .2em !important;
+}

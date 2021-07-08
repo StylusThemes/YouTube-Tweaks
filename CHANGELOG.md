@@ -1,4 +1,12 @@
-# YouTube Theater Changelog
+# YouTube Tweaks Changelog
+
+## v1.2.9 ... (08 JULY 21)
+
+### Note:
+`*` Change name from Youtube Theater to Youtube Tweaks
+
+### Additions:
+`+` Add option to make youtube subtitle captions more akin to netflix subtitles.
 
 ## v1.2.8 ... (29 APRIL 21)
 
