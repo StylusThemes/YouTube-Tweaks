@@ -2,7 +2,7 @@
 video {
   position: static !important;
   width: 100% !important;
-  height: 100vh !important
+  height: 100vh !important;
   transform: scaleX(1) !important;
 
   object-fit: fill !important;

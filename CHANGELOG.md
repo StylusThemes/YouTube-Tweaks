@@ -1,5 +1,10 @@
 # YouTube Tweaks Changelog
 
+## v1.2.10 ... (31 AUGUST 21)
+
+### Fixes:
+`+` Fix Stretch Video To Fill Player for some videos as I had missed a `;`
+
 ## v1.2.9 ... (08 JULY 21)
 
 ### Note:

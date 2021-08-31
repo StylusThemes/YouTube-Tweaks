@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Tweaks
-@version      1.2.9
+@version      1.2.10
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -18,7 +18,7 @@ VMaxWidthN "No" <<<EOT
 
 @advanced dropdown SVTFP "Stretch Video To Fill Player?" {
 SVTFPY "Yes" <<<EOT
-video{position:static!important;width:100%!important;height:100vh !important transform: scaleX(1)!important;object-fit:fill!important} EOT;
+video{position:static!important;width:100%!important;height:100vh!important;transform:scaleX(1)!important;object-fit:fill!important} EOT;
 SVTFPN "No" <<<EOT
  EOT;
 }
@@ -54,7 +54,7 @@ ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]){display:block}ytd-
 @-moz-document domain("youtube.com") {
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 1.2.9";
+    content: "\aYoutube Tweaks - Version 1.2.10";
   }
 
   ::-webkit-scrollbar {
