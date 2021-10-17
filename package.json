@@ -8,7 +8,7 @@
   "homepage": "https://github.com/StylusThemes/YouTube-Tweaks",
   "main": "style.user.css",
   "dependencies": {
-    "yarn": "^1.22.15"
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
