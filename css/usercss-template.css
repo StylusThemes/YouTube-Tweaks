@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Tweaks
-@version      1.2.10
+@version      1.2.11
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -50,16 +50,27 @@ FadePPCompN "No" <<<EOT
 FadePPCompY "Yes" <<<EOT
 {{fade++-compatibility}} EOT;
 }
+
+@advanced dropdown RemovePTSFB "Remove PocketTube Subscription Filter Border" {
+RemovePTSFBN "No" <<<EOT
+ EOT;
+RemovePTSFBY "Yes" <<<EOT
+{{remove-pockettube-subscription-filter-border}} EOT;
+}
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
 {{theme}}
 /*[[WatchedBadge]]*/
-/*[[NetflixSubtitles]]*/
 /*[[WVC]]*/
 /*[[FadePPComp]]*/
 }
 
-@-moz-document regexp("https?://www.youtube.com/watch.*") {
+@-moz-document url-prefix("https://www.youtube.com/feed/subscriptions") {
+/*[[RemovePTSFB]]*/
+}
+
+@-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
+/*[[NetflixSubtitles]]*/
 /*[[SVTFP]]*/
 /*[[VMaxWidth]]*/
 }

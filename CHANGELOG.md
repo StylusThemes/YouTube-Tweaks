@@ -1,5 +1,13 @@
 # YouTube Tweaks Changelog
 
+## v1.2.11 ... (22 NOVEMBER 21)
+
+### Additions:
+`+` Added an option to remove the border outline from `youtube subscription manager` for people who use it, including myself (this addition was mainly for myself)
+
+### Changes:
+`+` Updated code for `youtube subtitles to be more like netflix` option.
+
 ## v1.2.10 ... (31 AUGUST 21)
 
 ### Fixes:

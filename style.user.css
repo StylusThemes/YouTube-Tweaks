@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Tweaks
-@version      1.2.10
+@version      1.2.11
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -32,7 +32,7 @@ WatchedBadgeN "No" <<<EOT
 
 @advanced dropdown NetflixSubtitles "Change youtube subtitles to be more like netflix?" {
 NetflixSubtitlesY "Yes" <<<EOT
-.ytp-caption-segment{padding-bottom:5!important;font-family:"Netflix Sans",sans-serif!important;font-weight:700!important;background:0 0!important;text-shadow:#000 0 0 .2em!important} EOT;
+@font-face{font-family:"Netflix Sans";font-weight:100;src:url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2) format("woff2"),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff) format("woff")}@font-face{font-family:"Netflix Sans";font-weight:300;src:url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2) format("woff2"),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff) format("woff")}@font-face{font-family:"Netflix Sans";font-weight:400;src:url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format("woff2"),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format("woff")}@font-face{font-family:"Netflix Sans";font-weight:700;src:url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff2) format("woff2"),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff) format("woff")}@font-face{font-family:"Netflix Sans";font-weight:800;src:url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff2) format("woff2"),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff) format("woff")}@font-face{font-family:"Netflix Sans";font-weight:900;src:url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff2) format("woff2"),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff) format("woff")}.ytp-caption-segment{font-family:"Netflix Sans",sans-serif!important;font-weight:700!important;background:0 0!important;text-shadow:#000 0 0 .2em!important} EOT;
 NetflixSubtitlesN "No" <<<EOT
  EOT;
 }
@@ -50,11 +50,18 @@ FadePPCompN "No" <<<EOT
 FadePPCompY "Yes" <<<EOT
 ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]){display:block}ytd-app[guide-persistent-and-visible] #page-manager>ytd-browse:not([page-subtype=playlist]) ytd-two-column-browse-results-renderer.ytd-browse{margin-left:250px!important} EOT;
 }
+
+@advanced dropdown RemovePTSFB "Remove PocketTube Subscription Filter Border" {
+RemovePTSFBN "No" <<<EOT
+ EOT;
+RemovePTSFBY "Yes" <<<EOT
+#primary>ytd-section-list-renderer>div.ysm-subscription-filter.ysm-select-filters.branded-page-module-title.shelf-title-cell.ysm-subscription-filter-new.last-change{border:none!important} EOT;
+}
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 1.2.10";
+    content: "\aYoutube Tweaks - Version 1.2.11";
   }
 
   ::-webkit-scrollbar {
@@ -93,12 +100,17 @@ ytd-app #page-manager>ytd-browse:not([page-subtype=playlist]){display:block}ytd-
   }
 
   /*[[WatchedBadge]]*/
-  /*[[NetflixSubtitles]]*/
   /*[[WVC]]*/
   /*[[FadePPComp]]*/
 }
 
-@-moz-document regexp("https?://www.youtube.com/watch.*") {
+@-moz-document url-prefix("https://www.youtube.com/feed/subscriptions") {
+  /*[[RemovePTSFB]]*/
+}
+
+@-moz-document regexp("https?://www.youtube.com/watch.*"),
+regexp("https?://www.youtube.com/clip.*") {
+  /*[[NetflixSubtitles]]*/
   /*[[SVTFP]]*/
   /*[[VMaxWidth]]*/
 }
