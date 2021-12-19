@@ -4476,10 +4476,10 @@ upath@^1.1.1:
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.2.0.tgz#8f66dbcd55a883acdae4408af8b035a5044c1894"
   integrity sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==
 
-updates@^12.2.2:
-  version "12.2.2"
-  resolved "https://registry.yarnpkg.com/updates/-/updates-12.2.2.tgz#3fb667277e045a7f4cc08518f6a4bfa902595c55"
-  integrity sha512-b25kXEvCM38ZQf9nJolUz3AuaX1gFsJFuOdQenaxrSZAqn+Y9SM22qRN6nCix5rhu5wIHu2ZLYSE0KUm8PTQmg==
+updates@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/updates/-/updates-13.0.0.tgz#fcd74d1d9662b751e7153a0190a2b3659aff660b"
+  integrity sha512-ja14LjMoOAE+HZYijOLgjrrC4yrGj2ZLX0da3CXarnZLWkpIC9i6zfAq5ZrZIA9Q5odkh94eFIjns33u8PUhWw==
 
 uri-js@^4.2.2:
   version "4.4.1"
