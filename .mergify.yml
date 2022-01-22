@@ -6,7 +6,6 @@ pull_request_rules:
       - base=master
     actions:
       merge:
-        strict: smart
         method: squash
   - name: automatic merge when CI passes and user is JourneyOver
     conditions:
@@ -15,15 +14,13 @@ pull_request_rules:
       - base=master
     actions:
       merge:
-        strict: smart
         method: squash
   - name: automatic merge when user is dependabot[bot]
     conditions:
-      - author=dependabot[bot]
+      - author~=^dependabot(|-preview)\[bot\]$
       - base=dev
     actions:
       merge:
-        strict: smart
         method: squash
   - name: delete head branch after merge
     conditions: []
