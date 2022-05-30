@@ -1,0 +1,10 @@
+{
+  "automerge": true,
+  "schedule": ["monthly"],
+  "extends": ["config:base", ":rebaseStalePrs"],
+  "platformAutomerge": true,
+  "prCreation": "not-pending",
+  "timezone": "US/Central",
+  "updateInternalDeps": true,
+  "groupName": "all"
+}
