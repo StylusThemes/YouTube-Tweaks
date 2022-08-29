@@ -1,5 +1,10 @@
 # YouTube Tweaks Changelog
 
+## v1.2.12 ... (29 AUGUST 22)
+
+### Fixes:
+`+` Fix Fade Watched for the home page.
+
 ## v1.2.11 ... (22 NOVEMBER 21)
 
 ### Additions:

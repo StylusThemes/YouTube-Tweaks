@@ -41,7 +41,8 @@ ytd-thumbnail-overlay-resume-playback-renderer:before {
 ytd-compact-video-renderer:hover #overlays,
 ytd-video-renderer:hover #overlays,
 ytd-grid-video-renderer:hover #overlays,
-ytd-playlist-video-renderer:hover #overlays {
+ytd-playlist-video-renderer:hover #overlays,
+ytd-thumbnail:hover #overlays { /* Not sure if I need all the others but for now I'll keep them in */
   opacity: 0;
 }
 
