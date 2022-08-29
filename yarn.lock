@@ -1958,7 +1958,7 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
-gulp-autoprefixer@^8.0.0:
+gulp-autoprefixer@8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/gulp-autoprefixer/-/gulp-autoprefixer-8.0.0.tgz#ee2413d6cb9f7cc2f01b7d9835b46e58e326b88d"
   integrity sha512-sVR++PIaXpa81p52dmmA/jt50bw0egmylK5mjagfgOJ8uLDGaF9tHyzvetkY9Uo0gBZUS5sVqN3kX/GlUKOyog==
@@ -1970,7 +1970,7 @@ gulp-autoprefixer@^8.0.0:
     through2 "^4.0.2"
     vinyl-sourcemaps-apply "^0.2.1"
 
-gulp-beautify@^3.0.0:
+gulp-beautify@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gulp-beautify/-/gulp-beautify-3.0.0.tgz#97ddaef9deeff0e491553f4c3621d0d6abb83134"
   integrity sha512-Srxzb7+AQjNm+NkEVpLBfnFtN93jofVc4d4qI+N4MTPRF/vZ14jC4QA6WUZsZZZxc/oYk4bjcqQOUhmopFWlXg==
@@ -1978,7 +1978,7 @@ gulp-beautify@^3.0.0:
     js-beautify "^1.8.8"
     through2 "^2.0.0"
 
-gulp-clean-css@^4.3.0:
+gulp-clean-css@4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/gulp-clean-css/-/gulp-clean-css-4.3.0.tgz#5b1e73f2fca46703eb636014cdd4553cea65146d"
   integrity sha512-mGyeT3qqFXTy61j0zOIciS4MkYziF2U594t2Vs9rUnpkEHqfu6aDITMp8xOvZcvdX61Uz3y1mVERRYmjzQF5fg==
@@ -2012,7 +2012,7 @@ gulp-cli@^2.2.0:
     v8flags "^3.2.0"
     yargs "^7.1.0"
 
-gulp-dart-sass@^1.0.2:
+gulp-dart-sass@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/gulp-dart-sass/-/gulp-dart-sass-1.0.2.tgz#20e33c236b48d557c91e8dfe67a2aef2b8a2e328"
   integrity sha512-8fLttA824mbuc0jRVlGs00zWYZXBckat6INawx5kp66Eqsz5srNWTA51t0mbfB4C8a/a/GZ9muYLwXGklgAHlw==
@@ -2026,7 +2026,7 @@ gulp-dart-sass@^1.0.2:
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-file-insert@^2.0.0:
+gulp-file-insert@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gulp-file-insert/-/gulp-file-insert-2.0.0.tgz#b0025acb99ce8bbd016e623dd5739083f23622f9"
   integrity sha512-tVY2CoT1hhbKhEtHSdbKz6CnA62UD4j3TF4JUJ3qaknrIHq6h9on/sYzvag642yGdegcK+jQFfBXw0cOpUGl/Q==
@@ -2034,12 +2034,12 @@ gulp-file-insert@^2.0.0:
     event-stream "^3.3.4"
     vinyl "^2.1.0"
 
-gulp-rename@^2.0.0:
+gulp-rename@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-2.0.0.tgz#9bbc3962b0c0f52fc67cd5eaff6c223ec5b9cf6c"
   integrity sha512-97Vba4KBzbYmR5VBs9mWmK+HwIf5mj+/zioxfZhOKeXtx5ZjBk57KFlePf5nxq9QsTtFl0ejnHE3zTC9MHXqyQ==
 
-gulp@^4.0.2:
+gulp@4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-4.0.2.tgz#543651070fd0f6ab0a0650c6a3e6ff5a7cb09caa"
   integrity sha512-dvEs27SCZt2ibF29xYgmnwwCYZxdxhQ/+LFWlbAW8y7jt68L/65402Lz3+CKy0Ov4rOs+NERmDq7YlZaDqUIfA==
@@ -3826,7 +3826,7 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-sass-lint@^1.13.1:
+sass-lint@1.13.1:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/sass-lint/-/sass-lint-1.13.1.tgz#5fd2b2792e9215272335eb0f0dc607f61e8acc8f"
   integrity sha512-DSyah8/MyjzW2BWYmQWekYEKir44BpLqrCFsgs9iaWiVTcwZfwXHF586hh3D1n+/9ihUNMfd8iHAyb9KkGgs7Q==
@@ -4063,7 +4063,7 @@ standard-engine@^14.0.1:
     pkg-conf "^3.1.0"
     xdg-basedir "^4.0.0"
 
-standard@^16.0.4:
+standard@16.0.4:
   version "16.0.4"
   resolved "https://registry.yarnpkg.com/standard/-/standard-16.0.4.tgz#779113ba41dd218ab545e7b4eb2405561f6eb370"
   integrity sha512-2AGI874RNClW4xUdM+bg1LRXVlYLzTNEkHmTG5mhyn45OhbgwA+6znowkOGYy+WMb5HRyELvtNy39kcdMQMcYQ==
