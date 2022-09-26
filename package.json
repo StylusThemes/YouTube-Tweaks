@@ -11,7 +11,7 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
-    "eslint": "8.23.0",
+    "eslint": "8.24.0",
     "gulp": "4.0.2",
     "gulp-autoprefixer": "8.0.0",
     "gulp-beautify": "3.0.0",
@@ -21,7 +21,7 @@
     "gulp-rename": "2.0.0",
     "sass-lint": "1.13.1",
     "standard": "17.0.0",
-    "updates": "13.1.5"
+    "updates": "13.1.8"
   },
   "browserslist": [
     "> 0.2%",
@@ -29,6 +29,7 @@
   ],
   "scripts": {
     "update": "updates -cu && yarn install",
+    "nupdate": "updates -cu && pnpm install",
     "start": "gulp default"
   }
 }
