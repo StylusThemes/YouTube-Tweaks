@@ -1,5 +1,10 @@
 # YouTube Tweaks Changelog
 
+## v1.2.13 ... (19 MARCH 23)
+
+### Additions:
+`+` Add code to fix the blank spot on the home page when an adblocker is active.
+
 ## v1.2.12 ... (29 AUGUST 22)
 
 ### Fixes:

@@ -1,6 +1,6 @@
 #copyright div::after {
   white-space: pre;
-  content: "\aYoutube Tweaks - Version 1.2.12";
+  content: "\aYoutube Tweaks - Version 1.2.13";
 }
 
 ::-webkit-scrollbar {
@@ -36,4 +36,22 @@ ytd-video-renderer[use-prominent-thumbs] #channel-info.ytd-video-renderer {
 
 ytd-search[center-results] ytd-two-column-search-results-renderer.ytd-search {
   padding-right: 150px;
+}
+
+[page-subtype=home] ytd-rich-grid-renderer #contents ytd-rich-grid-row {
+  display: contents;
+}
+[page-subtype=home] ytd-rich-grid-renderer #contents ytd-rich-grid-row #contents {
+  display: contents;
+}
+[page-subtype=home] ytd-rich-grid-renderer #contents #contents > ytd-rich-item-renderer {
+  margin: 0 4px 24px !important;
+}
+
+ytd-rich-section-renderer {
+  display: none;
+}
+
+.ghost-grid.ytd-ghost-grid-renderer {
+  display: none;
 }
