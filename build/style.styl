@@ -1,0 +1,50 @@
+@-moz-document domain("youtube.com") {
+    i=!important;
+    t=transparent;
+
+  #copyright div::after {
+    white-space: pre;
+    content: "\aYoutube Tweaks - Version [[VERSION]]";
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px i;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none i;
+    border-radius: 0 i;
+    height: 13px i;
+    background-color: #333 i;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px i;
+    background: #555 i;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: #333 i;
+  }
+
+  [page-subtype=home] ytd-rich-grid-row,
+  [page-subtype=home] ytd-rich-grid-row #contents {
+    display: contents;
+  }
+
+  ytd-rich-section-renderer,
+  .ghost-grid.ytd-ghost-grid-renderer {
+    display: none;
+  }
+
+  [page-subtype=home] #contents>ytd-rich-item-renderer:has(#content > ytd-ad-slot-renderer) {
+    display: none;
+  }
+}
+
+@-moz-document url-prefix("https://www.youtube.com/feed/subscriptions") {
+}
+
+@-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
+}
