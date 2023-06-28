@@ -1,0 +1,75 @@
+/* ==UserStyle==
+@name           Youtube Tweaks
+@version        2.0.0
+@namespace      https://github.com/StylusThemes
+@description    Tweaks for Youtube!
+@author         StylusThemes <https://github.com/StylusThemes>
+@homepageURL    https://github.com/StylusThemes/YouTube-Tweaks
+@supportURL     https://github.com/StylusThemes/YouTube-Tweaks/issues
+@updateURL      https://raw.githubusercontent.com/StylusThemes/YouTube-Tweaks/master/youtube-tweaks.user.styl
+@preprocessor   stylus
+@license        CC-BY-SA-4.0
+
+@var select VMaxWidth "Real Theater Mode?" ["VMaxWidthY:Yes", "VMaxWidthN:No"]
+@var select SVTFP "Stretch Video To Fill Player?" ["SVTFPY:Yes", "SVTFPN:No"]
+@var select WatchedBadge "Re-Add Youtube Watched Badge?" ["WatchedBadgeY:Yes", "WatchedBadgeN:No"]
+==/UserStyle== */
+@-moz-document domain("youtube.com") {
+    i=!important;
+    t=transparent;
+
+  #copyright div::after {
+    white-space: pre;
+    content: "\aYoutube Tweaks - Version 2.0.0";
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px i;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none i;
+    border-radius: 0 i;
+    height: 13px i;
+    background-color: #333 i;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px i;
+    background: #555 i;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: #333 i;
+  }
+
+  [page-subtype=home] ytd-rich-grid-row,
+  [page-subtype=home] ytd-rich-grid-row #contents {
+    display: contents;
+  }
+
+  ytd-rich-section-renderer,
+  .ghost-grid.ytd-ghost-grid-renderer {
+    display: none;
+  }
+
+  [page-subtype=home] #contents>ytd-rich-item-renderer:has(#content > ytd-ad-slot-renderer) {
+    display: none;
+  }
+
+  /*[[DFT]]*/
+  /*[[WatchedBadge]]*/
+  /*[[WVC]]*/
+  /*[[FadePPComp]]*/
+}
+
+@-moz-document url-prefix("https://www.youtube.com/feed/subscriptions") {
+  /*[[RemovePTSFB]]*/
+}
+
+@-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
+  /*[[NetflixSubtitles]]*/
+  /*[[SVTFP]]*/
+  /*[[VMaxWidth]]*/
+}
