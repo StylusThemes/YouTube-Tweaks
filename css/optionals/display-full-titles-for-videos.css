@@ -1,0 +1,16 @@
+ytd-grid-video-renderer,
+ytd-rich-grid-media[mini-mode] #video-title.yt-simple-endpoint.ytd-grid-video-renderer,
+ytd-rich-grid-media #video-title.ytd-rich-grid-media {
+  max-height: unset !important;
+  -webkit-line-clamp: unset !important;
+}
+
+#video-title.ytd-compact-video-renderer,
+#video-title.ytd-rich-grid-media,
+#video-title.ytd-video-renderer,
+#video-title.ytd-rich-grid-slim-media,
+#video-title.ytd-grid-playlist-renderer,
+#video-title.ytd-reel-item-renderer {
+  max-height: unset !important;
+  -webkit-line-clamp: unset !important;
+}

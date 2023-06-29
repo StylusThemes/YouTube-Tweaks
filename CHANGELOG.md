@@ -1,5 +1,15 @@
 # YouTube Tweaks Changelog
 
+## v1.2.14 ... (28 JUNE 23)
+
+### Additions:
+`+` Add option to display full titles for videos on all pages.
+
+### Fixes:
+`+` Fix `Real Theater Mode` due to some changes in css that happened today (courtasy of https://github.com/ImCarsen/ytfulltheater).
+
+`+` Fix adblock blank spot.
+
 ## v1.2.13 ... (19 MARCH 23)
 
 ### Additions:

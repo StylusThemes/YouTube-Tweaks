@@ -1,27 +1,13 @@
-[page-subtype="home"] {
-  ytd-rich-grid-renderer {
-    #contents {
-      ytd-rich-grid-row {
-        display: contents;
-
-        #contents {
-          display: contents;
-        }
-      }
-
-      #contents {
-        > ytd-rich-item-renderer {
-          margin: 0 4px 24px !important;
-        }
-      }
-    }
-  }
+[page-subtype="home"] ytd-rich-grid-row,
+[page-subtype="home"] ytd-rich-grid-row #contents {
+  display: contents;
 }
 
-ytd-rich-section-renderer {
+ytd-rich-section-renderer,
+.ghost-grid.ytd-ghost-grid-renderer {
   display: none;
 }
 
-.ghost-grid.ytd-ghost-grid-renderer {
+[page-subtype="home"] #contents > ytd-rich-item-renderer:has(#content > ytd-ad-slot-renderer) {
   display: none;
 }

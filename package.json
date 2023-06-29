@@ -1,27 +1,30 @@
 {
   "name": "youtube-tweaks",
   "title": "Youtube Tweaks",
-  "version": "1.2.12",
+  "version": "1.2.14",
   "description": "Tweaks for Youtube!",
   "license": "CC-BY-SA-4.0",
-  "repository": "StylusThemes/YouTube-Tweaks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StylusThemes/YouTube-Tweaks"
+  },
   "homepage": "https://github.com/StylusThemes/YouTube-Tweaks",
   "main": "style.user.css",
   "dependencies": {
     "yarn": "^1.22.19"
   },
   "devDependencies": {
-    "eslint": "8.24.0",
+    "eslint": "8.43.0",
     "gulp": "4.0.2",
     "gulp-autoprefixer": "8.0.0",
     "gulp-beautify": "3.0.0",
     "gulp-clean-css": "4.3.0",
-    "gulp-dart-sass": "1.0.2",
+    "gulp-dart-sass": "1.1.0",
     "gulp-file-insert": "2.0.0",
     "gulp-rename": "2.0.0",
     "sass-lint": "1.13.1",
-    "standard": "17.0.0",
-    "updates": "13.1.8"
+    "standard": "17.1.0",
+    "updates": "14.2.8"
   },
   "browserslist": [
     "> 0.2%",

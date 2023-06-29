@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Tweaks
-@version      1.2.13
+@version      1.2.14
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -27,6 +27,13 @@ SVTFPN "No" <<<EOT
 WatchedBadgeY "Yes" <<<EOT
 {{fade-watched}} EOT;
 WatchedBadgeN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown DFT "Display Full Title For Videos?" {
+DFTY "Yes" <<<EOT
+{{display-full-titles-for-videos}} EOT;
+DFTN "No" <<<EOT
  EOT;
 }
 
@@ -60,6 +67,7 @@ RemovePTSFBY "Yes" <<<EOT
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
 {{theme}}
+/*[[DFT]]*/
 /*[[WatchedBadge]]*/
 /*[[WVC]]*/
 /*[[FadePPComp]]*/

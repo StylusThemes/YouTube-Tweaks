@@ -1,6 +1,6 @@
 #copyright div::after {
   white-space: pre;
-  content: "\aYoutube Tweaks - Version 1.2.13";
+  content: "\aYoutube Tweaks - Version 1.2.14";
 }
 
 ::-webkit-scrollbar {
@@ -38,20 +38,16 @@ ytd-search[center-results] ytd-two-column-search-results-renderer.ytd-search {
   padding-right: 150px;
 }
 
-[page-subtype=home] ytd-rich-grid-renderer #contents ytd-rich-grid-row {
+[page-subtype=home] ytd-rich-grid-row,
+[page-subtype=home] ytd-rich-grid-row #contents {
   display: contents;
-}
-[page-subtype=home] ytd-rich-grid-renderer #contents ytd-rich-grid-row #contents {
-  display: contents;
-}
-[page-subtype=home] ytd-rich-grid-renderer #contents #contents > ytd-rich-item-renderer {
-  margin: 0 4px 24px !important;
 }
 
-ytd-rich-section-renderer {
+ytd-rich-section-renderer,
+.ghost-grid.ytd-ghost-grid-renderer {
   display: none;
 }
 
-.ghost-grid.ytd-ghost-grid-renderer {
+[page-subtype=home] #contents > ytd-rich-item-renderer:has(#content > ytd-ad-slot-renderer) {
   display: none;
 }

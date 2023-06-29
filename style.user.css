@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Youtube Tweaks
-@version      1.2.13
+@version      1.2.14
 @description  Expands videos to fill all free space inside browser window.
 @namespace    https://github.com/StylusThemes
 @author       StylusThemes <https://github.com/StylusThemes>
@@ -11,7 +11,7 @@
 
 @advanced dropdown VMaxWidth "Real Theater Mode?" {
 VMaxWidthY "Yes" <<<EOT
-ytd-watch-flexy[theater] #player-theater-container,ytd-watch[theater] #player{min-height:100vh!important;max-height:100vh!important}#masthead-container{opacity:0!important;transition:opacity .2s ease-in-out}#masthead-container:hover{opacity:1!important}#page-manager{margin-top:0!important}#extra-buttons{display:none!important}#toast:not(.paper-toast-open){pointer-events:none} EOT;
+ytd-watch-flexy[fullscreen] #player-theater-container.ytd-watch-flexy,ytd-watch-flexy[theater] #player-wide-container.ytd-watch-flexy{height:100vh;max-height:100vh}ytd-watch-flexy:not([fullscreen])[theater] #player.ytd-watch{max-height:100vh}ytd-watch[theater] #player.ytd-watch{width:100%;max-height:100vh}#masthead-container.ytd-app{opacity:0!important;transition:opacity .2s ease-in-out}#masthead-container.ytd-app:hover{opacity:1!important}#page-manager.ytd-app{margin-top:0}#extra-buttons.ytd-app{display:none!important}#toast.ytd-app:not(.paper-toast-open){pointer-events:none} EOT;
 VMaxWidthN "No" <<<EOT
  EOT;
 }
@@ -27,6 +27,13 @@ SVTFPN "No" <<<EOT
 WatchedBadgeY "Yes" <<<EOT
 @font-face{font-family:FontAwesome;font-weight:400;font-style:normal;src:url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0);src:url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0) format("woff2"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0) format("woff"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0) format("truetype"),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg")}.ytd-browse yt-formatted-string.ytd-thumbnail-overlay-playback-status-renderer{display:none}ytd-thumbnail-overlay-resume-playback-renderer{width:100%;height:100%;background-color:#030303;opacity:.85;transition:opacity .2s ease-out}ytd-thumbnail-overlay-resume-playback-renderer:before{display:flex;position:absolute;top:0;z-index:100;width:100%;height:100%;font-family:FontAwesome;font-size:32px;color:#999;opacity:.7;transition:.1s ease;content:url(https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/images/watched.png);align-items:center;justify-content:center}ytd-compact-video-renderer:hover #overlays,ytd-grid-video-renderer:hover #overlays,ytd-playlist-video-renderer:hover #overlays,ytd-thumbnail:hover #overlays,ytd-video-renderer:hover #overlays{opacity:0}ytd-thumbnail #overlays{height:100%;transition:.2s ease}#progress.ytd-thumbnail-overlay-resume-playback-renderer{height:100%;background-color:#3a0909;opacity:1}.ytd-browse div#progress:after{color:#fff} EOT;
 WatchedBadgeN "No" <<<EOT
+ EOT;
+}
+
+@advanced dropdown DFT "Display Full Title For Videos?" {
+DFTY "Yes" <<<EOT
+ytd-grid-video-renderer,ytd-rich-grid-media #video-title.ytd-rich-grid-media,ytd-rich-grid-media[mini-mode] #video-title.yt-simple-endpoint.ytd-grid-video-renderer{max-height:unset!important;-webkit-line-clamp:unset!important}#video-title.ytd-compact-video-renderer,#video-title.ytd-grid-playlist-renderer,#video-title.ytd-reel-item-renderer,#video-title.ytd-rich-grid-media,#video-title.ytd-rich-grid-slim-media,#video-title.ytd-video-renderer{max-height:unset!important;-webkit-line-clamp:unset!important} EOT;
+DFTN "No" <<<EOT
  EOT;
 }
 
@@ -61,7 +68,7 @@ RemovePTSFBY "Yes" <<<EOT
 @-moz-document domain("youtube.com") {
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 1.2.13";
+    content: "\aYoutube Tweaks - Version 1.2.14";
   }
 
   ::-webkit-scrollbar {
@@ -99,26 +106,21 @@ RemovePTSFBY "Yes" <<<EOT
     padding-right: 150px;
   }
 
-  [page-subtype=home] ytd-rich-grid-renderer #contents ytd-rich-grid-row {
+  [page-subtype=home] ytd-rich-grid-row,
+  [page-subtype=home] ytd-rich-grid-row #contents {
     display: contents;
   }
 
-  [page-subtype=home] ytd-rich-grid-renderer #contents ytd-rich-grid-row #contents {
-    display: contents;
-  }
-
-  [page-subtype=home] ytd-rich-grid-renderer #contents #contents>ytd-rich-item-renderer {
-    margin: 0 4px 24px !important;
-  }
-
-  ytd-rich-section-renderer {
-    display: none;
-  }
-
+  ytd-rich-section-renderer,
   .ghost-grid.ytd-ghost-grid-renderer {
     display: none;
   }
 
+  [page-subtype=home] #contents>ytd-rich-item-renderer:has(#content > ytd-ad-slot-renderer) {
+    display: none;
+  }
+
+  /*[[DFT]]*/
   /*[[WatchedBadge]]*/
   /*[[WVC]]*/
   /*[[FadePPComp]]*/
