@@ -1,6 +1,6 @@
 # YouTube Tweaks Changelog
 
-## v2.0.0 ... (28 JUNE 23)
+## v2.0.0 ... (UNRELEASED)
 
 ### Changes:
 `+` Converted code to Stylus.
