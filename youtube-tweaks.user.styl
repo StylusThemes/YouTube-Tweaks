@@ -10,9 +10,16 @@
 @preprocessor   stylus
 @license        CC-BY-SA-4.0
 
-
+@var checkbox compact-header-bar "Compact header bar" 0
+@var checkbox no-shorts "Shorts blocker" 0
+@var number videos-per-row "Videos per row" [6, 0, 11]
+@var checkbox full-titles "Show full video titles" 0
+@var checkbox theater "Fullscreen theater mode" 0
+@var checkbox fill-player "Stretch Video To Fill Player" 0
+@var checkbox netflix-subtitles "Netflix subtitles" 0
+@var checkbox youtube-watched-badge "Re-add YouTube Watched Badge" 0
 ==/UserStyle== */
-@-moz-document domain("youtube.com") {
+@-moz-document url-prefix("https://www.youtube.com") {
   i=!important;
   t=transparent;
 
@@ -42,39 +49,406 @@
     background-color: #333 i;
   }
 
-  ytd-thumbnail[class="style-scope ytd-video-renderer"],
-  ytd-playlist-thumbnail[class="style-scope ytd-playlist-renderer"] {
-    max-width: 225px i;
-    max-height: 132px i;
+  if videos-per-row > "3" {
+    .ytd-rich-grid-renderer {
+      --ytd-rich-grid-items-per-row: videos-per-row;
   }
 
-  ytd-video-renderer[use-prominent-thumbs] #channel-info.ytd-video-renderer {
-    padding: 5px 0;
-  }
-
-  ytd-search[center-results] ytd-two-column-search-results-renderer.ytd-search {
-    padding-right: 150px;
-  }
-
-  [page-subtype="home"] {
-    ytd-rich-grid-row,
-    ytd-rich-grid-row #contents {
-      display: contents;
-    }
-  }
-
-  ytd-rich-section-renderer,
-  .ghost-grid.ytd-ghost-grid-renderer {
+  .ytp-inline-preview-mode .ytp-paid-content-overlay,
+  [style="--ytd-rich-shelf-items-count: 4;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
     display: none;
   }
 
-  [page-subtype=home] {
-    #contents > ytd-rich-item-renderer:has(#content > ytd-ad-slot-renderer) {
+  ytd-rich-item-renderer:nth-child(4):has(#video-title.ytd-rich-grid-media)[hidden] {
+    display: block i;
+  }
+
+  [page-subtype="home"] .yt-core-image--content-mode-scale-aspect-fill {
+    object-fit: fill;
+  }
+
+  .ytp-inline-preview-ui .ytp-subtitles-button,
+  .ytp-inline-preview-ui .ytp-mute-button {
+    display: block i;
+  }
+
+  .ytp-inline-preview-mode button.ytp-subtitles-button.ytp-button::after {
+    margin: 0 8px;
+  }
+
+  ytd-rich-section-renderer {
+    order: -1;
+  }
+
+  ytd-rich-shelf-renderer {
+    border: none;
+  }
+
+  #rich-shelf-header.ytd-rich-shelf-renderer {
+    margin-top: 0;
+  }
+
+  #home-page-skeleton .rich-grid-media-skeleton {
+    --ytd-rich-grid-items-per-row: videos-per-row;
+    max-width: calc(100%/var(--ytd-rich-grid-items-per-row) - 16px);
+    min-width: 0;
+  }
+
+    if videos-per-row > "4" {
+      ytd-rich-item-renderer:nth-child(5):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+    [style="--ytd-rich-shelf-items-count: 5;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
       display: none;
+      }
+
+    if videos-per-row > "5" {
+      ytd-rich-item-renderer:nth-child(6):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+      [style="--ytd-rich-shelf-items-count: 6;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        display: none;
+      }
+    }
+
+    if videos-per-row > "6" {
+      ytd-rich-item-renderer:nth-child(7):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+      [style="--ytd-rich-shelf-items-count: 7;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        display: none;
+      }
+    }
+
+    if videos-per-row > "7" {
+      ytd-rich-item-renderer:nth-child(8):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+      [style="--ytd-rich-shelf-items-count: 8;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        display: none;
+      }
+    }
+
+    if videos-per-row > "8" {
+      ytd-rich-item-renderer:nth-child(9):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+      [style="--ytd-rich-shelf-items-count: 9;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        display: none;
+      }
+    }
+
+    if videos-per-row > "9" {
+      ytd-rich-item-renderer:nth-child(10):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+      [style="--ytd-rich-shelf-items-count: 10;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        display: none;
+      }
+    }
+
+    if videos-per-row > "10" {
+      ytd-rich-item-renderer:nth-child(11):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+      [style="--ytd-rich-shelf-items-count: 11;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        display: none;
+      }
+    }
+
+    if videos-per-row > "11" {
+      ytd-rich-item-renderer:nth-child(12):has(#video-title.ytd-rich-grid-media)[hidden] {
+        display: block i;
+      }
+
+      [style="--ytd-rich-shelf-items-count: 12;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+        display: none;
+      }
+     }
+    }
+  }
+
+  #contents > ytd-rich-grid-row,
+  #contents > ytd-rich-grid-row > #contents {
+    display: contents;
+  }
+
+  #content.ytd-rich-section-renderer {
+    margin: 0 8px;
+  }
+
+  ytd-rich-item-renderer[is-slim-grid]:last-of-type {
+    margin-right: calc(var(--ytd-rich-grid-item-margin)/2);
+  }
+
+  ytd-rich-item-renderer[is-slim-grid]:first-of-type {
+    margin-left: calc(var(--ytd-rich-grid-item-margin)/2);
+  }
+
+  #contents.ytd-rich-grid-renderer:not([page-subtype="channels"] #contents.ytd-rich-grid-renderer) {
+    width: calc(100% - 2.4 * 1vw);
+    max-width: calc(var(--ytd-rich-grid-items-per-row) * (var(--ytd-rich-grid-item-max-width) + var(--ytd-rich-grid-item-margin)));
+  }
+
+  ytd-rich-grid-media[mini-mode],
+  ytd-rich-section-renderer[mini-mode] #content.ytd-rich-section-renderer {
+    max-width: none;
+  }
+
+  .skeleton-bg-color.ytd-ghost-grid-renderer,
+  ytd-rich-item-renderer:has(ytd-ad-slot-renderer) {
+    display: none;
+  }
+
+  ytd-video-meta-block[rich-meta] #metadata-line.ytd-video-meta-block {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    max-height: 3.6rem;
+  }
+
+  #video-title.ytd-rich-grid-media {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    max-height: 4rem;
+  }
+
+  ytd-rich-item-renderer {
+    margin: 8px 4px 24px 0 i;
+    width: calc(100%/var(--ytd-rich-grid-items-per-row) - 4px);
+  }
+
+  ytd-two-column-browse-results-renderer.grid:not(.grid-disabled):has(ytd-rich-grid-renderer:not([is-shorts-grid])) {
+    max-width: 100% i;
+    width: 100% i;
+  }
+
+  if no-shorts {
+    #items.ytd-grid-renderer > ytd-grid-video-renderer.ytd-grid-renderer:has([href*="/shorts/"]),
+    #items.yt-horizontal-list-renderer > *.yt-horizontal-list-renderer:has([href*="/shorts/"]),
+    ytd-rich-section-renderer:has([is-shorts]),
+    ytd-rich-item-renderer:has([href*="/shorts/"]):not([is-slim-media]),
+    ytd-video-renderer:has([href*="/shorts/"]),
+    ytd-notification-renderer:has([href*="/shorts/"]),
+    ytd-reel-shelf-renderer:has([href*="/shorts/"]),
+    [page-subtype="subscriptions"] ytd-item-section-renderer:has([href*="/shorts/"]) {
+      display: none i;
+    }
+  }
+
+  if full-titles {
+    ytd-grid-video-renderer #video-title.yt-simple-endpoint.ytd-grid-video-renderer,
+    ytd-rich-grid-media[mini-mode] #video-title.ytd-rich-grid-media,
+    ytd-rich-grid-slim-media[mini-mode] #video-title.ytd-rich-grid-slim-media,
+    ytd-video-renderer[is-backstage-video] #video-title.ytd-video-renderer,
+    #video-title[class*="ytd"] {
+      -webkit-line-clamp: 20;
+      max-height: 44rem;
+    }
+  }
+
+  if compact-header-bar {
+    html {
+      --ytd-toolbar-height: 36px;
+    }
+
+    ytd-app:not([scrolling]) {
+      --ytd-masthead-height: var(--ytd-toolbar-height) i;
+    }
+
+    .ytd-masthead:is(#container, #background),
+    #header.ytd-app,
+    ytd-masthead.shell {
+      height: var(--ytd-toolbar-height);
+    }
+
+    #player.skeleton.theater {
+      margin-top: var(--ytd-toolbar-height);
+    }
+
+    .ytd-searchbox:is(#search-form, #search-icon-legacy) {
+      height: 30px;
+    }
+
+    yt-icon-button:is(.ytd-topbar-menu-button-renderer, .ytd-masthead, .ytd-notification-topbar-button-renderer),
+    #masthead .yt-spec-button-shape-next--icon-only-default,
+    #guide-button.ytd-app {
+      width: 30px;
+      height: 30px;
+      padding: 3px;
+    }
+
+    #container.ytd-masthead,
+    #header.ytd-app {
+      padding: 0 21px;
+    }
+  }
+
+  if youtube-watched-badge {
+    @font-face {
+      font-family: "FontAwesome";
+      font-weight: normal;
+      font-style: normal;
+
+      src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
+      src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+    }
+
+    .ytd-browse yt-formatted-string.ytd-thumbnail-overlay-playback-status-renderer {
+      display: none;
+    }
+
+    ytd-thumbnail-overlay-resume-playback-renderer {
+      width: 100%;
+      height: 100%;
+      background-color: #030303;
+      opacity: .85;
+      transition: opacity 200ms ease-out;
+    }
+
+    ytd-thumbnail-overlay-resume-playback-renderer:before {
+      display: flex;
+      position: absolute;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      font-family: "FontAwesome";
+      font-size: 32px;
+      color: #999;
+      opacity: .7;
+      transition: .1s ease;
+      content: url("https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/images/watched.png");
+      align-items: center;
+      justify-content: center;
+    }
+
+    ytd-compact-video-renderer:hover #overlays,
+    ytd-video-renderer:hover #overlays,
+    ytd-grid-video-renderer:hover #overlays,
+    ytd-playlist-video-renderer:hover #overlays,
+    ytd-thumbnail:hover #overlays {
+      opacity: 0;
+    }
+
+    ytd-thumbnail #overlays {
+      height: 100%;
+      transition: .2s ease;
+    }
+
+    #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+      height: 100%;
+      background-color: #3a0909;
+      opacity: 1;
+    }
+
+    .ytd-browse div#progress:after {
+      color: #fff;
     }
   }
 }
 
-@-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
+@-moz-document regexp("https?://www.youtube.com/watch.*"),
+regexp("https?://www.youtube.com/clip.*") {
+  if theater {
+    ytd-watch-flexy:not([fullscreen])[theater] #player-wide-container.ytd-watch-flexy {
+      height: 100vh;
+      max-height: none;
+      margin-top: calc(0px - var(--ytd-toolbar-height));
+    }
 
+    #masthead-container.ytd-app [is-watch-page][theater]:not([fullscreen]) {
+      opacity: 0;
+      transition: 0.15s;
+    }
+
+    #masthead-container.ytd-app:hover [theater]:not([fullscreen]) {
+      opacity: 1;
+    }
+
+    [theater] .ytp-cards-button-icon,
+    [theater] .ytp-share-icon,
+    [theater] .ytp-tooltip-text,
+    [theater] .ytp-cards-teaser,
+    [theater] .ytp-exp-ppp-update .ytp-paid-content-overlay-link,
+    [theater] .ytp-sfn {
+      margin-top: var(--ytd-toolbar-height);
+    }
+
+    [fullscreen] .ytp-cards-button-icon,
+    [fullscreen] .ytp-share-icon,
+    [fullscreen] .ytp-tooltip-text,
+    [fullscreen] .ytp-cards-teaser,
+    [fullscreen] .ytp-exp-ppp-update .ytp-paid-content-overlay-link,
+    [fullscreen] .ytp-sfn {
+      margin-top: 0px;
+    }
+  }
+
+  if fill-player {
+    video {
+      position: static i;
+      width: 100% i;
+      height: 100vh i;
+      transform: scaleX(1) i;
+      object-fit: fill i;
+    }
+  }
+
+  if netflix-subtitles {
+    @font-face {
+      font-family: "Netflix Sans";
+      font-weight: 100;
+
+      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "Netflix Sans";
+      font-weight: 300;
+
+      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "Netflix Sans";
+      font-weight: 400;
+
+       src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format("woff");
+     }
+
+    @font-face {
+      font-family: "Netflix Sans";
+      font-weight: 700;
+
+      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff) format("woff");
+    }
+
+    @font-face {
+      font-family: "Netflix Sans";
+      font-weight: 800;
+
+       src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff) format("woff");
+     }
+
+    @font-face {
+      font-family: "Netflix Sans";
+      font-weight: 900;
+
+      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff) format("woff");
+    }
+
+    .ytp-caption-segment {
+      font-family: "Netflix Sans", sans-serif i;
+      font-weight: 700 i;
+      background: none i;
+      text-shadow: rgba(0, 0, 0, 1) 0 0 .2em i;
+    }
+  }
 }
