@@ -336,7 +336,7 @@
 @-moz-document regexp("https?://www.youtube.com/watch.*"),
 regexp("https?://www.youtube.com/clip.*") {
   if theater {
-    ytd-watch-flexy:not([fullscreen])[theater] #player-wide-container.ytd-watch-flexy {
+    ytd-watch-flexy[full-bleed-player]:not([fullscreen])[theater] #player-full-bleed-container.ytd-watch-flexy {
       height: 100vh;
       max-height: none;
       margin-top: calc(0px - var(--ytd-toolbar-height));
@@ -344,7 +344,7 @@ regexp("https?://www.youtube.com/clip.*") {
 
     #masthead-container.ytd-app [is-watch-page][theater]:not([fullscreen]) {
       opacity: 0;
-      transition: 0.15s;
+      transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
     }
 
     #masthead-container.ytd-app:hover [theater]:not([fullscreen]) {
