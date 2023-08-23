@@ -365,29 +365,22 @@ regexp("https?://www.youtube.com/clip.*") {
 
     #masthead-container.ytd-app [is-watch-page][theater]:not([fullscreen]) {
       opacity: 0;
-      transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+      transition: opacity .1s ease-in;
     }
 
     #masthead-container.ytd-app:hover [theater]:not([fullscreen]) {
       opacity: 1;
+      transition: opacity .1s ease-out;
     }
 
-    [theater] .ytp-cards-button-icon,
-    [theater] .ytp-share-icon,
-    [theater] .ytp-tooltip-text,
-    [theater] .ytp-cards-teaser,
-    [theater] .ytp-exp-ppp-update .ytp-paid-content-overlay-link,
-    [theater] .ytp-sfn {
+    [theater]:not([fullscreen]) .ytp-cards-button-icon,
+    [theater]:not([fullscreen]) .ytp-share-icon,
+    [theater]:not([fullscreen]) .ytp-tooltip-text,
+    [theater]:not([fullscreen]) .ytp-cards-teaser,
+    [theater]:not([fullscreen]) .ytp-exp-ppp-update .ytp-paid-content-overlay-link,
+    [theater]:not([fullscreen]) .ytp-sfn,
+    [theater]:not([fullscreen]) .ytp-drawer {
       margin-top: var(--ytd-toolbar-height);
-    }
-
-    [fullscreen] .ytp-cards-button-icon,
-    [fullscreen] .ytp-share-icon,
-    [fullscreen] .ytp-tooltip-text,
-    [fullscreen] .ytp-cards-teaser,
-    [fullscreen] .ytp-exp-ppp-update .ytp-paid-content-overlay-link,
-    [fullscreen] .ytp-sfn {
-      margin-top: 0px;
     }
   }
 
