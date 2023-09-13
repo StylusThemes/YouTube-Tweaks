@@ -28,129 +28,187 @@
     background-color: #333 i;
   }
 
-  if videos-per-row > "3" {
+  if (videos-per-row > "3") {
     .ytd-rich-grid-renderer {
       --ytd-rich-grid-items-per-row: videos-per-row;
-  }
+    }
 
-  .ytp-inline-preview-mode .ytp-paid-content-overlay,
-  [style="--ytd-rich-shelf-items-count: 4;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-    display: none;
-  }
+    .ytp-inline-preview-mode .ytp-paid-content-overlay {
+      display: none;
+    }
 
-  ytd-rich-item-renderer:nth-child(4):has(#video-title.ytd-rich-grid-media)[hidden] {
-    display: block i;
-  }
+    ytd-rich-item-renderer:nth-child(4):has(#video-title.ytd-rich-grid-media)[hidden] {
+      display: block i;
+    }
 
-  [page-subtype="home"] .yt-core-image--content-mode-scale-aspect-fill {
-    object-fit: fill;
-  }
+    [style="--ytd-rich-shelf-items-count: 4;"]:has(#video-title.ytd-rich-grid-media) {
+      .expand-collapse-button.ytd-rich-shelf-renderer {
+        display: none;
+      }
 
-  .ytp-inline-preview-ui .ytp-subtitles-button,
-  .ytp-inline-preview-ui .ytp-mute-button {
-    display: block i;
-  }
+      #dismissible.ytd-rich-shelf-renderer {
+        border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+      }
+    }
 
-  .ytp-inline-preview-mode button.ytp-subtitles-button.ytp-button::after {
-    margin: 0 8px;
-  }
+    [page-subtype="home"] .yt-core-image--content-mode-scale-aspect-fill {
+      object-fit: fill;
+    }
 
-  ytd-rich-section-renderer {
-    order: -1;
-  }
+    .ytp-inline-preview-ui .ytp-subtitles-button,
+    .ytp-inline-preview-ui .ytp-mute-button {
+      display: block i;
+    }
 
-  ytd-rich-shelf-renderer {
-    border: none;
-  }
+    .ytp-inline-preview-mode button.ytp-subtitles-button.ytp-button::after {
+      margin: 0 8px;
+    }
 
-  #rich-shelf-header.ytd-rich-shelf-renderer {
-    margin-top: 0;
-  }
+    ytd-rich-section-renderer {
+      order: -1;
+    }
 
-  #home-page-skeleton .rich-grid-media-skeleton {
-    --ytd-rich-grid-items-per-row: videos-per-row;
-    max-width: calc(100%/var(--ytd-rich-grid-items-per-row) - 16px);
-    min-width: 0;
-  }
+    ytd-rich-shelf-renderer {
+      border: none;
+    }
 
-    if videos-per-row > "4" {
+    #rich-shelf-header.ytd-rich-shelf-renderer,
+    ytd-rich-section-renderer.ytd-rich-grid-renderer + ytd-rich-section-renderer.ytd-rich-grid-renderer {
+      margin-top: 0;
+    }
+
+    #home-container-media .rich-grid-media-skeleton {
+      --ytd-rich-grid-items-per-row: videos-per-row;
+      max-width: calc(100% / var(--ytd-rich-grid-items-per-row) - 16px);
+      min-width: 0 i;
+    }
+
+    if (videos-per-row > "4") {
       ytd-rich-item-renderer:nth-child(5):has(#video-title.ytd-rich-grid-media)[hidden] {
         display: block i;
       }
 
-    [style="--ytd-rich-shelf-items-count: 5;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-      display: none;
+      [style="--ytd-rich-shelf-items-count: 5;"]:has(#video-title.ytd-rich-grid-media) {
+        .expand-collapse-button.ytd-rich-shelf-renderer {
+          display: none;
+        }
+
+        #dismissible.ytd-rich-shelf-renderer {
+          border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+        }
       }
 
-    if videos-per-row > "5" {
-      ytd-rich-item-renderer:nth-child(6):has(#video-title.ytd-rich-grid-media)[hidden] {
-        display: block i;
+      if (videos-per-row > "5") {
+        ytd-rich-item-renderer:nth-child(6):has(#video-title.ytd-rich-grid-media)[hidden] {
+          display: block i;
+        }
+
+        [style="--ytd-rich-shelf-items-count: 6;"]:has(#video-title.ytd-rich-grid-media) {
+          .expand-collapse-button.ytd-rich-shelf-renderer {
+            display: none;
+          }
+
+          #dismissible.ytd-rich-shelf-renderer {
+            border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+          }
+        }
       }
 
-      [style="--ytd-rich-shelf-items-count: 6;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-        display: none;
-      }
-    }
+      if (videos-per-row > "6") {
+        ytd-rich-item-renderer:nth-child(7):has(#video-title.ytd-rich-grid-media)[hidden] {
+          display: block i;
+        }
 
-    if videos-per-row > "6" {
-      ytd-rich-item-renderer:nth-child(7):has(#video-title.ytd-rich-grid-media)[hidden] {
-        display: block i;
-      }
+        [style="--ytd-rich-shelf-items-count: 7;"]:has(#video-title.ytd-rich-grid-media) {
+          .expand-collapse-button.ytd-rich-shelf-renderer {
+            display: none;
+          }
 
-      [style="--ytd-rich-shelf-items-count: 7;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-        display: none;
-      }
-    }
-
-    if videos-per-row > "7" {
-      ytd-rich-item-renderer:nth-child(8):has(#video-title.ytd-rich-grid-media)[hidden] {
-        display: block i;
+          #dismissible.ytd-rich-shelf-renderer {
+            border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+          }
+        }
       }
 
-      [style="--ytd-rich-shelf-items-count: 8;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-        display: none;
-      }
-    }
+      if (videos-per-row > "7") {
+        ytd-rich-item-renderer:nth-child(8):has(#video-title.ytd-rich-grid-media)[hidden] {
+          display: block i;
+        }
 
-    if videos-per-row > "8" {
-      ytd-rich-item-renderer:nth-child(9):has(#video-title.ytd-rich-grid-media)[hidden] {
-        display: block i;
-      }
+        [style="--ytd-rich-shelf-items-count: 8;"]:has(#video-title.ytd-rich-grid-media) {
+          .expand-collapse-button.ytd-rich-shelf-renderer {
+            display: none;
+          }
 
-      [style="--ytd-rich-shelf-items-count: 9;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-        display: none;
-      }
-    }
-
-    if videos-per-row > "9" {
-      ytd-rich-item-renderer:nth-child(10):has(#video-title.ytd-rich-grid-media)[hidden] {
-        display: block i;
+          #dismissible.ytd-rich-shelf-renderer {
+            border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+          }
+        }
       }
 
-      [style="--ytd-rich-shelf-items-count: 10;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-        display: none;
-      }
-    }
+      if (videos-per-row > "8") {
+        ytd-rich-item-renderer:nth-child(9):has(#video-title.ytd-rich-grid-media)[hidden] {
+          display: block i;
+        }
 
-    if videos-per-row > "10" {
-      ytd-rich-item-renderer:nth-child(11):has(#video-title.ytd-rich-grid-media)[hidden] {
-        display: block i;
-      }
+        [style="--ytd-rich-shelf-items-count: 9;"]:has(#video-title.ytd-rich-grid-media) {
+          .expand-collapse-button.ytd-rich-shelf-renderer {
+            display: none;
+          }
 
-      [style="--ytd-rich-shelf-items-count: 11;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-        display: none;
-      }
-    }
-
-    if videos-per-row > "11" {
-      ytd-rich-item-renderer:nth-child(12):has(#video-title.ytd-rich-grid-media)[hidden] {
-        display: block i;
+          #dismissible.ytd-rich-shelf-renderer {
+            border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+          }
+        }
       }
 
-      [style="--ytd-rich-shelf-items-count: 12;"] #dismissible.ytd-rich-shelf-renderer:has(#video-title.ytd-rich-grid-media) #show-more-button .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-        display: none;
+      if (videos-per-row > "9") {
+        ytd-rich-item-renderer:nth-child(10):has(#video-title.ytd-rich-grid-media)[hidden] {
+          display: block i;
+        }
+
+        [style="--ytd-rich-shelf-items-count: 10"]:has(#video-title.ytd-rich-grid-media) {
+          .expand-collapse-button.ytd-rich-shelf-renderer {
+            display: none;
+          }
+
+          #dismissible.ytd-rich-shelf-renderer {
+            border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+          }
+        }
       }
-     }
+
+      if (videos-per-row > "10") {
+        ytd-rich-item-renderer:nth-child(11):has(#video-title.ytd-rich-grid-media)[hidden] {
+          display: block i;
+        }
+
+        [style="--ytd-rich-shelf-items-count: 11;"]:has(#video-title.ytd-rich-grid-media) {
+          .expand-collapse-button.ytd-rich-shelf-renderer {
+            display: none;
+          }
+
+          #dismissible.ytd-rich-shelf-renderer {
+            border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+          }
+        }
+      }
+
+      if (videos-per-row > "11") {
+        ytd-rich-item-renderer:nth-child(12):has(#video-title.ytd-rich-grid-media)[hidden] {
+          display: block i;
+        }
+
+        [style="--ytd-rich-shelf-items-count: 12;"]:has(#video-title.ytd-rich-grid-media) {
+          .expand-collapse-button.ytd-rich-shelf-renderer {
+            display: none;
+          }
+
+          #dismissible.ytd-rich-shelf-renderer {
+            border-bottom: 4px solid var(--yt-spec-10-percent-layer);
+          }
+        }
+      }
     }
   }
 
@@ -164,15 +222,15 @@
   }
 
   ytd-rich-item-renderer[is-slim-grid]:last-of-type {
-    margin-right: calc(var(--ytd-rich-grid-item-margin)/2);
+    margin-right: calc((var(--ytd-rich-grid-item-margin) / 2));
   }
 
   ytd-rich-item-renderer[is-slim-grid]:first-of-type {
-    margin-left: calc(var(--ytd-rich-grid-item-margin)/2);
+    margin-left: calc((var(--ytd-rich-grid-item-margin) / 2));
   }
 
   #contents.ytd-rich-grid-renderer:not([page-subtype="channels"] #contents.ytd-rich-grid-renderer) {
-    width: calc(100% - 2.4 * 1vw);
+    width: calc(100% - 32px);
     max-width: calc(var(--ytd-rich-grid-items-per-row) * (var(--ytd-rich-grid-item-max-width) + var(--ytd-rich-grid-item-margin)));
   }
 
@@ -186,21 +244,9 @@
     display: none;
   }
 
-  ytd-video-meta-block[rich-meta] #metadata-line.ytd-video-meta-block {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    max-height: 3.6rem;
-  }
-
-  #video-title.ytd-rich-grid-media {
-    font-size: 1.4rem;
-    line-height: 2rem;
-    max-height: 4rem;
-  }
-
   ytd-rich-item-renderer {
     margin: 8px 4px 24px 0 i;
-    width: calc(100%/var(--ytd-rich-grid-items-per-row) - 4px);
+    width: calc(100% / var(--ytd-rich-grid-items-per-row) - 4px);
   }
 
   ytd-two-column-browse-results-renderer.grid:not(.grid-disabled):has(ytd-rich-grid-renderer:not([is-shorts-grid])) {
@@ -208,7 +254,21 @@
     width: 100% i;
   }
 
-  if no-shorts {
+if (font-size) {
+  #video-title[class*="style-scope ytd-rich-grid"],
+  ytd-game-details-renderer[is-rich-grid]:not([mini-mode]) #title.ytd-game-details-renderer {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .ytd-rich-grid-media ytd-video-meta-block[rich-meta] #byline-container.ytd-video-meta-block,
+  .ytd-rich-grid-media ytd-video-meta-block[rich-meta] #metadata-line.ytd-video-meta-block {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+}
+
+  if (no-shorts) {
     #items.ytd-grid-renderer > ytd-grid-video-renderer.ytd-grid-renderer:has([href*="/shorts/"]),
     #items.yt-horizontal-list-renderer > *.yt-horizontal-list-renderer:has([href*="/shorts/"]),
     ytd-rich-section-renderer:has([is-shorts]),
@@ -216,25 +276,34 @@
     ytd-video-renderer:has([href*="/shorts/"]),
     ytd-notification-renderer:has([href*="/shorts/"]),
     ytd-reel-shelf-renderer:has([href*="/shorts/"]),
-    [page-subtype="subscriptions"] ytd-item-section-renderer:has([href*="/shorts/"]) {
+    [page-subtype="subscriptions"] ytd-item-section-renderer:has([href*="/shorts/"]),
+    #dismissible.ytd-compact-video-renderer:has([href*="/shorts/"]) {
       display: none i;
     }
   }
 
-  if full-titles {
+  ytd-rich-section-renderer:has([is-post]) {
+    display: none if no-yt-posts;
+  }
+
+  if (full-titles) {
     ytd-grid-video-renderer #video-title.yt-simple-endpoint.ytd-grid-video-renderer,
     ytd-rich-grid-media[mini-mode] #video-title.ytd-rich-grid-media,
     ytd-rich-grid-slim-media[mini-mode] #video-title.ytd-rich-grid-slim-media,
     ytd-video-renderer[is-backstage-video] #video-title.ytd-video-renderer,
     #video-title[class*="ytd"] {
-      -webkit-line-clamp: 20;
-      max-height: 44rem;
+      -webkit-line-clamp: 20 i;
+      max-height: 44rem i;
     }
   }
 
-  if compact-header-bar {
+  if (compact-header-bar) {
     html {
       --ytd-toolbar-height: 36px;
+    }
+
+    ytd-feed-filter-chip-bar-renderer {
+      --ytd-rich-grid-chips-bar-top: var(--ytd-toolbar-height);
     }
 
     ytd-app:not([scrolling]) {
@@ -269,12 +338,11 @@
     }
   }
 
-  if youtube-watched-badge {
+  if (youtube-watched-badge) {
     @font-face {
       font-family: "FontAwesome";
       font-weight: normal;
       font-style: normal;
-
       src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
       src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
     }
@@ -287,7 +355,7 @@
       width: 100%;
       height: 100%;
       background-color: #030303;
-      opacity: .85;
+      opacity: 0.85;
       transition: opacity 200ms ease-out;
     }
 
@@ -301,8 +369,8 @@
       font-family: "FontAwesome";
       font-size: 32px;
       color: #999;
-      opacity: .7;
-      transition: .1s ease;
+      opacity: 0.7;
+      transition: 0.1s ease;
       content: url("https://raw.githubusercontent.com/StylusThemes/YouTube-Theater/master/images/watched.png");
       align-items: center;
       justify-content: center;
@@ -318,7 +386,7 @@
 
     ytd-thumbnail #overlays {
       height: 100%;
-      transition: .2s ease;
+      transition: 0.2s ease;
     }
 
     #progress.ytd-thumbnail-overlay-resume-playback-renderer {
@@ -333,9 +401,8 @@
   }
 }
 
-@-moz-document regexp("https?://www.youtube.com/watch.*"),
-regexp("https?://www.youtube.com/clip.*") {
-  if theater {
+@-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
+  if (theater) {
     ytd-watch-flexy[full-bleed-player]:not([fullscreen])[theater] #full-bleed-container.ytd-watch-flexy {
       height: 100vh;
       max-height: none;
@@ -344,12 +411,12 @@ regexp("https?://www.youtube.com/clip.*") {
 
     #masthead-container.ytd-app [is-watch-page][theater]:not([fullscreen]) {
       opacity: 0;
-      transition: opacity .1s ease-in;
+      transition: opacity 0.1s ease-in;
     }
 
     #masthead-container.ytd-app:hover [theater]:not([fullscreen]) {
       opacity: 1;
-      transition: opacity .1s ease-out;
+      transition: opacity 0.1s ease-out;
     }
 
     [theater]:not([fullscreen]) .ytp-cards-button-icon,
@@ -363,7 +430,7 @@ regexp("https?://www.youtube.com/clip.*") {
     }
   }
 
-  if fill-player {
+  if (fill-player) {
     video {
       position: static i;
       width: 100% i;
@@ -373,54 +440,48 @@ regexp("https?://www.youtube.com/clip.*") {
     }
   }
 
-  if netflix-subtitles {
+  if (netflix-subtitles) {
     @font-face {
       font-family: "Netflix Sans";
       font-weight: 100;
-
-      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff) format("woff");
+      src: url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2") format("woff2"), url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff") format("woff");
     }
 
     @font-face {
       font-family: "Netflix Sans";
       font-weight: 300;
-
-      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff) format("woff");
+      src: url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2") format("woff2"), url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff") format("woff");
     }
 
     @font-face {
       font-family: "Netflix Sans";
       font-weight: 400;
-
-       src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff) format("woff");
-     }
+      src: url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff2") format("woff2"), url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Rg.woff") format("woff");
+    }
 
     @font-face {
       font-family: "Netflix Sans";
       font-weight: 700;
-
-      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff) format("woff");
+      src: url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff2") format("woff2"), url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Md.woff") format("woff");
     }
 
     @font-face {
       font-family: "Netflix Sans";
       font-weight: 800;
-
-       src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff) format("woff");
-     }
+      src: url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff2") format("woff2"), url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Bd.woff") format("woff");
+    }
 
     @font-face {
       font-family: "Netflix Sans";
       font-weight: 900;
-
-      src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff2) format("woff2"), url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff) format("woff");
+      src: url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff2") format("woff2"), url("https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff") format("woff");
     }
 
     .ytp-caption-segment {
       font-family: "Netflix Sans", sans-serif i;
       font-weight: 700 i;
       background: none i;
-      text-shadow: rgba(0, 0, 0, 1) 0 0 .2em i;
+      text-shadow: rgba(0, 0, 0, 1) 0 0 0.2em i;
     }
   }
 }
