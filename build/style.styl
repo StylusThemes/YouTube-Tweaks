@@ -190,6 +190,12 @@
     }
   }
 
+  [is-search] ytd-shelf-renderer.ytd-item-section-renderer:not(ytd-channel-renderer + ytd-shelf-renderer),
+  [is-search] ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
+  [is-search] ytd-exploratory-results-renderer.ytd-item-section-renderer {
+    display: none if search-dismissible;
+  }
+
   if compact-header-bar {
     html {
       --ytd-toolbar-height: 36px;

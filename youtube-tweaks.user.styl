@@ -10,10 +10,11 @@
 @preprocessor   stylus
 @license        CC-BY-SA-4.0
 
-@var number videos-per-row "Videos per row" [6, 0, 11]
+@var number videos-per-row "Videos per row" 0
 @var checkbox compact-header-bar "Compact header bar" 0
 @var checkbox font-size "Video grid: Decrease font size" 0;
 @var checkbox no-shorts "Shorts blocker" 0
+@var checkbox search-dismissible "No irrelevant search results" 0
 @var checkbox no-yt-posts "Hide Latest YouTube Posts" 0
 @var checkbox no-recomendations-bar "No topic bar" 0
 @var checkbox full-titles "Show full video titles" 0
@@ -213,6 +214,12 @@
       -webkit-line-clamp: 20 i;
       max-height: 44rem i;
     }
+  }
+
+  [is-search] ytd-shelf-renderer.ytd-item-section-renderer:not(ytd-channel-renderer + ytd-shelf-renderer),
+  [is-search] ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
+  [is-search] ytd-exploratory-results-renderer.ytd-item-section-renderer {
+    display: none if search-dismissible;
   }
 
   if compact-header-bar {
