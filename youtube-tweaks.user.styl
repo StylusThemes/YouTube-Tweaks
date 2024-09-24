@@ -14,6 +14,7 @@
 @var checkbox compact-header-bar "Compact header bar" 0
 @var checkbox font-size "Video grid: Decrease font size" 0;
 @var checkbox no-shorts "Shorts blocker" 0
+@var checkbox no-promo-bar "No promo bar" 0
 @var checkbox search-dismissible "No irrelevant search results" 0
 @var checkbox no-yt-posts "Hide Latest YouTube Posts" 0
 @var checkbox no-recomendations-bar "No topic bar" 0
@@ -201,6 +202,28 @@
     ytd-reel-shelf-renderer:has([href*="/shorts/"]),
     [page-subtype="subscriptions"] ytd-item-section-renderer:has([href*="/shorts/"]),
     #dismissible.ytd-compact-video-renderer:has([href*="/shorts/"]) {
+      display: none i;
+    }
+  }
+
+  if no-promo-bar {
+    #player-ads,
+    #attached-survey,
+    ytd-search-pyv-renderer,
+    [page-subtype="home"] ytd-rich-section-renderer,
+    ytd-rich-item-renderer:has(ytd-feed-nudge-renderer),
+    [page-subtype="subscriptions"] ytd-rich-section-renderer,
+    #masthead-ad:has(ytd-banner-promo-renderer),
+    tp-yt-paper-dialog:has(yt-mealbar-promo-renderer),
+    ytd-rich-item-renderer:has(ytd-ad-slot-renderer),
+    ytd-rich-item-renderer:has(ytd-ad-slot-renderer),
+    ytd-rich-item-renderer.ytd-rich-grid-row:has(ytd-ad-slot-renderer),
+    ytd-rich-item-renderer.ytd-rich-grid-row:has(ytd-feed-nudge-renderer),
+    ytd-rich-item-renderer:has(ytd-toggle-button-renderer button[aria-label="Notify me"]),
+    ytd-ad-slot-renderer.ytd-item-section-renderer:has(ytd-promoted-sparkles-web-renderer),
+    ytd-compact-video-renderer:has(ytd-badge-supported-renderer [aria-label="Members first"]),
+    [page-subtype="home"] ytd-rich-item-renderer:has(.ytd-playlist-video-thumbnail-renderer),
+    ytd-watch-next-secondary-results-renderer :is(ytd-ad-slot-renderer, ytd-compact-movie-renderer) {
       display: none i;
     }
   }
