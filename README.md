@@ -1,4 +1,4 @@
-# YouTube Tweaks [![Version][version]][1] [![Size][size]][1] [![Install directly from GitHub][install]][2] [![GitHub stars][stars]][3] [![GitHub watchers][watchers]][4] [![GitHub open issues][open issues]][5] [![GitHub closed issues][closed issues]][5] [![GitHub license][license]][6] [![GitHub last commit][last commit]][7]
+# YouTube Tweaks [![Version][version]][1] [![Install directly from GitHub][install]][2] [![GitHub stars][stars]][3] [![GitHub watchers][watchers]][4] [![GitHub open issues][open issues]][5] [![GitHub closed issues][closed issues]][5] [![GitHub license][license]][6] [![GitHub last commit][last commit]][7]
 
 **_Tweaks for [Youtube]_**
 
@@ -9,9 +9,8 @@
 
 # Installation
 
-1. Download one of these add-ons for your browser:
-   - Stylus: [Chrome][stychrome], [Firefox][styfirefox] or [Opera][styopera].
-   - xStyle: [Chrome][xstychrome], [Firefox][xstyfirefox].
+1. Download Stylus for your browser:
+   - Stylus: [Chrome][stychrome] or [Firefox][styfirefox].
 2. To install directly from GitHub, click here:
 
    [![Install directly from GitHub][YouTube Tweaks]][2]
@@ -28,9 +27,8 @@ If you would like to contribute to this repository, please...
 <!-- BADGES -->
 [version]: https://flat.badgen.net/github/release/StylusThemes/YouTube-Tweaks
 [1]: #
-[size]: https://flat.badgen.net/badgesize/normal/StylusThemes/YouTube-Tweaks/master/style.user.css
 [install]: https://flat.badgen.net/badge/install%20directly%20from/GitHub/00ADAD "Click here!"
-[2]: https://rebrand.ly/InstallYouTube-Theater
+[2]: https://raw.githubusercontent.com/StylusThemes/YouTube-Tweaks/Stylus_convert/youtube-tweaks.user.styl
 [stars]: https://flat.badgen.net/github/stars/StylusThemes/YouTube-Tweaks
 [3]: https://github.com/StylusThemes/YouTube-Tweaks/stargazers
 [watchers]: https://flat.badgen.net/github/watchers/StylusThemes/YouTube-Tweaks
@@ -60,11 +58,6 @@ If you would like to contribute to this repository, please...
 <!-- STYLUS DOWNLOADS -->
 [STYChrome]: https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
 [STYFirefox]: https://addons.mozilla.org/firefox/addon/styl-us/
-[STYOpera]: https://addons.opera.com/extensions/details/stylus/
-
-<!-- XSTYLE DOWNLOADS -->
-[XSTYChrome]: https://chrome.google.com/webstore/detail/xstyle/hncgkmhphmncjohllpoleelnibpmccpj
-[XSTYFirefox]: https://addons.mozilla.org/firefox/addon/xstyle/
 
 <!-- INSTALL YouTube Tweaks BADGE -->
 [YouTube Tweaks]: https://flat.badgen.net/badge/YouTube%20Tweaks/install/00ADAD "Click here!"
