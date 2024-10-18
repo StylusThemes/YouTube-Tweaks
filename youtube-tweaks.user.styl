@@ -381,7 +381,7 @@
 
 @-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
   if theater {
-    ytd-watch-flexy[full-bleed-player]:not([fullscreen])[theater] {
+    ytd-watch-flexy[theater]:not([fullscreen]) {
       #full-bleed-container {
         &.ytd-watch-flexy {
           height: 100vh;
@@ -391,30 +391,32 @@
       }
     }
 
-    #masthead-container {
-      &.ytd-app {
-        [is-watch-page][theater]:not([fullscreen]) {
-          opacity: 0;
-          transition: opacity 0.1s ease-in;
-        }
-        &:hover {
-          [theater]:not([fullscreen]) {
-            opacity: 1;
-            transition: opacity 0.1s ease-out;
-          }
+    ytd-watch-flexy[fixed-panels] {
+      #chat {
+        &.ytd-watch-flexy {
+          top: 0;
         }
       }
     }
 
-    [theater]:not([fullscreen]) {
-      .ytp-cards-button-icon,
-      .ytp-share-icon,
-      .ytp-tooltip-text,
-      .ytp-cards-teaser,
-      .ytp-exp-ppp-update .ytp-paid-content-overlay-link,
-      .ytp-sfn,
-      .ytp-drawer {
-        margin-top: var(--ytd-toolbar-height);
+    #player {
+      &.skeleton {
+        &.theater {
+          height: 100vh;
+          margin-top: 0;
+          max-height: none;
+        }
+      }
+    }
+
+    #masthead[is-watch-page][theater]:not([fullscreen]) {
+      position: absolute;
+      transform: translateY(calc(0px - var(--ytd-toolbar-height)));
+      padding-bottom: 20px;
+      transition: transform .3s ease, padding .3s ease;
+      &:hover {
+        transform: initial;
+        padding-bottom: 0;
       }
     }
   }
