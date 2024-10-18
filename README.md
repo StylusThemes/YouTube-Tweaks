@@ -28,7 +28,7 @@ If you would like to contribute to this repository, please...
 [version]: https://flat.badgen.net/github/release/StylusThemes/YouTube-Tweaks
 [1]: #
 [install]: https://flat.badgen.net/badge/install%20directly%20from/GitHub/00ADAD "Click here!"
-[2]: https://raw.githubusercontent.com/StylusThemes/YouTube-Tweaks/Stylus_convert/youtube-tweaks.user.styl
+[2]: https://raw.githubusercontent.com/StylusThemes/YouTube-Tweaks/master/youtube-tweaks.user.styl
 [stars]: https://flat.badgen.net/github/stars/StylusThemes/YouTube-Tweaks
 [3]: https://github.com/StylusThemes/YouTube-Tweaks/stargazers
 [watchers]: https://flat.badgen.net/github/watchers/StylusThemes/YouTube-Tweaks

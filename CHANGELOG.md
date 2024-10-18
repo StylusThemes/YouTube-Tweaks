@@ -1,9 +1,9 @@
 # YouTube Tweaks Changelog
 
-## v2.0.0 ... (UNRELEASED)
+## v2.0.0 ... (18 OCTOBER 24)
 
 ### Changes:
-`+` Converted code to Stylus.
+`+` Converted code to Stylus (Pretty much rewrote a ton of stuff and fixed up a bunch of stuff over the past year).
 
 ## v1.2.14 ... (28 JUNE 23)
 
