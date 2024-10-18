@@ -1,7 +1,7 @@
 {
   "name": "youtube-tweaks",
   "title": "Youtube Tweaks",
-  "version": "1.2.14",
+  "version": "2.0.0",
   "description": "Tweaks for Youtube!",
   "license": "CC-BY-SA-4.0",
   "repository": {
@@ -9,30 +9,19 @@
     "url": "https://github.com/StylusThemes/YouTube-Tweaks"
   },
   "homepage": "https://github.com/StylusThemes/YouTube-Tweaks",
-  "main": "style.user.css",
-  "dependencies": {
-    "yarn": "^1.22.19"
-  },
+  "main": "youtube-tweaks.user.styl",
   "devDependencies": {
-    "eslint": "8.43.0",
-    "gulp": "4.0.2",
-    "gulp-autoprefixer": "8.0.0",
-    "gulp-beautify": "3.0.0",
-    "gulp-clean-css": "4.3.0",
-    "gulp-dart-sass": "1.1.0",
-    "gulp-file-insert": "2.0.0",
-    "gulp-rename": "2.0.0",
-    "sass-lint": "1.13.1",
-    "standard": "17.1.0",
-    "updates": "14.2.8"
+    "css": "^3.0.0",
+    "perfectionist": "^2.4.0",
+    "postcss": "^8.4.47",
+    "postcss-syntax": "^0.36.2",
+    "semver": "^7.6.3",
+    "updates": "16.4.0"
   },
-  "browserslist": [
-    "> 0.2%",
-    "last 2 versions"
-  ],
   "scripts": {
-    "update": "updates -cu && yarn install",
-    "nupdate": "updates -cu && pnpm install",
-    "start": "gulp default"
+    "build": "node build/build.js",
+    "perfectionist": "perfectionist",
+    "update": "updates -cu && npm install",
+    "nupdate": "updates -cu && bun install"
   }
 }

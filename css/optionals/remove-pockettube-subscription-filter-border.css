@@ -1,4 +1,0 @@
-/*::: Remove PocketTube Subscription Filter Border :::*/
-#primary > ytd-section-list-renderer > div.ysm-subscription-filter.ysm-select-filters.branded-page-module-title.shelf-title-cell.ysm-subscription-filter-new.last-change {
-  border: none !important;
-}
