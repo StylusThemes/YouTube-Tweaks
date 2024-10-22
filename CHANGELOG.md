@@ -1,5 +1,10 @@
 # YouTube Tweaks Changelog
 
+## v2.0.1 ... (21 OCTOBER 24)
+
+### Additions:
+`+` Added extra selectors to No Recomendations Bar.
+
 ## v2.0.0 ... (18 OCTOBER 24)
 
 ### Changes:

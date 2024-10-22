@@ -284,10 +284,16 @@
     }
   }
 
-  [page-subtype="home"] ytd-feed-filter-chip-bar-renderer,
-  #home-chips,
-  yt-related-chip-cloud-renderer {
-    display: none if no-recomendations-bar;
+  if no-recomendations-bar {
+    [page-subtype="home"] ytd-feed-filter-chip-bar-renderer,
+    #home-chips,
+    yt-related-chip-cloud-renderer {
+        display: none;
+    }
+
+    ytd-masthead[frosted-glass=with-chipbar] #background.ytd-masthead {
+        height: var(--ytd-toolbar-height);
+    }
   }
 
   ytd-rich-section-renderer {
