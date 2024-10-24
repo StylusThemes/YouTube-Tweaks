@@ -1,5 +1,20 @@
 # YouTube Tweaks Changelog
 
+## v2.0.2 ... (UNRELEASED)
+
+### Additions:
+`+` Added return youtube to red which when enabled will return the red color instead of the new pink gradient
+
+### Changes:
+
+`+` Removed chrome scrollbar stuff as they stopped working along time ago and I stopped using chrome and have switched over to firefox.
+
+`+` Removed Show full video titles as it no longer worked and every attempt I had at fixing it just didn't look great.
+
+`+` Make Square Youtube a lot more simple.
+
+### Fixes:
+
 ## v2.0.1 ... (21 OCTOBER 24)
 
 ### Additions:
