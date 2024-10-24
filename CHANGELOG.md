@@ -1,6 +1,6 @@
 # YouTube Tweaks Changelog
 
-## v2.0.2 ... (UNRELEASED)
+## v2.0.2 ... (23 OCTOBER 24)
 
 ### Additions:
 `+` Added return youtube to red which when enabled will return the red color instead of the new pink gradient
