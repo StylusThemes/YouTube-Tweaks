@@ -98,7 +98,7 @@
     display: none;
   }
 
-  if font-size {
+  if smaller-font {
     :root {
       --smaller-font-1-4rem: 1.4rem;
       --smaller-font-2rem: 2rem;
@@ -120,10 +120,11 @@
     }
   }
 
-  if full-titles {
+  if show-full-titles {
     ytd-rich-item-renderer .yt-lockup-metadata-view-model-wiz__title,
     ytd-grid-video-renderer #video-title.yt-simple-endpoint.ytd-grid-video-renderer,
     ytd-rich-grid-media[mini-mode] #video-title.ytd-rich-grid-media,
+    ytd-rich-grid-media #video-title:not(.ta-title-container),
     ytd-rich-grid-slim-media[mini-mode] #video-title.ytd-rich-grid-slim-media,
     ytd-video-renderer[is-backstage-video] #video-title.ytd-video-renderer,
     #video-title[class*="ytd"] {
@@ -132,13 +133,13 @@
     }
   }
 
-  if no-rounded-corners {
+  if square-corners {
     * {
       border-radius: 0 i;
     }
   }
 
-  if no-shorts {
+  if hide-shorts {
     #items.ytd-grid-renderer > ytd-grid-video-renderer.ytd-grid-renderer:has([href*="/shorts/"]),
     #items.yt-horizontal-list-renderer > *.yt-horizontal-list-renderer:has([href*="/shorts/"]),
     ytd-rich-section-renderer:has([is-shorts]),
@@ -152,7 +153,13 @@
     }
   }
 
-  if no-promo-bar {
+  [is-search] ytd-shelf-renderer.ytd-item-section-renderer:not(ytd-channel-renderer + ytd-shelf-renderer),
+  [is-search] ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
+  [is-search] ytd-exploratory-results-renderer.ytd-item-section-renderer {
+    display: none if filter-search-results;
+  }
+
+  if hide-promo-bar {
     #player-ads,
     #attached-survey,
     ytd-search-pyv-renderer,
@@ -174,13 +181,7 @@
     }
   }
 
-  [is-search] ytd-shelf-renderer.ytd-item-section-renderer:not(ytd-channel-renderer + ytd-shelf-renderer),
-  [is-search] ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child),
-  [is-search] ytd-exploratory-results-renderer.ytd-item-section-renderer {
-    display: none if search-dismissible;
-  }
-
-  if compact-header-bar {
+  if compact-header {
     html {
       --ytd-toolbar-height: 36px;
     }
@@ -232,78 +233,23 @@
     }
   }
 
-  if no-recomendations-bar {
+  if hide-recommendations-bar {
     [page-subtype="home"] ytd-feed-filter-chip-bar-renderer,
     #home-chips,
     yt-related-chip-cloud-renderer {
       display: none;
     }
 
-    #frosted-glass.with-chipbar.ytd-app {
-      height: var(--ytd-toolbar-height);
+    #frosted-glass {
+      height: var(--ytd-toolbar-height) i;
     }
   }
 
   ytd-rich-section-renderer:has([is-post]) {
-    display: none if no-yt-posts;
+    display: none if hide-yt-posts;
   }
 
-  if return-red-youTube {
-    html[dark], [dark] {
-      --yt-spec-red-indicator: #f00;
-    }
-
-    html[refresh], [refresh] {
-      --yt-spec-static-brand-red: #f00;
-      --yt-spec-static-overlay-background-brand: #f00;
-    }
-
-    ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer,
-    .YtProgressBarLineProgressBarPlayedRefresh,
-    .ytp-cairo-refresh-signature-moments .ytp-play-progress,
-    .badge-style-type-live-now-alternate.ytd-badge-supported-renderer,
-    .yt-spec-avatar-shape--cairo-refresh.yt-spec-avatar-shape--live-ring::after,
-    .badge-shape-wiz--thumbnail-live,
-    #progress.yt-page-navigation-progress {
-      background: #f00 i;
-    }
-
-    .YtProgressBarLineProgressBarPlayed,
-    .YtProgressBarPlayheadProgressBarPlayheadDot,
-    .ytp-cairo-refresh .ytp-swatch-background-color,
-    .ytp-cairo-refresh .ytp-settings-button.ytp-hd-quality-badge::after,
-    .ytp-cairo-refresh .ytp-settings-button.ytp-hdr-quality-badge::after,
-    .ytp-cairo-refresh .ytp-settings-button.ytp-4k-quality-badge::after,
-    .ytp-cairo-refresh .ytp-settings-button.ytp-5k-quality-badge::after,
-    .ytp-cairo-refresh .ytp-settings-button.ytp-8k-quality-badge::after,
-    .ytp-cairo-refresh .ytp-settings-button.ytp-3d-badge-grey::after,
-    .ytp-cairo-refresh .ytp-settings-button.ytp-3d-badge::after,
-    .yt-spec-avatar-shape--cairo-refresh .yt-spec-avatar-shape__live-badge {
-      background-color: #f00 i;
-    }
-
-    .guide-entry-badge.ytd-guide-entry-renderer {
-      color: #f00;
-    }
-
-    svg path[d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"] {
-      fill: #f00;
-    }
-
-    .yt-spec-icon-badge-shape--style-overlay.yt-spec-icon-badge-shape--type-cart-refresh .yt-spec-icon-badge-shape__badge {
-      color: #fff i;
-    }
-
-    .yt-spec-icon-badge-shape--style-overlay .yt-spec-icon-badge-shape__badge {
-      border: 2px solid #212121 i;
-    }
-
-    .yt-spec-icon-badge-shape--type-notification-refresh .yt-spec-icon-badge-shape__badge {
-      background-color: #c00 i;
-    }
-  }
-
-  if youtube-watched-badge {
+  if restore-watched-badge {
     @font-face {
       font-family: "FontAwesome";
       src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
@@ -354,7 +300,7 @@
 }
 
 @-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
-  if theater {
+  if enable-theater-mode {
     ytd-watch-flexy[theater]:not([fullscreen]) #full-bleed-container.ytd-watch-flexy {
       height: 100vh;
       max-height: none;
@@ -384,7 +330,7 @@
     }
   }
 
-  if fill-player {
+  if stretch-video {
     video {
       position: static i;
       width: 100% i;
@@ -394,7 +340,7 @@
     }
   }
 
-  if hide-dl-clip-thanks-button {
+  if hide-buttons {
     ytd-download-button-renderer {
       display: none i;
     }
@@ -407,7 +353,24 @@
     }
   }
 
-  if netflix-subtitles {
+  if hide-suggestion-cards {
+    .ytp-endscreen-content {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .ytp-endscreen-content:hover {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .ytp-ce-element-show {
+    display: none if hide-end-cards;
+  }
+
+  if enable-netflix-subtitles {
     @font-face {
       font-family: "Netflix Sans";
       font-weight: 100;
