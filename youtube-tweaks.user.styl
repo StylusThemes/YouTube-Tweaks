@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.0.2
+@version        2.0.3
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -13,6 +13,7 @@
 @var number videos-per-row "Videos per row" 0
 @var checkbox compact-header-bar "Compact header bar" 0
 @var checkbox font-size "Video grid: Decrease font size" 0;
+@var checkbox full-titles "Show full video titles" 0
 @var checkbox no-rounded-corners "Square YouTube" 0
 @var checkbox no-shorts "Shorts blocker" 0
 @var checkbox no-promo-bar "No promo bar" 0
@@ -32,11 +33,12 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.0.2";
+    content: "\aYoutube Tweaks - Version 2.0.3";
   }
 
   if videos-per-row {
     ytd-rich-grid-renderer,
+    ytd-rich-item-renderer[is-responsive-grid="STANDARD"]:not([is-post]),
     :root {
       --ytd-rich-grid-items-per-row: videos-per-row i;
     }
@@ -133,15 +135,29 @@
       --smaller-font-1-8rem: 1.8rem;
     }
 
+    ytd-rich-item-renderer .yt-lockup-metadata-view-model-wiz__title,
     #video-title[class*="style-scope ytd-rich-grid"],
     ytd-game-details-renderer[is-rich-grid]:not([mini-mode]) #title.ytd-game-details-renderer {
-      font-size: 1.4rem;
-      line-height: 2rem;
+      font-size: 1.4rem i;
+      line-height: 2rem i;
     }
 
+    ytd-rich-item-renderer .yt-content-metadata-view-model-wiz__metadata-text,
     .ytd-rich-grid-media ytd-video-meta-block[rich-meta] .ytd-video-meta-block:is(#byline-container, #metadata-line) {
-      font-size: 1.2rem;
-      line-height: 1.8rem;
+      font-size: 1.2rem i;
+      line-height: 1.8rem i;
+    }
+  }
+
+  if full-titles {
+    ytd-rich-item-renderer .yt-lockup-metadata-view-model-wiz__title,
+    ytd-grid-video-renderer #video-title.yt-simple-endpoint.ytd-grid-video-renderer,
+    ytd-rich-grid-media[mini-mode] #video-title.ytd-rich-grid-media,
+    ytd-rich-grid-slim-media[mini-mode] #video-title.ytd-rich-grid-slim-media,
+    ytd-video-renderer[is-backstage-video] #video-title.ytd-video-renderer,
+    #video-title[class*="ytd"] {
+      -webkit-line-clamp: 20 i;
+      max-height: 44rem i;
     }
   }
 
@@ -216,16 +232,22 @@
       margin-top: var(--ytd-toolbar-height);
     }
 
+    yt-searchbox,
     .ytd-searchbox:is(#search-form, #search-icon-legacy) {
-      height: 30px;
+      height: 30px i;
     }
 
     yt-icon-button:is(.ytd-topbar-menu-button-renderer, .ytd-masthead, .ytd-notification-topbar-button-renderer),
     #masthead .yt-spec-button-shape-next--icon-only-default,
-    #guide-button.ytd-app {
-      width: 30px;
-      height: 30px;
+    #guide-button.ytd-app,
+    .ytSearchboxComponentClearButton {
+      width: 30px i;
+      height: 30px i;
       padding: 3px;
+    }
+
+    .ytSearchboxComponentSuggestionsContainer {
+      top: 30px;
     }
 
     yt-icon.ytd-logo {
@@ -243,11 +265,11 @@
     [page-subtype="home"] ytd-feed-filter-chip-bar-renderer,
     #home-chips,
     yt-related-chip-cloud-renderer {
-        display: none;
+      display: none;
     }
 
-    ytd-masthead[frosted-glass=with-chipbar] #background.ytd-masthead {
-        height: var(--ytd-toolbar-height);
+    #frosted-glass.with-chipbar.ytd-app {
+      height: var(--ytd-toolbar-height);
     }
   }
 

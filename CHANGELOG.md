@@ -1,5 +1,15 @@
 # YouTube Tweaks Changelog
 
+## v2.0.3 ... (17 JANUARY 25)
+
+### Additions:
+`+` Re-add Show full video titles
+
+### Changes:
+
+### Fixes:
+`+` Fix a couple issues with new layout.
+
 ## v2.0.2 ... (23 OCTOBER 24)
 
 ### Additions:
