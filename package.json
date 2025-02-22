@@ -1,7 +1,7 @@
 {
   "name": "youtube-tweaks",
   "title": "Youtube Tweaks",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Tweaks for Youtube!",
   "license": "CC-BY-SA-4.0",
   "repository": {
@@ -12,15 +12,13 @@
   "main": "youtube-tweaks.user.styl",
   "devDependencies": {
     "css": "^3.0.0",
-    "perfectionist": "^2.4.0",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.3",
     "postcss-syntax": "^0.36.2",
-    "semver": "^7.6.3",
-    "updates": "16.4.1"
+    "semver": "^7.7.1",
+    "updates": "16.4.2"
   },
   "scripts": {
     "build": "node build/build.js",
-    "perfectionist": "perfectionist",
     "update": "updates -cu && npm install",
     "nupdate": "updates -cu && bun install"
   }

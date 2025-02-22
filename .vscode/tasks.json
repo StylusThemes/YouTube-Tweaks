@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "bun: build",
+      "detail": "This task runs the build script using bun."
+    },
+    {
+      "type": "npm",
+      "script": "nupdate",
+      "group": "none",
+      "problemMatcher": [],
+      "label": "bun: update",
+      "detail": "This task runs the update script using bun."
+    }
+  ]
+}

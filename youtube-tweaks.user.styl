@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.0
+@version        2.1.1
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -35,7 +35,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.0";
+    content: "\aYoutube Tweaks - Version 2.1.1";
   }
 
   if videos-per-row {
@@ -323,7 +323,8 @@
       opacity: 0 i;
     }
 
-    ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+    ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+    #progress.ytd-thumbnail-overlay-resume-playback-renderer {
       height: 100%;
       background: #111 i;
     }
