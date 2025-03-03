@@ -1,7 +1,7 @@
 {
   "name": "youtube-tweaks",
   "title": "Youtube Tweaks",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Tweaks for Youtube!",
   "license": "CC-BY-SA-4.0",
   "repository": {
@@ -18,7 +18,7 @@
     "updates": "16.4.2"
   },
   "scripts": {
-    "build": "node build/build.js",
+    "build": "bun build/build.js",
     "update": "updates -cu && npm install",
     "nupdate": "updates -cu && bun install"
   }

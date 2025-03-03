@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.1
+@version        2.1.2
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -35,7 +35,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.1";
+    content: "\aYoutube Tweaks - Version 2.1.2";
   }
 
   if videos-per-row {
@@ -395,6 +395,10 @@
     .ytp-endscreen-content:hover {
       opacity: 1;
       transform: scale(1);
+    }
+
+    div[class="ytp-videowall-still-image"]:not(.cb-visible) {
+      visibility: visible !important;
     }
   }
 
