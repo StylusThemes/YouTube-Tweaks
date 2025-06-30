@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.2
+@version        2.1.3
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -35,7 +35,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.2";
+    content: "\aYoutube Tweaks - Version 2.1.3";
   }
 
   if videos-per-row {
@@ -171,15 +171,23 @@
   }
 
   if hide-shorts {
+    #dismissible.ytd-compact-video-renderer:has([href*="/shorts/"]),
     #items.ytd-grid-renderer > ytd-grid-video-renderer.ytd-grid-renderer:has([href*="/shorts/"]),
     #items.yt-horizontal-list-renderer > *.yt-horizontal-list-renderer:has([href*="/shorts/"]),
-    ytd-rich-section-renderer:has([is-shorts]),
-    ytd-rich-item-renderer:has([href*="/shorts/"]):not([is-slim-media]),
-    ytd-video-renderer:has([href*="/shorts/"]),
+    #sections .ytd-guide-renderer:first-child ytd-guide-entry-renderer:nth-child(2),
+    .style-scope .ytd-mini-guide-renderer:nth-child(2),
+    a[title="Shorts"],
+    grid-shelf-view-model,
     ytd-notification-renderer:has([href*="/shorts/"]),
+    ytd-reel-shelf-renderer,
     ytd-reel-shelf-renderer:has([href*="/shorts/"]),
+    ytd-video-renderer:has([href*="/shorts/"]),
+    ytd-rich-item-renderer:has([href*="/shorts/"]):not([is-slim-media]),
+    ytd-rich-section-renderer:has([is-shorts]),
     [page-subtype="subscriptions"] ytd-item-section-renderer:has([href*="/shorts/"]),
-    #dismissible.ytd-compact-video-renderer:has([href*="/shorts/"]) {
+    [page-subtype="subscriptions"] ytd-rich-shelf-renderer[is-shorts],
+    [page-subtype="channels"] .yt-tab-shape-wiz--host-clickable[tab-title="Shorts"],
+    [page-subtype="hashtag-landing-page"] .yt-tab-shape-wiz--host-clickable[tab-title="Shorts"] {
       display: none i;
     }
   }
@@ -331,7 +339,7 @@
   }
 }
 
-@-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*") {
+@-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*"), regexp("https?://www.youtube.com/embed.*"), regexp("https?://www.youtube.com/live.*") {
   if enable-theater-mode {
     ytd-watch-flexy[theater]:not([fullscreen]) #full-bleed-container.ytd-watch-flexy {
       height: 100vh;
