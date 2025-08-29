@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.4
+@version        2.1.5
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -34,7 +34,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.4";
+    content: "\aYoutube Tweaks - Version 2.1.5";
   }
 
   if videos-per-row {
@@ -138,13 +138,15 @@
 
     ytd-rich-item-renderer .yt-lockup-metadata-view-model-wiz__title,
     #video-title[class*="style-scope ytd-rich-grid"],
-    ytd-game-details-renderer[is-rich-grid]:not([mini-mode]) #title.ytd-game-details-renderer {
+    ytd-game-details-renderer[is-rich-grid]:not([mini-mode]) #title.ytd-game-details-renderer,
+    yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title {
       font-size: 1.4rem i;
       line-height: 2rem i;
     }
 
     ytd-rich-item-renderer .yt-content-metadata-view-model-wiz__metadata-text,
-    .ytd-rich-grid-media ytd-video-meta-block[rich-meta] .ytd-video-meta-block:is(#byline-container, #metadata-line) {
+    .ytd-rich-grid-media ytd-video-meta-block[rich-meta] .ytd-video-meta-block:is(#byline-container, #metadata-line),
+    yt-lockup-metadata-view-model .yt-content-metadata-view-model__metadata-text {
       font-size: 1.2rem i;
       line-height: 1.8rem i;
     }
@@ -157,7 +159,8 @@
     ytd-rich-grid-media #video-title:not(.ta-title-container),
     ytd-rich-grid-slim-media[mini-mode] #video-title.ytd-rich-grid-slim-media,
     ytd-video-renderer[is-backstage-video] #video-title.ytd-video-renderer,
-    #video-title[class*="ytd"] {
+    #video-title[class*="ytd"],
+    yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title {
       -webkit-line-clamp: 20 i;
       max-height: 44rem i;
     }
