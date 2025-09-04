@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.5
+@version        2.1.6
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -18,6 +18,7 @@
 @var checkbox filter-search-results "🔎 Filter irrelevant search results" 0;
 @var checkbox hide-promo-bar "🚫 Hide promotional bar" 0;
 @var checkbox compact-header "✂️ Use compact header bar" 0;
+@var checkbox smaller-search "🔍 Smaller search result thumbnails" 0;
 @var checkbox hide-recommendations-bar "🚫 Hide recommendations topic bar" 0;
 @var checkbox hide-yt-posts "🚫 Hide latest YouTube posts" 0;
 
@@ -34,7 +35,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.5";
+    content: "\aYoutube Tweaks - Version 2.1.6";
   }
 
   if videos-per-row {
@@ -271,6 +272,26 @@
     #container.ytd-masthead,
     #header.ytd-app {
       padding: 0 21px;
+    }
+  }
+
+  if smaller-search {
+    ytd-two-column-search-results-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #primary.ytd-two-column-search-results-renderer, ytd-search[has-search-header][has-bigger-thumbs] #header.ytd-search {
+      max-width: 1096px i;
+    }
+
+    ytd-channel-renderer[use-bigger-thumbs][bigger-thumb-style=BIG] #avatar-section.ytd-channel-renderer, ytd-channel-renderer[use-bigger-thumbs] #avatar-section.ytd-channel-renderer,
+    ytd-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-video-renderer, ytd-video-renderer[use-search-ui] ytd-thumbnail.ytd-video-renderer,
+    ytd-playlist-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-playlist-renderer, ytd-playlist-renderer[use-bigger-thumbs] ytd-playlist-thumbnail.ytd-playlist-renderer,
+    ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs] ytd-thumbnail.ytd-radio-renderer,
+    ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-radio-renderer, ytd-radio-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-playlist-thumbnail.ytd-radio-renderer,
+    ytd-movie-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] .thumbnail-container.ytd-movie-renderer, ytd-movie-renderer[use-bigger-thumbs] .thumbnail-container.ytd-movie-renderer,
+    ytd-promoted-video-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] ytd-thumbnail.ytd-promoted-video-renderer,
+    ytd-promoted-sparkles-web-renderer[web-search-layout][use-bigger-thumbs][bigger-thumbs-style=BIG] #thumbnail-container.ytd-promoted-sparkles-web-renderer,
+    ytd-text-image-no-button-layout-renderer[use-bigger-thumbs][bigger-thumbs-style=BIG] #text-image-container.ytd-text-image-no-button-layout-renderer,
+    .yt-lockup-view-model-wiz--horizontal .yt-lockup-view-model-wiz__content-image,
+    .yt-lockup-view-model--horizontal .yt-lockup-view-model__content-image {
+      max-width: 360px i;
     }
   }
 
