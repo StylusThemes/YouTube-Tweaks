@@ -24,7 +24,7 @@ async function createUserStyl(version, title, description) {
 }
 
 function processTemplate(files, version, title, description) {
-  const template = files.join("");
+  const template = files.join("\n");
   const processedTemplate = template
   .replace(/\[\[VERSION\]\]/g, version)
     .replace("[[NAME]]", title)
