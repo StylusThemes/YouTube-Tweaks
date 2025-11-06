@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.7
+@version        2.1.8
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -27,7 +27,6 @@
 @var checkbox hide-buttons "🚫 Hide Download, Clip, Thanks, and Promote buttons" 0;
 @var checkbox hide-suggestion-cards "🚫 Hide suggestion cards (unless hovering)" 0;
 @var checkbox hide-end-cards "🚫 Hide end cards" 0;
-@var checkbox new-player-tweaks "✂️ tweaks for the modern player design" 0;
 @var checkbox enable-netflix-subtitles "🍿 Enable Netflix-style subtitles" 0;
 ==/UserStyle== */
 
@@ -35,7 +34,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.7";
+    content: "\aYoutube Tweaks - Version 2.1.8";
   }
 
   if videos-per-row {
@@ -315,31 +314,32 @@
 @-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*"), regexp("https?://www.youtube.com/embed.*"), regexp("https?://www.youtube.com/live.*") {
   if enable-theater-mode {
     ytd-watch-flexy[theater]:not([fullscreen]) #full-bleed-container.ytd-watch-flexy {
-      height: 100vh;
-      max-height: none;
-      margin-top: calc(0px - var(--ytd-toolbar-height));
+      height: 100vh !important;
+      max-height: none !important;
+      margin-top: calc(0px - var(--ytd-toolbar-height)) !important;
     }
 
-    ytd-watch-flexy[fixed-panels] #chat.ytd-watch-flexy {
-      top: 0;
+    ytd-watch-flexy[fixed-panels] #chat.ytd-watch-flexy,
+    ytd-app[fullscreen] #page-manager > ytd-watch-flexy[theater]{
+      top: 0 !important;
     }
 
     #player.skeleton.theater {
-      height: 100vh;
-      margin-top: 0;
-      max-height: none;
+      height: 100vh !important;
+      margin-top: 0 !important;
+      max-height: none !important;
     }
 
     #masthead[is-watch-page][theater]:not([fullscreen]) {
-      position: absolute;
-      transform: translateY(calc(0px - var(--ytd-toolbar-height)));
-      padding-bottom: 20px;
-      transition: transform .3s ease, padding .3s ease;
+      position: absolute !important;
+      transform: translateY(calc(0px - var(--ytd-toolbar-height))) !important;
+      padding-bottom: 20px !important;
+      transition: transform .3s ease, padding .3s ease !important;
     }
 
     #masthead[is-watch-page][theater]:not([fullscreen]):hover {
-      transform: initial;
-      padding-bottom: 0;
+      transform: initial !important;
+      padding-bottom: 0 !important;
     }
   }
 
@@ -385,110 +385,6 @@
 
   .ytp-ce-element-show {
     display: none if hide-end-cards;
-  }
-
-  if new-player-tweaks {
-    #content .ytp-chrome-bottom {
-      bottom: 0;
-      height: 48px;
-      width: 100%;
-      z-index: 59;
-      padding-top: 3px;
-      text-align: left;
-      direction: ltr;
-    }
-
-    #content .ytp-progress-bar-container {
-      display: block;
-      position: absolute;
-      width: 100%;
-      bottom: 47px;
-      height: 5px;
-    }
-
-    #content .ytp-chrome-controls {
-      height: inherit;
-      font-size: 109%;
-      text-align: left;
-      direction: ltr;
-    }
-
-    #content .ytp-right-controls {
-      height: inherit;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      -webkit-backdrop-filter: blur(0px);
-      backdrop-filter: blur(0px);
-    }
-
-    #content .ytp-right-controls-left {
-      height: inherit;
-    }
-
-    #content .ytp-chrome-controls .ytp-play-button,
-    #content .ytp-chrome-controls .ytp-prev-button,
-    #content .ytp-chrome-controls .ytp-next-button {
-      border-radius: 0;
-      margin-top: 0;
-      -webkit-backdrop-filter: blur(0px);
-      backdrop-filter: blur(0px);
-      background: transparent;
-      text-shadow: 0 0 2px #000;
-      padding: 0;
-      text-align: center;
-      height: 100%;
-    }
-
-    #content .ytp-chrome-controls .ytp-volume-area {
-      border-radius: 0;
-      margin-top: 0;
-      -webkit-backdrop-filter: blur(0px);
-      backdrop-filter: blur(0px);
-      background: transparent;
-      text-shadow: 0 0 2px #000;
-      padding: 0;
-      text-align: center;
-      height: 100%;
-      margin-left: 0;
-    }
-
-
-    #content .ytp-chrome-controls .ytp-play-button svg {
-      padding: 0;
-      width: 24px;
-      height: 100%;
-    }
-
-    #content .ytp-time-display {
-      padding: 0;
-    }
-
-    #content .ytp-time-wrapper,
-    #content .ytp-chrome-controls .ytp-chapter-container .ytp-chapter-title,
-    #content .ytp-chrome-controls .ytp-chapter-container .ytp-chapter-title:hover::after,
-    #content .ytp-chrome-controls .ytp-prev-button:hover::after,
-    #content .ytp-chrome-controls .ytp-next-button:hover::after {
-      -webkit-backdrop-filter: blur(0px) !important;
-      backdrop-filter: blur(0px) !important;
-      background: transparent !important;
-    }
-
-    #content .ytp-chrome-controls .ytp-chapter-container {
-      padding-top: 0;
-    }
-
-    #content .ytp-chrome-controls .ytp-right-controls .ytp-button:hover::before,
-    #content .ytp-play-button:hover::after,
-    #content .ytp-volume-area:hover::after,
-    #content .ytp-time-wrapper:not(.ytp-miniplayer-ui *):hover::after {
-      background-color: transparent;
-    }
-
-    #content .ytp-gradient-bottom {
-      display: inherit;
-    }
   }
 
   if enable-netflix-subtitles {
