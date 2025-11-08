@@ -299,43 +299,85 @@
       right: 0;
     }
 
-    ytd-browse yt-formatted-string.ytd-thumbnail-overlay-playback-status-renderer {
-      display: none;
-    }
-
+    .resume-playback-background,
     ytd-thumbnail-overlay-resume-playback-renderer,
     .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
-      width: 100%;
+      background: rgba(3, 3, 3, 0.85) !important;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block !important;
       height: 100%;
-      opacity: .95;
-      transition: opacity 200ms ease-out;
-      background-color: #030303;
+      width: 100%;
+      pointer-events: none;
+      opacity: 1;
+      z-index: 11;
+      font-size: 12px;
+      text-align: center;
+      transition: background 0.2s;
     }
 
-    ytd-thumbnail-overlay-resume-playback-renderer div#progress::after,
-    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
+    .resume-playback-background::before,
+    ytd-thumbnail-overlay-resume-playback-renderer::before,
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
       content: "\f00c";
       visibility: visible;
       font-family: "FontAwesome";
-      left: 50%;
-      font-size: 32px;
-      opacity: .7;
-      position: absolute;
-      top: 50%;
-      margin-top: -14px;
-      margin-left: -14px;
-      color: #fff;
-    }
-
-    ytd-thumbnail-overlay-resume-playback-renderer:hover {
-      opacity: 0 !important;
-    }
-
-    ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer,
-    #progress.ytd-thumbnail-overlay-resume-playback-renderer,
-    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+      color: white;
+      box-sizing: border-box;
+      width: auto;
       height: 100%;
-      background: #111 !important;
+      line-height: normal;
+      padding: 1px 5px;
+
+      display: flex;
+      position: relative;
+      z-index: 14;
+      opacity: 0.9;
+      pointer-events: none;
+      font-size: 32px;
+      transition: opacity 0.2s;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .yt-lockup-thumbnail:hover .resume-playback-background::before,
+    .thumb-wrapper:hover .resume-playback-background::before,
+    #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer::before,
+    yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .yt-lockup-thumbnail:hover .resume-playback-background,
+    .thumb-wrapper:hover .resume-playback-background,
+    #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer,
+    yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar,
+    #thumbnail:hover #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+    yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
+      background: rgba(0, 0, 0, 0) !important;
+      transition: background 0.2s;
+    }
+
+    #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBar .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+      background: none !important;
+      height: 100% !important;
+      bottom: 0px !important;
+      position: absolute !important;
+    }
+
+    #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
+      content: "";
+      background-color: rgba(0, 0, 0, .85);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
     }
   }
 }
