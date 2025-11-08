@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.8
+@version        2.1.9
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -21,6 +21,7 @@
 @var checkbox smaller-search "🔍 Smaller search result thumbnails" 0;
 @var checkbox hide-recommendations-bar "🚫 Hide recommendations topic bar" 0;
 @var checkbox hide-yt-posts "🚫 Hide latest YouTube posts" 0;
+@var checkbox restore-watched-badge "👀 Restore YouTube watched badge" 0;
 
 @var checkbox enable-theater-mode "🎭 Enable fullscreen theater mode" 0;
 @var checkbox stretch-video "📺 Stretch video to fill player" 0;
@@ -34,7 +35,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.8";
+    content: "\aYoutube Tweaks - Version 2.1.9";
   }
 
   if videos-per-row {
@@ -308,6 +309,67 @@
 
   ytd-rich-section-renderer:has([is-post]) {
     display: none if hide-yt-posts;
+  }
+
+  if restore-watched-badge {
+    @font-face {
+      font-family: "FontAwesome";
+      src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0");
+      src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+        url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+        url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+        url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+        url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .ytThumbnailBottomOverlayViewModelHost {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    ytd-browse yt-formatted-string.ytd-thumbnail-overlay-playback-status-renderer {
+      display: none;
+    }
+
+    ytd-thumbnail-overlay-resume-playback-renderer,
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+      width: 100%;
+      height: 100%;
+      opacity: .95;
+      transition: opacity 200ms ease-out;
+      background-color: #030303;
+    }
+
+    ytd-thumbnail-overlay-resume-playback-renderer div#progress::after,
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
+      content: "\f00c";
+      visibility: visible;
+      font-family: "FontAwesome";
+      left: 50%;
+      font-size: 32px;
+      opacity: .7;
+      position: absolute;
+      top: 50%;
+      margin-top: -14px;
+      margin-left: -14px;
+      color: #fff;
+    }
+
+    ytd-thumbnail-overlay-resume-playback-renderer:hover {
+      opacity: 0 !important;
+    }
+
+    ytd-thumbnail-overlay-resume-playback-renderer[enable-refresh-signature-moments-web] #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+    #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+      height: 100%;
+      background: #111 !important;
+    }
   }
 }
 
