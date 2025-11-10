@@ -438,13 +438,15 @@
   }
 
   if hide-suggestion-cards {
-    .ytp-endscreen-content {
+    .ytp-endscreen-content,
+    .ytp-fullscreen-grid-stills-container {
       opacity: 0;
       transform: scale(0.95);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
 
-    .ytp-endscreen-content:hover {
+    .ytp-endscreen-content:hover,
+    .ytp-fullscreen-grid-stills-container:hover {
       opacity: 1;
       transform: scale(1);
     }
