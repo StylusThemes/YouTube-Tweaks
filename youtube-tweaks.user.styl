@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.12
+@version        2.1.13
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -35,7 +35,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.12";
+    content: "\aYoutube Tweaks - Version 2.1.13";
   }
 
   if videos-per-row {
@@ -451,6 +451,10 @@
       transform: scaleX(1) !important;
       object-fit: fill !important;
     }
+
+    #player-full-bleed-container.ytd-watch-flexy {
+      position: unset;
+    }
   }
 
   if hide-buttons {
@@ -483,6 +487,14 @@
     div[class="ytp-videowall-still-image"]:not(.cb-visible) {
       visibility: visible !important;
     }
+  }
+
+  .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid {
+    display: none;
+  }
+
+  .ytp-fullscreen-grid-active.html5-video-player.ended-mode .html5-endscreen {
+    display: initial;
   }
 
   .ytp-ce-element-show {
