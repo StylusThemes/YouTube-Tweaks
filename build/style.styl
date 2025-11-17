@@ -292,17 +292,13 @@
     }
 
     .ytThumbnailBottomOverlayViewModelHost {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      display: none !important;
     }
 
     .resume-playback-background,
     ytd-thumbnail-overlay-resume-playback-renderer,
     .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
-      background: rgba(3, 3, 3, 0.85) !important;
+      background: rgba(3, 3, 3, .8) !important;
       position: absolute;
       left: 0;
       top: 0;
@@ -314,7 +310,7 @@
       z-index: 11;
       font-size: 12px;
       text-align: center;
-      transition: background 0.2s;
+      transition: background .2s;
     }
 
     .resume-playback-background::before,
@@ -333,10 +329,10 @@
       display: flex;
       position: relative;
       z-index: 14;
-      opacity: 0.9;
+      opacity: .9;
       pointer-events: none;
       font-size: 32px;
-      transition: opacity 0.2s;
+      transition: opacity .2s;
       flex-direction: row;
       align-items: center;
       justify-content: center;
@@ -347,7 +343,7 @@
     #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer::before,
     yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
       opacity: 0;
-      transition: opacity 0.2s;
+      transition: opacity .2s;
     }
 
     .yt-lockup-thumbnail:hover .resume-playback-background,
@@ -357,7 +353,7 @@
     #thumbnail:hover #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
     yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
       background: rgba(0, 0, 0, 0) !important;
-      transition: background 0.2s;
+      transition: background .2s;
     }
 
     #progress.ytd-thumbnail-overlay-resume-playback-renderer,
@@ -371,7 +367,7 @@
     #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
     .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
       content: "";
-      background-color: rgba(0, 0, 0, .85);
+      background-color: rgba(0, 0, 0, .65);
       position: absolute;
       left: 0;
       right: 0;
@@ -441,8 +437,8 @@
     .ytp-endscreen-content,
     .ytp-fullscreen-grid-stills-container {
       opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      transform: scale(.95);
+      transition: opacity .5s ease-out, transform .5s ease-out;
     }
 
     .ytp-endscreen-content:hover,
@@ -507,7 +503,7 @@
       font-family: "Netflix Sans", sans-serif !important;
       font-weight: 700 !important;
       background: none !important;
-      text-shadow: #000 0 0 0.2em !important;
+      text-shadow: #000 0 0 .2em !important;
     }
   }
 }
