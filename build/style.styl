@@ -376,6 +376,38 @@
       z-index: -1;
     }
   }
+
+  /* Enable flex so reordering works */
+  #sections {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Reset default order */
+  #sections > ytd-guide-section-renderer {
+    order: 0 !important;
+  }
+
+  /* Swap DOM #2 and #3 */
+  #sections > ytd-guide-section-renderer:nth-of-type(2) {
+    order: 3 !important;
+  }
+
+  #sections > ytd-guide-section-renderer:nth-of-type(3) {
+    order: 2 !important;
+  }
+
+  #sections > ytd-guide-section-renderer:nth-of-type(4) {
+    order: 4 !important;
+  }
+
+  #sections > ytd-guide-section-renderer:nth-of-type(5) {
+    order: 5 !important;
+  }
+
+  #sections > ytd-guide-section-renderer:nth-of-type(6) {
+    order: 6 !important;
+  }
 }
 
 @-moz-document regexp("https?://www.youtube.com/watch.*"), regexp("https?://www.youtube.com/clip.*"), regexp("https?://www.youtube.com/embed.*"), regexp("https?://www.youtube.com/live.*") {
