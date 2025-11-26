@@ -15,6 +15,7 @@
 @var checkbox show-full-titles "🎥 Display full video titles" 0;
 @var checkbox square-corners "🔲 Use square corners on YouTube" 0;
 @var checkbox hide-shorts "🩳 Hide YouTube Shorts" 0;
+@var checkbox hide-channel-banners "🚫 Hide channel banners" 0;
 @var checkbox filter-search-results "🔎 Filter irrelevant search results" 0;
 @var checkbox hide-promo-bar "🚫 Hide promotional bar" 0;
 @var checkbox compact-header "✂️ Use compact header bar" 0;
@@ -190,7 +191,14 @@
     [page-subtype="subscriptions"] ytd-item-section-renderer:has([href*="/shorts/"]),
     [page-subtype="subscriptions"] ytd-rich-shelf-renderer[is-shorts],
     [page-subtype="channels"] .yt-tab-shape-wiz--host-clickable[tab-title="Shorts"],
-    [page-subtype="hashtag-landing-page"] .yt-tab-shape-wiz--host-clickable[tab-title="Shorts"] {
+    [page-subtype="hashtag-landing-page"] .yt-tab-shape-wiz--host-clickable[tab-title="Shorts"],
+    yt-tab-shape[tab-title="Shorts"] {
+      display: none !important;
+    }
+  }
+
+  if hide-channel-banners {
+    #page-header-banner {
       display: none !important;
     }
   }
