@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.15
+@version        2.1.16
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -37,7 +37,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.15";
+    content: "\aYoutube Tweaks - Version 2.1.16";
   }
 
   if videos-per-row {
@@ -166,6 +166,10 @@
     yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title {
       -webkit-line-clamp: 20 !important;
       max-height: 44rem !important;
+    }
+
+    [class*="yt-lockup-metadata-view-model__heading-reset"] {
+      --cb-max-height: 100% !important;
     }
   }
 
@@ -334,7 +338,11 @@
     }
 
     .ytThumbnailBottomOverlayViewModelHost {
-      display: none !important;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
 
     .resume-playback-background,

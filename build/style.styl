@@ -132,6 +132,10 @@
       -webkit-line-clamp: 20 !important;
       max-height: 44rem !important;
     }
+
+    [class*="yt-lockup-metadata-view-model__heading-reset"] {
+      --cb-max-height: 100% !important;
+    }
   }
 
   if square-corners {
@@ -299,7 +303,11 @@
     }
 
     .ytThumbnailBottomOverlayViewModelHost {
-      display: none !important;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
 
     .resume-playback-background,
