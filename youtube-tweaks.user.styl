@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.16
+@version        2.1.17
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -22,6 +22,7 @@
 @var checkbox smaller-search "🔍 Smaller search result thumbnails" 0;
 @var checkbox hide-recommendations-bar "🚫 Hide recommendations topic bar" 0;
 @var checkbox hide-yt-posts "🚫 Hide latest YouTube posts" 0;
+@var checkbox hide-video-summary "🚫 Hide video summary box" 0;
 @var checkbox restore-watched-badge "👀 Restore YouTube watched badge" 0;
 @var checkbox reorder-sidebar "🔀 Reorder sidebar sections" 0;
 
@@ -37,7 +38,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.16";
+    content: "\aYoutube Tweaks - Version 2.1.17";
   }
 
   if videos-per-row {
@@ -324,6 +325,11 @@
     display: none if hide-yt-posts;
   }
 
+  #video-summary,
+  #expandable-metadata.ytd-video-renderer:not(:empty) {
+    display: none if hide-video-summary;
+  }
+
   if restore-watched-badge {
     @font-face {
       font-family: "FontAwesome";
@@ -424,6 +430,10 @@
       top: 0;
       bottom: 0;
       z-index: -1;
+    }
+
+    .ytThumbnailBottomOverlayViewModelHost {
+      display: none;
     }
   }
 

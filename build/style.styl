@@ -289,6 +289,11 @@
     display: none if hide-yt-posts;
   }
 
+  #video-summary,
+  #expandable-metadata.ytd-video-renderer:not(:empty) {
+    display: none if hide-video-summary;
+  }
+
   if restore-watched-badge {
     @font-face {
       font-family: "FontAwesome";
@@ -389,6 +394,10 @@
       top: 0;
       bottom: 0;
       z-index: -1;
+    }
+
+    .ytThumbnailBottomOverlayViewModelHost {
+      display: none;
     }
   }
 
