@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.18
+@version        2.1.19
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -39,7 +39,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.18";
+    content: "\aYoutube Tweaks - Version 2.1.19";
   }
 
   if videos-per-row {
@@ -144,7 +144,9 @@
     ytd-rich-item-renderer .yt-lockup-metadata-view-model-wiz__title,
     #video-title[class*="style-scope ytd-rich-grid"],
     ytd-game-details-renderer[is-rich-grid]:not([mini-mode]) #title.ytd-game-details-renderer,
-    yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title {
+    yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title,
+    yt-lockup-metadata-view-model .ytLockupMetadataViewModelTitle,
+    yt-lockup-metadata-view-model .ytLockupMetadataViewModelHeadingReset {
       font-size: 1.4rem !important;
       line-height: 2rem !important;
     }
@@ -165,12 +167,16 @@
     ytd-rich-grid-slim-media[mini-mode] #video-title.ytd-rich-grid-slim-media,
     ytd-video-renderer[is-backstage-video] #video-title.ytd-video-renderer,
     #video-title[class*="ytd"],
-    yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title {
+    yt-lockup-metadata-view-model .yt-lockup-metadata-view-model__title,
+    yt-lockup-metadata-view-model .ytLockupMetadataViewModelTitle,
+    yt-lockup-metadata-view-model .ytLockupMetadataViewModelHeadingReset {
       -webkit-line-clamp: 20 !important;
       max-height: 44rem !important;
+      overflow: visible !important;
     }
 
-    [class*="yt-lockup-metadata-view-model__heading-reset"] {
+    [class*="yt-lockup-metadata-view-model__heading-reset"],
+    yt-lockup-metadata-view-model .ytLockupMetadataViewModelHeadingReset {
       --cb-max-height: 100% !important;
     }
   }
