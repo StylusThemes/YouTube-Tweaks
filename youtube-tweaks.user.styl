@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.1.19
+@version        2.2.0
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -24,6 +24,10 @@
 @var checkbox hide-yt-posts "🚫 Hide latest YouTube posts" 0;
 @var checkbox hide-video-summary "🚫 Hide video summary box" 0;
 @var checkbox restore-watched-badge "👀 Restore YouTube watched badge" 0;
+@var select watched-badge-style "🎨 Watched badge style" {
+    'dark overlay + checkmark *': 'dark-overlay',
+    'light overlay + badge + progress bar': 'light-progress'
+}
 @var checkbox reorder-sidebar "🔀 Reorder sidebar sections" 0;
 @var checkbox hide-exp-int "🚫 Hide \"Experiencing interruptions\" notifications" 0;
 
@@ -39,7 +43,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.1.19";
+    content: "\aYoutube Tweaks - Version 2.2.0";
   }
 
   if videos-per-row {
@@ -358,85 +362,153 @@
       right: 0;
     }
 
-    .resume-playback-background,
-    ytd-thumbnail-overlay-resume-playback-renderer,
-    .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
-      background: rgba(3, 3, 3, .8) !important;
-      position: absolute;
-      left: 0;
-      top: 0;
-      display: block !important;
-      height: 100%;
-      width: 100%;
-      pointer-events: none;
-      opacity: 1;
-      z-index: 11;
-      font-size: 12px;
-      text-align: center;
-      transition: background .2s;
+    if watched-badge-style == "dark-overlay" {
+      .resume-playback-background,
+      ytd-thumbnail-overlay-resume-playback-renderer,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+        background: rgba(3, 3, 3, .8) !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block !important;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        opacity: 1;
+        z-index: 11;
+        font-size: 12px;
+        text-align: center;
+        transition: background .2s;
+      }
+
+      .resume-playback-background::before,
+      ytd-thumbnail-overlay-resume-playback-renderer::before,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
+        content: "\f00c";
+        visibility: visible;
+        font-family: "FontAwesome";
+        color: white;
+        box-sizing: border-box;
+        width: auto;
+        height: 100%;
+        line-height: normal;
+        padding: 1px 5px;
+
+        display: flex;
+        position: relative;
+        z-index: 14;
+        opacity: .9;
+        pointer-events: none;
+        font-size: 32px;
+        transition: opacity .2s;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .yt-lockup-thumbnail:hover .resume-playback-background::before,
+      .thumb-wrapper:hover .resume-playback-background::before,
+      #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer::before,
+      yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
+        opacity: 0;
+        transition: opacity .2s;
+      }
+
+      .yt-lockup-thumbnail:hover .resume-playback-background,
+      .thumb-wrapper:hover .resume-playback-background,
+      #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer,
+      yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar,
+      #thumbnail:hover #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+      yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
+        background: rgba(0, 0, 0, 0) !important;
+        transition: background .2s;
+      }
+
+      #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBar .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+        background: none !important;
+        height: 100% !important;
+        bottom: 0px !important;
+        position: absolute !important;
+      }
+
+      #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
+        content: "";
+        background-color: rgba(0, 0, 0, .65);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
     }
 
-    .resume-playback-background::before,
-    ytd-thumbnail-overlay-resume-playback-renderer::before,
-    .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
-      content: "\f00c";
-      visibility: visible;
-      font-family: "FontAwesome";
-      color: white;
-      box-sizing: border-box;
-      width: auto;
-      height: 100%;
-      line-height: normal;
-      padding: 1px 5px;
+    if watched-badge-style == "light-progress" {
+      .resume-playback-background,
+      ytd-thumbnail-overlay-resume-playback-renderer,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+        background: rgba(0, 0, 0, .5) !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block !important;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+        opacity: 1;
+        z-index: 11;
+      }
 
-      display: flex;
-      position: relative;
-      z-index: 14;
-      opacity: .9;
-      pointer-events: none;
-      font-size: 32px;
-      transition: opacity .2s;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
+      .resume-playback-background::before,
+      ytd-thumbnail-overlay-resume-playback-renderer::before,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
+        content: "WATCHED";
+        visibility: visible;
+        font-family: "Roboto", "Arial", sans-serif;
+        color: white;
+        background: rgba(0, 0, 0, 0.85);
+        font-size: 11px;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 4px;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        z-index: 14;
+        display: flex !important;
+        pointer-events: none;
+      }
 
-    .yt-lockup-thumbnail:hover .resume-playback-background::before,
-    .thumb-wrapper:hover .resume-playback-background::before,
-    #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer::before,
-    yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
-      opacity: 0;
-      transition: opacity .2s;
-    }
+      #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBar .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+        background: #FF0000 !important;
+        height: 4px !important;
+        top: auto !important;
+        bottom: 0px !important;
+        left: 0 !important;
+        position: absolute !important;
+        width: var(--watched-progress, 50%);
+      }
 
-    .yt-lockup-thumbnail:hover .resume-playback-background,
-    .thumb-wrapper:hover .resume-playback-background,
-    #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer,
-    yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar,
-    #thumbnail:hover #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
-    yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
-      background: rgba(0, 0, 0, 0) !important;
-      transition: background .2s;
-    }
+      #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+      .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
+        content: "";
+        display: none;
+      }
 
-    #progress.ytd-thumbnail-overlay-resume-playback-renderer,
-    .ytThumbnailOverlayProgressBarHostWatchedProgressBar .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
-      background: none !important;
-      height: 100% !important;
-      bottom: 0px !important;
-      position: absolute !important;
-    }
-
-    #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
-    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
-      content: "";
-      background-color: rgba(0, 0, 0, .65);
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: -1;
+      .yt-lockup-thumbnail:hover .resume-playback-background::before,
+      .thumb-wrapper:hover .resume-playback-background::before,
+      #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer::before,
+      yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before,
+      .yt-lockup-thumbnail:hover .resume-playback-background,
+      .thumb-wrapper:hover .resume-playback-background,
+      #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer,
+      yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+        opacity: 1 !important;
+        background: rgba(0, 0, 0, .25) !important;
+      }
     }
   }
 

@@ -1,4 +1,4 @@
-# YouTube Tweaks [![Version][version]][1] [![Install directly from GitHub][install]][2] [![GitHub stars][stars]][3] [![GitHub watchers][watchers]][4] [![GitHub open issues][open issues]][5] [![GitHub closed issues][closed issues]][5] [![GitHub license][license]][6] [![GitHub last commit][last commit]][7]
+# YouTube Tweaks [![Install directly from GitHub][install]][2] [![GitHub stars][stars]][3] [![GitHub watchers][watchers]][4] [![GitHub open issues][open issues]][5] [![GitHub closed issues][closed issues]][5] [![GitHub license][license]][6]
 
 **_Tweaks for [Youtube]_**
 
