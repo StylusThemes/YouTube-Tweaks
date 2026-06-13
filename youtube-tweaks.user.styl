@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.2.0
+@version        2.3.0
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -43,7 +43,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.2.0";
+    content: "\aYoutube Tweaks - Version 2.3.0";
   }
 
   if videos-per-row {
@@ -648,6 +648,10 @@
 
   .ytp-ce-element-show {
     display: none if hide-end-cards;
+  }
+
+  .ytLockupViewModelHorizontal .ytLockupViewModelContentImage {
+    max-width: 200px !important;
   }
 
   if enable-netflix-subtitles {
