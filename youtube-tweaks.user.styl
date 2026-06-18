@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.3.0
+@version        2.3.1
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -43,7 +43,7 @@
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.3.0";
+    content: "\aYoutube Tweaks - Version 2.3.1";
   }
 
   if videos-per-row {
@@ -360,6 +360,10 @@
       bottom: 0;
       left: 0;
       right: 0;
+    }
+
+    .ytThumbnailBottomOverlayViewModelHostBackground {
+      display: none;
     }
 
     if watched-badge-style == "dark-overlay" {
