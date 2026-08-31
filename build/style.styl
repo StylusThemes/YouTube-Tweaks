@@ -328,16 +328,20 @@
     if watched-badge-style == "dark-overlay" {
       .resume-playback-background,
       ytd-thumbnail-overlay-resume-playback-renderer,
+      ytw-thumbnail-overlay-resume-playback-renderer,
+      .ytwThumbnailOverlayResumePlaybackRendererHost,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
         background: rgba(3, 3, 3, .8) !important;
-        position: absolute;
-        left: 0;
-        top: 0;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
         display: block !important;
-        height: 100%;
-        width: 100%;
+        height: 100% !important;
+        width: 100% !important;
         pointer-events: none;
-        opacity: 1;
+        opacity: 1 !important;
         z-index: 11;
         font-size: 12px;
         text-align: center;
@@ -346,6 +350,7 @@
 
       .resume-playback-background::before,
       ytd-thumbnail-overlay-resume-playback-renderer::before,
+      ytw-thumbnail-overlay-resume-playback-renderer::before,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
         content: "\f00c";
         visibility: visible;
@@ -372,6 +377,7 @@
       .yt-lockup-thumbnail:hover .resume-playback-background::before,
       .thumb-wrapper:hover .resume-playback-background::before,
       #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer::before,
+      #thumbnail:hover ytw-thumbnail-overlay-resume-playback-renderer::before,
       yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
         opacity: 0;
         transition: opacity .2s;
@@ -380,14 +386,17 @@
       .yt-lockup-thumbnail:hover .resume-playback-background,
       .thumb-wrapper:hover .resume-playback-background,
       #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer,
+      #thumbnail:hover ytw-thumbnail-overlay-resume-playback-renderer,
       yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar,
       #thumbnail:hover #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+      #thumbnail:hover .ytwThumbnailOverlayResumePlaybackRendererThumbnailOverlayResumePlaybackProgress::after,
       yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
         background: rgba(0, 0, 0, 0) !important;
         transition: background .2s;
       }
 
       #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+      ytw-thumbnail-overlay-resume-playback-renderer .ytwThumbnailOverlayResumePlaybackRendererThumbnailOverlayResumePlaybackProgress,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBar .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
         background: none !important;
         height: 100% !important;
@@ -396,6 +405,7 @@
       }
 
       #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+      .ytwThumbnailOverlayResumePlaybackRendererThumbnailOverlayResumePlaybackProgress::after,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
         content: "";
         background-color: rgba(0, 0, 0, .65);
@@ -411,21 +421,26 @@
     if watched-badge-style == "light-progress" {
       .resume-playback-background,
       ytd-thumbnail-overlay-resume-playback-renderer,
+      ytw-thumbnail-overlay-resume-playback-renderer,
+      .ytwThumbnailOverlayResumePlaybackRendererHost,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
         background: rgba(0, 0, 0, .5) !important;
-        position: absolute;
-        left: 0;
-        top: 0;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
         display: block !important;
-        height: 100%;
-        width: 100%;
+        height: 100% !important;
+        width: 100% !important;
         pointer-events: none;
-        opacity: 1;
+        opacity: 1 !important;
         z-index: 11;
       }
 
       .resume-playback-background::before,
       ytd-thumbnail-overlay-resume-playback-renderer::before,
+      ytw-thumbnail-overlay-resume-playback-renderer::before,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before {
         content: "WATCHED";
         visibility: visible;
@@ -445,6 +460,7 @@
       }
 
       #progress.ytd-thumbnail-overlay-resume-playback-renderer,
+      ytw-thumbnail-overlay-resume-playback-renderer .ytwThumbnailOverlayResumePlaybackRendererThumbnailOverlayResumePlaybackProgress,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBar .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
         background: #FF0000 !important;
         height: 4px !important;
@@ -456,6 +472,7 @@
       }
 
       #progress.ytd-thumbnail-overlay-resume-playback-renderer::after,
+      .ytwThumbnailOverlayResumePlaybackRendererThumbnailOverlayResumePlaybackProgress::after,
       .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment::after {
         content: "";
         display: none;
@@ -464,10 +481,12 @@
       .yt-lockup-thumbnail:hover .resume-playback-background::before,
       .thumb-wrapper:hover .resume-playback-background::before,
       #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer::before,
+      #thumbnail:hover ytw-thumbnail-overlay-resume-playback-renderer::before,
       yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar::before,
       .yt-lockup-thumbnail:hover .resume-playback-background,
       .thumb-wrapper:hover .resume-playback-background,
       #thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer,
+      #thumbnail:hover ytw-thumbnail-overlay-resume-playback-renderer,
       yt-thumbnail-view-model:hover .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
         opacity: 1 !important;
         background: rgba(0, 0, 0, .25) !important;
