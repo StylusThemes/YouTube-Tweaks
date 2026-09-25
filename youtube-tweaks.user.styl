@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Youtube Tweaks
-@version        2.3.2
+@version        2.4.0
 @namespace      https://github.com/StylusThemes
 @description    Tweaks for Youtube!
 @author         StylusThemes <https://github.com/StylusThemes>
@@ -37,13 +37,14 @@
 @var checkbox hide-suggestion-cards "🚫 Hide suggestion cards (unless hovering)" 0;
 @var checkbox hide-end-cards "🚫 Hide end cards" 0;
 @var checkbox enable-netflix-subtitles "🍿 Enable Netflix-style subtitles" 0;
+@var checkbox old-youtube-embed "📼 Fix YouTube embed player" 0;
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.youtube.com") {
 
   #copyright div::after {
     white-space: pre;
-    content: "\aYoutube Tweaks - Version 2.3.2";
+    content: "\aYoutube Tweaks - Version 2.4.0";
   }
 
   if videos-per-row {
@@ -381,6 +382,7 @@
         display: block !important;
         height: 100% !important;
         width: 100% !important;
+        margin: 0 !important;
         pointer-events: none;
         opacity: 1 !important;
         z-index: 11;
@@ -474,6 +476,7 @@
         display: block !important;
         height: 100% !important;
         width: 100% !important;
+        margin: 0 !important;
         pointer-events: none;
         opacity: 1 !important;
         z-index: 11;
@@ -721,10 +724,331 @@
     }
 
     .ytp-caption-segment {
-      font-family: "Netflix Sans", sans-serif !important;
-      font-weight: 700 !important;
+      direction: ltr !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+      line-height: normal !important;
+      color: #fff !important;
+      text-shadow: #000 0 0 7px !important;
+      font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+      font-weight: bolder !important;
       background: none !important;
-      text-shadow: #000 0 0 .2em !important;
+      text-size-adjust: none !important;
+      -webkit-font-smoothing: antialiased !important;
+      user-select: none !important;
+    }
+
+    .ytp-big-mode > div > div > span > span > span {
+      font-size: 2.5vw !important;
+      word-break: break-word;
+      padding: 0 3vw !important;
+    }
+
+    .ytp-hide-info-bar > div > div > span > span > span {
+      font-size: 2vw !important;
+      word-break: break-word;
+      padding: 0 3vw !important;
+    }
+
+    .caption-window {
+      text-align: center !important;
+      width: 100% !important;
+      height: auto !important;
+      left: 0% !important;
+      margin-left: auto !important;
+    }
+
+    .ytp-big-mode > div > .caption-window,
+    .ytp-hide-info-bar > div > .caption-window {
+      bottom: 6.9468% !important;
+    }
+
+    .ytp-big-mode.ytp-autohide-active > div > .caption-window,
+    .ytp-autohide > div > .caption-window {
+      bottom: 10% !important;
+    }
+  }
+}
+
+@-moz-document url-prefix("https://www.youtube.com/embed/"), url-prefix("https://www.youtube-nocookie.com/embed/") {
+  if old-youtube-embed {
+    /* All player controls */
+    #player-controls {
+      opacity: 0;
+      transition: opacity .15s ease 1s;
+    }
+
+    body:hover #player-controls,
+    #player-controls:has(.ytmVideoCoverHost.ended) {
+      opacity: 1;
+      transition-delay: 0s;
+    }
+
+    /* Play/pause/replay button (in the center) */
+    ytm-custom-control .player-controls-middle :is(.player-control-play-pause-icon, .endscreen-replay-button) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      translate: calc(-50vw + 5px) calc(50vh - 0px);
+      scale: .7;
+      margin: 0 !important;
+    }
+
+    ytm-custom-control .player-controls-middle :is(.player-control-play-pause-icon, .endscreen-replay-button).endscreen-replay-button {
+      translate: calc(-50vw + 0px) calc(50vh + 7px);
+      scale: .6;
+    }
+
+    /* Copy link button (bottom left) */
+    ytm-slim-metadata-button-renderer:has(> .circle-buttons.icon-link) {
+      display: none !important;
+    }
+
+    /* Share & watch later buttons (bottom-left) */
+    .action-menu-engagement-buttons-wrapper {
+      position: absolute;
+      right: 50%;
+      bottom: -6px;
+      scale: .75;
+      pointer-events: auto;
+      transform-origin: bottom;
+      transition: bottom .35s ease;
+    }
+
+    @media (max-width: 599px) {
+      .action-menu-engagement-buttons-wrapper {
+        right: -20px;
+        bottom: 120%;
+      }
+    }
+
+    @media (max-width: 599px) {
+      #player-controls:has(.ytmCuedOverlayHost:not(.ytmCuedOverlayHidden)) .action-menu-engagement-buttons-wrapper {
+        bottom: 0;
+      }
+    }
+
+    /* Remove empty flexbox without link button */
+    .action-menu-engagement-buttons-wrapper:has(> ytm-slim-metadata-button-renderer:first-child:last-child > .circle-buttons.icon-link),
+    .action-menu-engagement-buttons-wrapper:empty {
+      display: none !important;
+    }
+
+    /* Bottom right menu bar */
+    .quick-actions-wrapper {
+      margin-right: 50px;
+    }
+
+    /* More videos button with preview */
+    .quick-actions-wrapper > .fullscreen-watch-next-entrypoint-wrapper {
+      scale: .75;
+      translate: -15px 10px;
+    }
+
+    @media (max-width: 599px) {
+      .quick-actions-wrapper > .fullscreen-watch-next-entrypoint-wrapper {
+        translate: 140px -110%;
+      }
+    }
+
+    /* Watch on YouTube button */
+    .quick-actions-wrapper > .watch-on-youtube-button-wrapper {
+      scale: .75;
+      translate: -48px 10px;
+    }
+
+    /* Fullscreen button (bottom right, but above bar) */
+    .player-controls-bottom .icon-button.fullscreen-icon {
+      translate: 18px 78px;
+    }
+
+    /* Player time */
+    .ytwPlayerTimeDisplayHost {
+      translate: 50px 78px;
+    }
+
+    .ytwPlayerTimeDisplayHost > .ytwPlayerTimeDisplayPill {
+      margin-left: 0px !important;
+    }
+
+    /* Seek bar */
+    .fullscreen-controls-always-on .watch-page-progress-bar {
+      bottom: 36px !important;
+      left: 12px !important;
+      right: 12px !important;
+    }
+
+    /* Player controls (top right) */
+    ytm-custom-control .player-controls-top-right {
+      --left-pad: 135px;
+      position: absolute;
+      left: 0px;
+      translate: var(--left-pad) calc(100vh - 48px - 3px);
+    }
+
+    /* Volume button */
+    ytm-custom-control .player-controls-top-right > volume-controls > .ytdVolumeControlsVolumeControlsContainer {
+      flex-direction: row !important;
+      -moz-box-orient: horizontal !important;
+      width: unset !important;
+      max-width: unset !important;
+      gap: 5px !important;
+      justify-items: center !important;
+    }
+
+    ytm-custom-control .player-controls-top-right > volume-controls > .ytdVolumeControlsVolumeControlsContainer > .ytdVolumeControlsSliderContainerVertical {
+      z-index: 1000000;
+      transform: none !important;
+      rotate: 0deg !important;
+      margin-top: 0px !important;
+      height: unset !important;
+      min-height: unset !important;
+    }
+
+    ytm-custom-control .player-controls-top-right > volume-controls c3-icon::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      inset: 5px;
+      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+    }
+
+    /* Captions button */
+    ytm-custom-control .player-controls-top-right > yt-closed-captions-toggle-button {
+      position: absolute;
+      translate: calc(100vw - var(--left-pad) - 155px) 0;
+    }
+
+    ytm-custom-control .player-controls-top-right > yt-closed-captions-toggle-button c3-icon::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      inset: -7px;
+      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+    }
+
+    /* Settings button */
+    ytm-custom-control .player-controls-top-right > div:has(> .player-settings-icon) {
+      position: absolute;
+      translate: calc(100vw - var(--left-pad) - 110px) 0;
+    }
+
+    ytm-custom-control .player-controls-top-right > div:has(> .player-settings-icon) c3-icon::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      inset: 5px;
+      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+    }
+
+    /* Fix divs blocking player controls */
+    .fullscreen-action-menu {
+      pointer-events: none;
+    }
+
+    .fullscreen-action-menu > div > div {
+      pointer-events: auto;
+    }
+
+    /* Toasts */
+    #toasts > c3-toast {
+      translate: 0 -58px;
+    }
+
+    #toasts > c3-toast.inverse-theme {
+      background-color: transparent !important;
+      text-shadow: 1px 1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff, -1px -1px 1px #fff;
+    }
+
+    /* Opened settings menu */
+    .ytSpecBottomSheetLayoutContainer {
+      --color: #f6f6f6;
+      --bg: #0e0e0ef5;
+      margin: 0 24px 50px auto !important;
+      background-color: var(--bg) !important;
+      color: var(--color) !important;
+    }
+
+    /* Expandable gutter */
+    .ytSpecBottomSheetLayoutContainer > div:has(> .ytSpecBottomSheetLayoutHeaderWrapper) {
+      display: none;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper {
+      max-height: calc(100vh - 50px - 10px) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent {
+      color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSwitchListItemViewModelHost .ytListItemViewModelTitle {
+      color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSwitchShapeTrackActive {
+      background-color: color-mix(var(--bg) 20%, #f03 80%) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytListItemViewModelAccessory {
+      color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytListItemViewModelHost {
+      color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytListItemViewModelHost .ytButtonOrAnchorButton,
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytListItemViewModelHost .ytListItemViewModelMainContainer {
+      color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytListItemViewModelHost .ytButtonOrAnchorButton .ytListItemViewModelTitle,
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytListItemViewModelHost .ytListItemViewModelMainContainer .ytListItemViewModelTitle {
+      color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytwVariableSpeedControllerViewModelPlaybackSpeedDisplay,
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSliderShapeHostSlider {
+      color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextTonal,
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSliderShapeHostIncrementButtonIconWrapper {
+      color: var(--color) !important;
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextTonal c3-icon div:has(> svg),
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSliderShapeHostIncrementButtonIconWrapper c3-icon div:has(> svg) {
+      fill: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSpecTouchFeedbackShapeTouchResponse .ytSpecTouchFeedbackShapeFill {
+      background-color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytSpecTouchFeedbackShapeTouchResponse .ytSpecTouchFeedbackShapeStroke {
+      border-color: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent input,
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent input:focus {
+      filter: invert(.9);
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytRadioShapeHost c3-icon div:has(> svg) {
+      fill: var(--color) !important;
+    }
+
+    .ytSpecBottomSheetLayoutContainer #content-wrapper > .ytSpecBottomSheetLayoutBottomSheetContent .ytListItemViewModelTappable:hover {
+      background-color: rgba(255, 255, 255, 0.05);
     }
   }
 }
